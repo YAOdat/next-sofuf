@@ -1,20 +1,20 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	name: "Next.js + NextUI",
-	description: "Make beautiful websites regardless of your design experience.",
+	name: "Sofuf",
+	description: "Your Learning Journey Starts Here",
 	navItems: [
 		{
 			label: "Home",
 			href: "/",
 		},
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Resources",
+      href: "/resources",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Careers",
+      href: "/careers",
     },
     {
       label: "Blog",
@@ -27,42 +27,35 @@ export const siteConfig = {
 	],
 	navMenuItems: [
 		{
-			label: "Profile",
-			href: "/profile",
+			label: "Home",
+			href: "/",
 		},
 		{
-			label: "Dashboard",
-			href: "/dashboard",
+			label: "Resources",
+			href: "/resources",
 		},
 		{
-			label: "Projects",
-			href: "/projects",
+			label: "Careers",
+			href: "/careers",
 		},
 		{
-			label: "Team",
-			href: "/team",
+			label: "Blog",
+			href: "/blog",
 		},
 		{
-			label: "Calendar",
-			href: "/calendar",
+			label: "Contact",
+			href: "/contact",
 		},
 		{
-			label: "Settings",
-			href: "/settings",
+			label: "About",
+			href: "/about",
 		},
-		{
-			label: "Help & Feedback",
-			href: "/help-feedback",
-		},
-		{
-			label: "Logout",
-			href: "/logout",
-		},
+		
 	],
 	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui.org",
+		github: "/careers",
+		twitter: "https://t.me/odatt",
+		docs: "/resources",
 		discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev"
 	},
