@@ -72,7 +72,7 @@ export default function WhatsApp() {
       <p style={{ marginBottom: '0.5rem' }}>Choose from our various English WhatsApp groups:</p>
       <ol style={{ marginLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'circle' }}>
       {whatsappGroups.map((group, index) => (
-        <li>{group.name} <Link>{group.link}</Link></li>
+        <li key={index}>{group.name} <Link>{group.link}</Link></li>
         ))}
        
       </ol>
