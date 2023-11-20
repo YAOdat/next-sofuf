@@ -1,0 +1,31 @@
+{
+  "institutions": [
+    {
+      "name": "KAU",
+      "fullName": "King Abdulaziz University",
+      "logoSrc": "https://upload.wikimedia.org/wikipedia/en/6/66/King_Abdulaziz_University_%28emblem%29.jpg",
+      "description": "Find resources that help you with your studies.",
+      "link": {
+        "url": "/resources/KAU"
+      }
+    },
+    {
+      "name": "MOE UAE",
+      "fullName": "Ministry of Education of UAE",
+      "logoSrc": "https://pbs.twimg.com/profile_images/1633122884238311424/DtqRjmp3_400x400.jpg", 
+      "description": "Explore educational resources from the Ministry of Education of the United Arab Emirates.",
+      "link": {
+        "url": "/resources/MOE-UAE"
+      }
+    },
+    {
+      "name": "WhatsApp",
+      "fullName": "WhatsApp Resources",
+      "logoSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png", 
+      "description": "Explore WhatsApp groups and channels that help you with your learning journey.",
+      "link": {
+        "url": "/resources/whatsapp"
+      }
+    }
+  ]
+}
