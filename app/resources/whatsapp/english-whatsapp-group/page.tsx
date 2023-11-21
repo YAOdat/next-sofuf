@@ -82,7 +82,7 @@ export default function WhatsApp() {
     <li>Familiarize yourself with the group rules outlined in the description.</li>
   </ol>
   <h3 className="text-lg font-semibold mb-2">Join Our English Learning WhatsApp Groups:</h3>
-  <p className="mb-4">To join, simply click on the link beside each group. If you don't have WhatsApp installed, <a target="_blank" href="insert-download-link" className="text-blue-500">download it here</a>.</p>
+  <p className="mb-4">To join, simply click on the link beside each group. If you do not have WhatsApp installed, <a target="_blank" href="insert-download-link" className="text-blue-500">download it here</a>.</p>
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">WhatsApp Group Links:</h2>
               <div className="mb-4">
               <div className="flex flex-wrap mb-4">
