@@ -14,7 +14,7 @@ export default function WhatsApp() {
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         <Image
-          alt="Card background"
+          alt="English WhatsApp Group Blog Post"
           className="object-cover rounded-xl"
           src="/whatsappgroups.png"
           width={270}

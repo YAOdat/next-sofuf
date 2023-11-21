@@ -1,87 +1,139 @@
-'use client';
-
 import React from "react";
-import { Card, CardBody, CardHeader, Image, Link } from "@nextui-org/react";
-const whatsappGroups = [
-    { name: 'English Group 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', },
-    { name: 'English Group 2', link: 'https://chat.whatsapp.com/L6BzyM6siWzCvwlFINGhUN', members: '10.8k' },
-    { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', members: '10.8k'}
-  ];
+import { Card, CardBody, Link, Code, Image } from "@nextui-org/react";
+import Head from 'next/head'
+
+const englishGroups = [
+  { name: 'English Group 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English' },
+  { name: 'English Group 2', link: 'https://chat.whatsapp.com/L6BzyM6siWzCvwlFINGhUN', language: 'English' },
+  { name: 'English Group 3', link: 'https://chat.whatsapp.com/FMOdmLdsbRQCOUDPsvGoyf', language: 'English' },
+  { name: 'English Group 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1', language: 'English' },
+  { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'English'},
+  { name: 'English Arabic Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'EnglishArabic'}
+  
+];
+const langGroups = [
+  { 
+    name: "Arabic | English", 
+    description: "Join this bilingual community where both Arabic and English learners come together for language exchange.",
+    link: "https://chat.whatsapp.com/HeBS7UaTuH2HtSDMl9hj9x", 
+  },
+  { 
+    name: "English — Pyсский", 
+    description: "Immerse yourself in a diverse linguistic environment with speakers of both Russian and English in this language exchange group.",
+    link: "https://chat.whatsapp.com/CGmjCn9z94p4O6IraY5pvL" 
+  },
+  { 
+    name: "Türkçe Ve İngilizce", 
+    description: "Connect with fellow learners in a group accommodating both Turkish and English languages for an enriching language exchange experience.",
+    link: "https://chat.whatsapp.com/LRDFFg2GR6B7rekwAo3mCS" 
+  },
+  {
+    name:"Japanese(日本語)-English(英語)", 
+    description: "Join this group to practice Japanese and English in a fun and supportive environment.",
+    link: "https://chat.whatsapp.com/BiCkJLiwf1y8SBXoKJlc5J"
+  },
+  {
+    name: "Thai ไทย I English",
+    description: "Learn Thai and English from native speakers in this friendly and interactive language exchange group.",
+    link: "https://chat.whatsapp.com/Je7gDVaz6tS28AwTvPuZoM"
+  },
+  {
+    name: "English - Français",
+    description: "Join this group to improve your English and French language skills.",
+    link: "https://chat.whatsapp.com/EQlwGRxgDjeJwo78SgQUkD"
+  }
+];
 
 export default function WhatsApp() {
   return (
-    <div className="flex justify-center pt-0 px-2 w-full min-h-screen">
+    <div className="container mx-auto mt-8">
+        <Head>
+      <title>English WhatsApp Group - Learn and Practice English on WhatsApp</title>
+      <meta name="keywords" content="English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp" />
+      <meta name="description" content="Join English WhatsApp Groups to learn and practice English through writing, reading, speaking, and listening activities. Follow the group link to join." />
+      <meta name="author" content="Odat" />
+      <meta name="language" content="en" />
+      <meta name="robots" content="index, follow"/>
+    </Head>
       <Card>
         <CardBody>
-          <article className="max-w-[100rem]">
-            <h1 className="text-3xl font-bold">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
-            <p className="font-thin">2023 - 11 - 20 / Author: Odat</p>
-            <article className="article" >
-              {/* Add the tags section if tags exist */}
-              <div  className="w-full text-center">
-                <p className="text-sm font-thin" style={{ fontSize: '1rem', marginBottom: '1rem' }}>
-                  Are you looking to boost your English language skills in a fun and interactive way? Look no further! Our English WhatsApp groups are designed to help you practice and improve your writing, reading, speaking, and listening skills. WhatsApp Messenger, with its versatile features, serves as an excellent platform for language learning.
-                </p>
-              </div>
-              {/* WhatsApp Group Links */}
-              <div className="flex flex-row flex-wrap justify-center select-none">
-                {whatsappGroups.map((group, index) => (
-                  <span key={index} className="p-1 text-sm font-thin text-center rounded-full w-fit h-fit">
-                    Join our {group.name}: 
-                    <Link style={{ color: 'cyan', fontWeight: 'bold' }} href={group.link} target="_blank" rel="noopener noreferrer">
-                       TAP HERE TO JOIN
-                    </Link>
-                  </span>
+          <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
+            <p className="text-xs md:text-sm font-thin mb-4">2023 - 11 - 21 / Author: Odat</p>
+            <div className="mb-4">
+              <p className="md:text-base">
+             Welcome to our <span className="font-bold">English Learning WhatsApp Groups</span>! WhatsApp Messenger, a versatile instant messaging app, empowers users to exchange text and voice messages, conduct voice and video calls, and share various media formats, including images, documents, and user locations. Leveraging this platform for English language practice has proven highly beneficial, as I personally discovered.
+              </p >
+              <Link className="font-bold mt-4" href='https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx' style={{color:'cyan'}} isExternal rel="noopener noreferrer">Tap Here to Join</Link>
+            </div>
+            <div className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto mb-8">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">How it Works:</h2>
+              <ul className="list-disc pl-6 mb-4">
+    <li className="mb-2"><span className="font-bold"> Writing Practice: </span> Sharpen your writing skills by composing and sending messages within the group.</li>
+    <li className="mb-2"><span className="font-bold">Reading Practice:</span> Enhance your reading proficiency by perusing messages crafted by fellow group members.</li>
+    <li className="mb-2"><span className="font-bold">Speaking Practice:</span> Record and send voice notes to exercise your spoken English.</li>
+    <li><span className="font-bold">Listening Practice: </span> Develop your listening skills by attentively listening to voice notes from other group members.</li>
+  </ul>
+  <h4 className="font-semibold mb-2">Before You Join:</h4>
+  <ol className="list-decimal pl-6 mb-4">
+    <li className="mb-2">Ensure you have a basic understanding of the English language.</li>
+    <li className="mb-2">Disable automatic media downloads on WhatsApp (<span className="italic">Settings {">"} Data and Storage Usage {">"} Turn off all downloads</span>).</li>
+    <li className="mb-2">Mute the group immediately upon joining.</li>
+    <li>Familiarize yourself with the group rules outlined in the description.</li>
+  </ol>
+  <h3 className="text-lg font-semibold mb-2">Join Our English Learning WhatsApp Groups:</h3>
+  <p className="mb-4">To join, simply click on the link beside each group. If you don't have WhatsApp installed, <a target="_blank" href="insert-download-link" className="text-blue-500">download it here</a>.</p>
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">WhatsApp Group Links:</h2>
+              <div className="mb-4">
+              <div className="flex flex-wrap mb-4">
+              <ul className="list-disc pl-6 mb-4">
+                {englishGroups.map((group, index) => (
+                  <li key={index} className="mb-2">
+                    {group.name}:<br></br><Code className="text-blue-500 break-words bg-cyan-900" ><Link href={group.link} style={{fontSize:'12px', color:'cyan'}} target="_blank" rel="noopener noreferrer">{group.link}</Link>
+                  </Code>
+                  </li>
                 ))}
+                </ul>
+            </div>              
+            </div>
+            </div>
+            <div className="mb-4" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}> 
+            <Image
+          alt="English WhatsApp Group Link 2024"
+          className="object-cover rounded-xl"
+          src="/ewg-blog.png"
+          width={300}
+        /></div>
+
+            <div className="max-w-full md:max-w-2xl mx-auto">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">Enhance Your English with Language Exchange Groups</h3>
+
+        {langGroups.map((group, index) => (
+          <div key={index} className="mb-8">
+            <h3 className="mb-4">Join our bilingual community for language exchange:</h3>
+            <h4 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">{group.name} WhatsApp Group:</h4>
+              <div className="mb-2">
+              <li key={index} className="mb-2">
+                    {group.name}:<br/>{group.description}<Code className="text-blue-500 break-words bg-cyan-900 mt-4" ><Link href={group.link} style={{fontSize:'12px', color:'cyan'}} target="_blank" rel="noopener noreferrer">{group.link}</Link>
+                  </Code>
+                  </li>
               </div>
-            </article>
-            <div style={{ maxWidth: '48rem', margin: '2rem auto' }}>
-    <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>How it Works:</h2>
-
-    <ul style={{ marginLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'disc' }}>
-      <li>
-        <span style={{ fontWeight: 'bold' }}>Writing Practice:</span>
-        <span style={{ marginLeft: '0.5rem' }}>Engage in meaningful conversations by writing and sending messages to group members.</span>
-      </li>
-      <li>
-        <span style={{ fontWeight: 'bold' }}>Reading Practice:</span>
-        <span style={{ marginLeft: '0.5rem' }}>Enhance comprehension skills by reading messages from other members.</span>
-      </li>
-      <li>
-        <span style={{ fontWeight: 'bold' }}>Speaking Practice:</span>
-        <span style={{ marginLeft: '0.5rem' }}>Practice articulating thoughts and ideas by recording and sending voice notes.</span>
-      </li>
-      <li>
-        <span style={{ fontWeight: 'bold' }}>Listening Practice:</span>
-        <span style={{ marginLeft: '0.5rem' }}>Improve auditory skills by listening to voice notes from other members in the group.</span>
-      </li>
-    </ul>
-
-    <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>WhatsApp Group Links:</h2>
-
-    <div style={{ marginBottom: '1rem' }}>
-      <p style={{ marginBottom: '0.5rem' }}>To get started, follow these simple steps:</p>
-      <ol style={{ marginLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'decimal' }}>
-        <li>Ensure you have a basic understanding of the English language.</li>
-        <li>Turn off automatic media downloads in WhatsApp settings for a smoother experience.</li>
-        <li>Mute the group immediately after joining.</li>
-        <li>Familiarize yourself with the group rules outlined in the description.</li>
-      </ol>
-    </div>
-    <div style={{ marginBottom: '1rem' }}>
-      <p style={{ marginBottom: '0.5rem' }}>Choose from our various English WhatsApp groups:</p>
-      <ol style={{ marginLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'circle' }}>
-      {whatsappGroups.map((group, index) => (
-        <li key={index}>{group.name} <Link>{group.link}</Link></li>
+          
+          </div>
         ))}
-       
-      </ol>
-    </div>
-  </div>
+        
+        <p className="mb-8">
+          For those without WhatsApp, we also offer an English Telegram group for language practice.
+          Join the conversation and enhance your English skills in a supportive community.
+        </p>
+
+        English Telegram Group:<br/><Code className="text-blue-500 break-words bg-cyan-900 mt-4" ><Link href="https://t.me/theEnglishTelegram" style={{fontSize:'12px', color:'cyan'}} target="_blank" rel="noopener noreferrer">https://t.me/theEnglishTelegram</Link>
+      </Code>
+      </div>
+    
           </article>
         </CardBody>
       </Card>
     </div>
   );
 }
-
