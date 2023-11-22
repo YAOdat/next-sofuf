@@ -89,7 +89,7 @@ export default function WhatsApp() {
               <ul className="list-disc pl-6 mb-4">
                 {englishGroups.map((group, index) => (
                   <li key={index} className="mb-2">
-                    {group.name}:<br></br><Code className="text-blue-500 break-words bg-cyan-900" ><Link href={group.link} style={{fontSize:'12px', color:'cyan'}} target="_blank" rel="noopener noreferrer">{group.link}</Link>
+                    {group.name}:<br></br><Code className="text-blue-500 break-words bg-cyan-900" ><Link href={group.link} className="responsiveLinkSize" target="_blank" rel="noopener noreferrer">{group.link}</Link>
                   </Code>
                   </li>
                 ))}
@@ -114,7 +114,7 @@ export default function WhatsApp() {
             <h4 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">{group.name} WhatsApp Group:</h4>
               <div className="mb-2">
               <li key={index} className="mb-2">
-                    {group.name}:<br/>{group.description}<Code className="text-blue-500 break-words bg-cyan-900 mt-4" ><Link href={group.link} style={{fontSize:'12px', color:'cyan'}} target="_blank" rel="noopener noreferrer">{group.link}</Link>
+                    {group.name}:<br/>{group.description}<Code className="text-blue-500 break-words bg-cyan-900 mt-4" ><Link className="responsiveLinkSize" href={group.link} target="_blank" rel="noopener noreferrer">{group.link}</Link>
                   </Code>
                   </li>
               </div>
