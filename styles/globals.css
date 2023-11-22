@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* Default link style */
+.responsiveLinkSize {
+    font-size: 15px;
+    color: cyan;
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+    /* Adjust link style for screens up to 768px wide */
+    .responsiveLinkSize {
+      font-size: 12px;
+    }
+  }
+
+   /* Media query for smaller screens */
+    @media (max-width: 370px) {
+        /* Adjust link style for screens up to 768px wide */
+        .responsiveLinkSize {
+          font-size: 9px;
+        }
+      }
