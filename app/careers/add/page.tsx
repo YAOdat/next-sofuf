@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, FormEvent  } from 'react';
 import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
@@ -15,7 +15,7 @@ const JobSubmissionForm = () => {
     workLoc: '',
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const db = getFirestore();
     const jobsCollection = collection(db, 'careers');
