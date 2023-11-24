@@ -2,8 +2,10 @@
 import React, { useState, FormEvent  } from 'react';
 import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import {app} from '../../../config/firebase';
 
 const JobSubmissionForm = () => {
+
   const [jobData, setJobData] = useState({
     city: '',
     companyName: '',
@@ -17,7 +19,7 @@ const JobSubmissionForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const db = getFirestore();
+    const db = getFirestore(app);
     const jobsCollection = collection(db, 'careers');
 
     try {
