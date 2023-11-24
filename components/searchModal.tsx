@@ -46,7 +46,7 @@ export default function SearchModal() {
            
               </ModalBody>
               <ModalFooter>
-                <Button color="foreground" variant="light" onPress={onClose}>
+                <Button onPress={onClose}>
                   Close
                 </Button>
                 <Button className="bg-cyan-600 shadow-lg shadow-indigo-500/20" onPress={onClose}>
