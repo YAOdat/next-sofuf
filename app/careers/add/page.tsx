@@ -1,21 +1,27 @@
-"use client"
-import React, { useState, FormEvent  } from 'react';
+'use client';
+import React, { useState, FormEvent } from 'react';
 import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import {app} from '../../../config/firebase';
+import { app } from '../../../config/firebase';
 
 const JobSubmissionForm = () => {
-
   const [jobData, setJobData] = useState({
-    city: '',
+    jobTitle: '',
     companyName: '',
+    city: '',
     country: '',
     datePosted: '',
     description: '',
     industry: '',
-    jobTitle: '',
     workLoc: '',
   });
+
+  const styles = {
+    form: 'max-w-lg mx-auto mt-8 p-4 rounded-md shadow-md',
+    input: 'w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-cyan-300',
+    label: 'block text-sm font-medium text-gray-400',
+    button: 'w-full bg-cyan-500 text-white py-2 rounded-md',
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -25,88 +31,111 @@ const JobSubmissionForm = () => {
     try {
       await addDoc(jobsCollection, jobData);
       console.log('Job submitted successfully!');
-      // Optionally, you can reset the form after submission
-      setJobData({
-        city: '',
-        companyName: '',
-        country: '',
-        datePosted: '',
-        description: '',
-        industry: '',
-        jobTitle: '',
-        workLoc: '',
-      });
+      setJobData({ jobTitle: '', companyName: '', city: '', country: '', datePosted: '', description: '', industry: '', workLoc: '' });
     } catch (error) {
       console.error('Error submitting job:', error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Job Title:
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className="mb-4">
+        <label htmlFor="jobTitle" className={`${styles.label}`}>
+          Job Title:
+        </label>
         <input
           type="text"
+          id="jobTitle"
           value={jobData.jobTitle}
           onChange={(e) => setJobData({ ...jobData, jobTitle: e.target.value })}
+          className={`${styles.input} `}
         />
-      </label>
-      <label>
-        Company Name:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="companyName" className={`${styles.label}`}>
+          Company Name:
+        </label>
         <input
           type="text"
+          id="companyName"
           value={jobData.companyName}
           onChange={(e) => setJobData({ ...jobData, companyName: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <label>
-        City:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="city" className={`${styles.label}`}>
+          City:
+        </label>
         <input
           type="text"
+          id="city"
           value={jobData.city}
           onChange={(e) => setJobData({ ...jobData, city: e.target.value })}
+          className={`${styles.input}`}
         />
-      </label>
-      <label>
-        Country:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="country" className={`${styles.label}`}>
+          Country:
+        </label>
         <input
           type="text"
+          id="country"
           value={jobData.country}
           onChange={(e) => setJobData({ ...jobData, country: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <label>
-        Date Posted:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="datePosted" className={`${styles.label}`}>
+          Date Posted:
+        </label>
         <input
           type="text"
+          id="datePosted"
           value={jobData.datePosted}
           onChange={(e) => setJobData({ ...jobData, datePosted: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <label>
-        Description:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="description" className={`${styles.label}`}>
+          Description:
+        </label>
         <Textarea
           value={jobData.description}
           onChange={(e) => setJobData({ ...jobData, description: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <label>
-        Industry:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="industry" className={`${styles.label}`}>
+          Industry:
+        </label>
         <input
           type="text"
+          id="industry"
           value={jobData.industry}
           onChange={(e) => setJobData({ ...jobData, industry: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <label>
-        Work Location:
+      </div>
+      <div className="mb-4">
+        <label htmlFor="workLoc" className={`${styles.label}`}>
+          Work Location:
+        </label>
         <input
           type="text"
+          id="workLoc"
           value={jobData.workLoc}
           onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
         />
-      </label>
-      <button type="submit">Submit Job</button>
+      </div>
+      <button type="submit" className={styles.button}>
+        Submit Career
+      </button>
     </form>
   );
 };
