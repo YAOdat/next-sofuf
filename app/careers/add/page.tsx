@@ -28,6 +28,12 @@ const JobSubmissionForm = () => {
     const db = getFirestore(app);
     const jobsCollection = collection(db, 'careers');
 
+    const ref = await addDoc(jobsCollection, jobData);
+    const id = ref.id; // Retrieve the auto-generated ID
+
+    console.log(`Job submitted successfully with ID: ${id}`);
+
+
     try {
       await addDoc(jobsCollection, jobData);
       console.log('Job submitted successfully!');

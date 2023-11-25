@@ -10,7 +10,7 @@ export default function SearchModal() {
     <>
       <CiSearch className="bg-transparent rounded-md flex inline-flex items-center" onClick={onOpen} cursor={'pointer'} size={'28'}/>
       <Modal 
-        backdrop="blur" 
+        backdrop="opaque" 
         isOpen={isOpen} 
         onOpenChange={onOpenChange}  
         style={{
