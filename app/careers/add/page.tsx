@@ -14,6 +14,7 @@ const JobSubmissionForm = () => {
     description: '',
     industry: '',
     workLoc: '',
+    salary: '',
   });
 
   const styles = {
@@ -28,16 +29,14 @@ const JobSubmissionForm = () => {
     const db = getFirestore(app);
     const jobsCollection = collection(db, 'careers');
 
-    const ref = await addDoc(jobsCollection, jobData);
-    const id = ref.id; // Retrieve the auto-generated ID
-
-    console.log(`Job submitted successfully with ID: ${id}`);
-
+    // const ref = await addDoc(jobsCollection, jobData);
+    // const id = ref.id; // Retrieve the auto-generated ID
+    // console.log(`Job submitted successfully with ID: ${id}`);
 
     try {
       await addDoc(jobsCollection, jobData);
       console.log('Job submitted successfully!');
-      setJobData({ jobTitle: '', companyName: '', city: '', country: '', datePosted: '', description: '', industry: '', workLoc: '' });
+      setJobData({ salary: '', jobTitle: '', companyName: '', city: '', country: '', datePosted: '', description: '', industry: '', workLoc: '' });
     } catch (error) {
       console.error('Error submitting job:', error);
     }
@@ -98,7 +97,7 @@ const JobSubmissionForm = () => {
           Date Posted:
         </label>
         <input
-          type="text"
+          type="date"
           id="datePosted"
           value={jobData.datePosted}
           onChange={(e) => setJobData({ ...jobData, datePosted: e.target.value })}
@@ -136,6 +135,18 @@ const JobSubmissionForm = () => {
           id="workLoc"
           value={jobData.workLoc}
           onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="workLoc" className={`${styles.label}`}>
+          Estimated Salary:
+        </label>
+        <input
+          type="text"
+          id="salary"
+          value={jobData.salary}
+          onChange={(e) => setJobData({ ...jobData, salary: e.target.value })}
           className={`${styles.input} focus:border-blue-300`}
         />
       </div>

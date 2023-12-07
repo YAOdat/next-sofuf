@@ -11,7 +11,7 @@ import {
     PiHouseSimpleThin,
 } from "react-icons/pi";
 import SearchModal from "@/components/searchModal";
-
+import FilterModal from "@/components/searchFilter";
 
 function SubNav() {
     const pathname = usePathname() || "";

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.responsiveTextSize {
+  font-size: 15px;
+}
 
 /* Default link style */
 .responsiveLinkSize {
@@ -16,12 +18,18 @@
     .responsiveLinkSize {
       font-size: 12px;
     }
+    .responsiveTextSize {
+      font-size: 12px;}
   }
 
    /* Media query for smaller screens */
     @media (max-width: 370px) {
         /* Adjust link style for screens up to 768px wide */
-        .responsiveLinkSize {
+        .responsiveLinkSize  {
           font-size: 9px;
         }
+
+        .responsiveTextSize {
+            font-size: 9px;
+          }
       }

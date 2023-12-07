@@ -30,7 +30,6 @@ export default function Home() {
 					Resources
 				</Link>
 				<Link
-					isExternal
 					className={buttonStyles({ variant: "bordered", radius: "full" })}
 					href={siteConfig.links.github}
 				>
