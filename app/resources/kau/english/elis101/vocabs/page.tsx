@@ -887,6 +887,27 @@ export default function Vocabs() {
                 <meta name="author" content="Odat" />
                 <meta name="language" content="ar" />
                 <meta name="robots" content="index, follow" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33"></script>
+        
+<script
+ 
+dangerouslySetInnerHTML={{
+
+          
+__html: `
+            window.dataLayer = window.dataLayer || [];
+            function
+ 
+gtag(){dataLayer.push(arguments);}
+            gtag('js',
+ 
+new
+ 
+Date());
+
+            gtag('config', 'G-FJ4P5C4K33');
+          `,
+        }} />
             </Head>
             <h1>الكلمات المطلوب حفظها في الاختبار النهائي المستوى الأول علمي</h1>
             <br/>
