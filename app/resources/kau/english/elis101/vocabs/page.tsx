@@ -1,5 +1,6 @@
 import React from "react";
 import Head from 'next/head'
+import Script from 'next/script'
 
 const vocabularyData = [
     {
@@ -887,27 +888,17 @@ export default function Vocabs() {
                 <meta name="author" content="Odat" />
                 <meta name="language" content="ar" />
                 <meta name="robots" content="index, follow" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33"></script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33"></Script>
         
-<script
+        <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
  
-dangerouslySetInnerHTML={{
-
-          
-__html: `
-            window.dataLayer = window.dataLayer || [];
-            function
- 
-gtag(){dataLayer.push(arguments);}
-            gtag('js',
- 
-new
- 
-Date());
-
-            gtag('config', 'G-FJ4P5C4K33');
-          `,
-        }} />
+          gtag('config', 'G-FJ4P5C4K33');
+        `}
+      </Script>
             </Head>
             <h1>الكلمات المطلوب حفظها في الاختبار النهائي المستوى الأول علمي</h1>
             <br/>

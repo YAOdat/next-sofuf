@@ -26,7 +26,7 @@ const RegisterForm = () => {
         email,
         username,
         website,
-        role: 'regular', // Set a default role or update it based on your logic
+        role: 'regular', 
       });
 
       console.log('User registered successfully:', user);

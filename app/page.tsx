@@ -5,14 +5,13 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { MdBusinessCenter } from "react-icons/md";
-import Head from 'next/head';
 
 
 export default function Home() {
 
 	return (
 		<> 
-		<Head>
+		<head>
 			<title>Home | Sofuf</title>
 			<meta name="description" content="Sofuf is a comprehensive platform for learning and resources." />
 			<meta name="keywords" content="sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof" />
@@ -27,6 +26,7 @@ export default function Home() {
 			<script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
+		  
         />
         <script
           dangerouslySetInnerHTML={{
@@ -40,7 +40,7 @@ export default function Home() {
             `,
           }}
         />
-			</Head>
+			</head>
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
 			<div className="inline-block max-w-lg text-center justify-center">
 				<h1 className={title()}>Your&nbsp;</h1>
