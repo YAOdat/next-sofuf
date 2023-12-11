@@ -5,6 +5,7 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 
 const JobSubmissionForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [jobData, setJobData] = useState({
     jobTitle: '',
     companyName: '',
@@ -15,6 +16,7 @@ const JobSubmissionForm = () => {
     industry: '',
     workLoc: '',
     salary: '',
+    applicationLink: '',
   });
 
   const styles = {
@@ -28,15 +30,26 @@ const JobSubmissionForm = () => {
     e.preventDefault();
     const db = getFirestore(app);
     const jobsCollection = collection(db, 'careers');
-
     // const ref = await addDoc(jobsCollection, jobData);
     // const id = ref.id; // Retrieve the auto-generated ID
     // console.log(`Job submitted successfully with ID: ${id}`);
+    if (isSubmitting) {
+      alert('Error: Please wait before submitting again.');
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       await addDoc(jobsCollection, jobData);
       console.log('Job submitted successfully!');
-      setJobData({ salary: '', jobTitle: '', companyName: '', city: '', country: '', datePosted: '', description: '', industry: '', workLoc: '' });
+      setJobData({ applicationLink: '', salary: '', jobTitle: '', companyName: '', city: '', country: '', datePosted: '', description: '', industry: '', workLoc: '' });
+
+      //prevent spam
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 60000); // 60000 milliseconds = 1 minute
+
     } catch (error) {
       console.error('Error submitting job:', error);
     }
@@ -135,6 +148,7 @@ const JobSubmissionForm = () => {
           id="workLoc"
           value={jobData.workLoc}
           onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
+          placeholder='Remote, Onsite, or Hybrid'
           className={`${styles.input} focus:border-blue-300`}
         />
       </div>
@@ -147,6 +161,17 @@ const JobSubmissionForm = () => {
           id="salary"
           value={jobData.salary}
           onChange={(e) => setJobData({ ...jobData, salary: e.target.value })}
+          className={`${styles.input} focus:border-blue-300`}
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="workLoc" className={`${styles.label}`}>
+          Application Link:</label>
+        <input
+          type="text"
+          id="link"
+          value={jobData.applicationLink}
+          onChange={(e) => setJobData({ ...jobData, applicationLink: e.target.value })}
           className={`${styles.input} focus:border-blue-300`}
         />
       </div>

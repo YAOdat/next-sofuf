@@ -45,10 +45,7 @@ export default function CareersPage() {
       } else {
         console.error('User document not found:', user.uid);
       }
-    } else {
-      // User is not signed in
-      alert('User is not signed in');
-    }
+    } 
   });
 
   useEffect(() => {
@@ -81,7 +78,7 @@ export default function CareersPage() {
   };
   return (
     <div className="flex flex-col justify-center">
-      <h1 className={` ${title()}`}>Careers</h1>
+      <h1 className={`${title()}`}>Careers</h1>
       <SubNav />
       {careersData.length > 0 ? (
         <div>
@@ -173,7 +170,7 @@ export default function CareersPage() {
                       <Menu.Item>
                         {({ active }: { active: boolean }) => (
                           <a
-                            href="#"
+                            href={`careers/${career.id}`}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             View
