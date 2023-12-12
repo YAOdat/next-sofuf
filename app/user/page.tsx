@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { getAuth, signInAnonymously } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, doc, setDoc, collection } from 'firebase/firestore';
 import { app } from '../../config/firebase';
 
@@ -10,13 +10,14 @@ const RegisterForm = () => {
     const [username, setUsername] = useState('');
     const [website, setWebsite] = useState('');
 
-  const handleRegister = async (e: { preventDefault: () => void; }) => {
-    const auth = getAuth();
+    const handleRegister = async (e: { preventDefault: () => void; }) => {
+      e.preventDefault(); 
+          const auth = getAuth();
     const db = getFirestore(app);
 
     try {
       // Step 1: Register user with email and password
-      const userCredential = await signInAnonymously(auth);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       const userCollection = collection(db, 'users');
 
