@@ -20,7 +20,7 @@ function SubNav() {
 
     let links = [
         { icons: <PiHouseSimpleThin />, path: "/" },
-        { icons: <PiUserLight />, path: "#" },
+        { icons: <PiUserLight />, path: "##" },
         { icons: <PiBagSimpleLight />, path: "#" },
     ];
 
@@ -33,10 +33,11 @@ function SubNav() {
                             const isActive = item.path === pathname;
 
                             return (
-                                <>
+                                <React.Fragment key={item.path}>
+
                                     <Link
                                         data-active={isActive}
-                                        key={item.path}
+                                        // key={item.path}
                                         href={item.path}
                                         onMouseOver={() => setHoveredPath(item.path)}
                                         className={`px-1 py-1 rounded-full text-sm lg:text-base relative no-underline duration-300 ease-in ${isActive ? "text-zinc-100" : "text-zinc-400"
@@ -70,7 +71,7 @@ function SubNav() {
                                             />
                                         )}
                                     </Link>
-                                </>
+                                </React.Fragment>
                             );
                         })}
                         <SearchModal />

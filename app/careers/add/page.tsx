@@ -3,6 +3,8 @@ import React, { useState, FormEvent } from 'react';
 import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // import the styles
 
 const JobSubmissionForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -121,11 +123,15 @@ const JobSubmissionForm = () => {
         <label htmlFor="description" className={`${styles.label}`}>
           Description:
         </label>
-        <Textarea
+        {/* <Textarea
           value={jobData.description}
           onChange={(e) => setJobData({ ...jobData, description: e.target.value })}
           className={`${styles.input} focus:border-blue-300`}
-        />
+        /> */}
+<ReactQuill 
+  value={jobData.description} 
+  onChange={(value) => setJobData({ ...jobData, description: value })} 
+/>
       </div>
       <div className="mb-4">
         <label htmlFor="industry" className={`${styles.label}`}>

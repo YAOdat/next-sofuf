@@ -7,6 +7,7 @@ import { title } from "@/components/primitives";
 import SubNav from "@/components/subNavBar";
 import { Menu, Transition } from '@headlessui/react'
 import { FiMapPin, FiDollarSign, FiCalendar, FiHexagon } from "react-icons/fi";
+import {Link} from "@nextui-org/react";
 
 interface Career {
   id: string;
@@ -19,6 +20,7 @@ interface Career {
   industry: string;
   workLoc: string;
   salary: string;
+  applicationLink: string;
 }
 
 function classNames(...classes: string[]) {
@@ -86,9 +88,11 @@ export default function CareersPage() {
             <div className="lg:flex lg:items-center lg:justify-between" key={career.id}>
 
               <div className="min-w-0 flex-1">
+                <Link href={`careers/${career.id}`}>
                 <h2 className="text-2xl font-bold leading-7 sm:truncate sm:text-3xl sm:tracking-tight">
                   {career.jobTitle}
                 </h2>
+                </Link>
                 <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                   <div className="mt-2 flex items-center text-sm text-gray-500">
                     <FiHexagon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { getAuth, signInAnonymously  } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword  } from 'firebase/auth';
 import { app } from '../../../config/firebase';
 
 const LoginForm = () => {
@@ -15,11 +15,12 @@ const LoginForm = () => {
     const auth = getAuth(app);
 
     try {
-      await signInAnonymously(auth);
+      await signInWithEmailAndPassword(auth, email, password);
       setError('');
       window.location.href = '/';
     } catch (error: any) {
       setError(error.message);
+      alert(error.message)
     }
   };
 
