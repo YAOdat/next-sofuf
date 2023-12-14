@@ -1,12 +1,15 @@
 'use client';
 import React, { useState, FormEvent } from 'react';
-import { Textarea } from '@nextui-org/react';
+// import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // import the styles
+import dynamic from 'next/dynamic';
 
 const JobSubmissionForm = () => {
+  const ReactQuill = dynamic(import('react-quill'), { ssr: false });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [jobData, setJobData] = useState({
     jobTitle: '',
@@ -128,10 +131,12 @@ const JobSubmissionForm = () => {
           onChange={(e) => setJobData({ ...jobData, description: e.target.value })}
           className={`${styles.input} focus:border-blue-300`}
         /> */}
-<ReactQuill 
-  value={jobData.description} 
-  onChange={(value) => setJobData({ ...jobData, description: value })} 
-/>
+{ReactQuill && (
+  <ReactQuill 
+    value={jobData.description} 
+    onChange={(value) => setJobData({ ...jobData, description: value })} 
+  />
+)}
       </div>
       <div className="mb-4">
         <label htmlFor="industry" className={`${styles.label}`}>
