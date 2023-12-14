@@ -1,14 +1,15 @@
 'use client';
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, Suspense } from 'react';
 // import { Textarea } from '@nextui-org/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
-import ReactQuill from 'react-quill';
+// import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // import the styles
 import dynamic from 'next/dynamic';
+import {Select, SelectItem} from "@nextui-org/react";
 
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 const JobSubmissionForm = () => {
-  const ReactQuill = dynamic(import('react-quill'), { ssr: false });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [jobData, setJobData] = useState({
@@ -131,12 +132,14 @@ const JobSubmissionForm = () => {
           onChange={(e) => setJobData({ ...jobData, description: e.target.value })}
           className={`${styles.input} focus:border-blue-300`}
         /> */}
-{ReactQuill && (
+              <Suspense fallback={<div>Loading editor...</div>}>
+
   <ReactQuill 
     value={jobData.description} 
     onChange={(value) => setJobData({ ...jobData, description: value })} 
   />
-)}
+        </Suspense>
+
       </div>
       <div className="mb-4">
         <label htmlFor="industry" className={`${styles.label}`}>
@@ -151,20 +154,28 @@ const JobSubmissionForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="workLoc" className={`${styles.label}`}>
-          Work Location:
-        </label>
-        <input
-          type="text"
-          id="workLoc"
-          value={jobData.workLoc}
-          onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
-          placeholder='Remote, Onsite, or Hybrid'
-          className={`${styles.input} focus:border-blue-300`}
-        />
+      <Select
+      label="Work Location"
+      selectionMode="multiple"
+      id="workLoc"
+      value={jobData.workLoc}
+      className={`max-w-xs`}
+      onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
+    >
+        <SelectItem key='Remote' value="Remote">
+        Remote
+        </SelectItem>
+        <SelectItem key='Onsite' value="Onsite">
+        Onsite
+        </SelectItem>
+        <SelectItem key='Hybrid' value="Hybrid">
+        Hybrid
+        </SelectItem>
+    </Select>
+ 
       </div>
       <div className="mb-4">
-        <label htmlFor="workLoc" className={`${styles.label}`}>
+        <label htmlFor="salary" className={`${styles.label}`}>
           Estimated Salary:
         </label>
         <input
@@ -176,7 +187,7 @@ const JobSubmissionForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="workLoc" className={`${styles.label}`}>
+        <label htmlFor="link" className={`${styles.label}`}>
           Application Link:</label>
         <input
           type="text"

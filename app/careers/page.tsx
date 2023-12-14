@@ -132,16 +132,23 @@ export default function CareersPage() {
                     View
                   </button>
                 </span>
-
-                <span className="sm:ml-3">
+                <button>
+                          <a
+                            href={`careers/${career.id}`}
+                            className="inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                            >
+                            View
+                          </a>
+                    
+                      </button>
+                {/* <span className="sm:ml-3">
                   <button
                     type="button"
                     className="inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                   >
-                    {/* <CheckIcon className="-ml-0.5 mr-1.5 h-5 w-5" aria-hidden="true" /> */}
                     Apply
                   </button>
-                </span>
+                </span> */}
 
                 {/* Dropdown */}
                 <Menu as="div" className="relative ml-3 sm:hidden">
@@ -164,23 +171,14 @@ export default function CareersPage() {
                       <Menu.Item>
                         {({ active }: { active: boolean }) => (
                           <a
-                            href="#"
+                            href={`careers/${career.applicationLink}`}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Edit
+                            Apply
                           </a>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }: { active: boolean }) => (
-                          <a
-                            href={`careers/${career.id}`}
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            View
-                          </a>
-                        )}
-                      </Menu.Item>
+                   
                     </Menu.Items>
                   </Transition>
                 </Menu>
