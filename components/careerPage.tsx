@@ -54,43 +54,43 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
       <h1 className="text-3xl font-bold mb-4">{careerDetail.jobTitle}</h1>
       {careerDetail.companyName && (
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Company:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.companyName}</p>
+        <p className="mr-2">Company:</p>
+        <p className="font-semibold">{careerDetail.companyName}</p>
       </div>
     )}
 
     {careerDetail.city && careerDetail.country && (
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Location:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.city}, {careerDetail.country}</p>
+        <p className="mr-2">Location:</p>
+        <p className="font-semibold">{careerDetail.city}, {careerDetail.country}</p>
       </div>
     )}
 
     {careerDetail.datePosted && (
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Date Posted:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.datePosted}</p>
+        <p className=" mr-2">Date Posted:</p>
+        <p className=" font-semibold">{careerDetail.datePosted}</p>
       </div>
     )}
 
 {careerDetail.industry && (
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Industry:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.industry}</p>
+        <p className="mr-2">Industry:</p>
+        <p className="font-semibold">{careerDetail.industry}</p>
       </div>
 )}
 
 {careerDetail.workLoc && (
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Work Location:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.workLoc}</p>
+        <p className=" mr-2">Work Location:</p>
+        <p className=" font-semibold">{careerDetail.workLoc}</p>
       </div>
 )}
 {careerDetail.salary && (
 
       <div className="flex items-center mb-4">
-        <p className="text-gray-500 mr-2">Salary:</p>
-        <p className="text-gray-700 font-semibold">{careerDetail.salary}</p>
+        <p className=" mr-2"> Estimated Salary:</p>
+        <p className=" font-semibold">{careerDetail.salary}</p>
       </div>
  )}
       <div
