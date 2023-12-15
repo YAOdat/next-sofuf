@@ -76,16 +76,14 @@ function SubNav() {
                         })}
                         <SearchModal />
                     </div>
-
-                    <div className="flex items-center gap-x-3">
-
-                        <Link href={"/careers/add"}>
-                            <div className="bg-black dark:bg-[#373737]  px-2 rounded-md flex items-center gap-x-2 py-1">
-                                <AiOutlinePlusCircle className="text-white tex-3" />
-                                <span className="text-white  font-semibold">Add Career</span>
-                            </div>
-                        </Link>
-                    </div>
+<div className="flex items-center gap-x-3">
+  <Link href={"/careers/add"}>
+    <div className="bg-black dark:bg-[#373737] px-2 sm:px-3 py-1 rounded-md flex items-center gap-x-2 sm:gap-x-3">
+      <AiOutlinePlusCircle className="text-white text-xs sm:text-3xl" />
+      <span className="text-white font-semibold text-xs sm:text-base">Add Job</span>
+    </div>
+  </Link>
+</div>
                 </div>
             </div>
         </nav>
