@@ -82,16 +82,17 @@ export default function CareersPage() {
     <div className="flex flex-col justify-center">
       <h1 className={`${title()}`}>Careers</h1>
       <SubNav />
+      
       {careersData.length > 0 ? (
         <div>
-          {careersData.map((career) => (
+          {careersData.sort((a, b) => new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()).map((career) => (
             <div className="lg:flex lg:items-center lg:justify-between" key={career.id}>
 
               <div className="min-w-0 flex-1">
                 <Link href={`careers/${career.id}`}>
-                <h2 className="text-2xl font-bold leading-7 sm:truncate sm:text-3xl sm:tracking-tight">
-                  {career.jobTitle}
-                </h2>
+                <h2 className="text-2xl font-bold leading-7 sm:text-3xl sm:tracking-tight lg:text-2xl text-white">
+  {career.jobTitle}
+</h2>
                 </Link>
                 <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                   <div className="mt-2 flex items-center text-sm text-gray-500">
@@ -123,15 +124,7 @@ export default function CareersPage() {
                     Edit
                   </button>
                 </span>
-                <span className="ml-3 hidden sm:block">
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                  >
-                    {/* <LinkIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                    View
-                  </button>
-                </span>
+             
                 <button>
                           <a
                             href={`careers/${career.id}`}
@@ -171,7 +164,7 @@ export default function CareersPage() {
                       <Menu.Item>
                         {({ active }: { active: boolean }) => (
                           <a
-                            href={`careers/${career.applicationLink}`}
+                            href={`${career.applicationLink}`}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Apply
