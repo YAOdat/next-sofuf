@@ -53,49 +53,49 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">{careerDetail.jobTitle}</h1>
       {careerDetail.companyName && (
-      <div className="flex items-center mb-4">
-        <p className="mr-2">Company:</p>
-        <p className="font-semibold">{careerDetail.companyName}</p>
-      </div>
-    )}
+        <div className="flex items-center mb-4">
+          <p className="mr-2">Company:</p>
+          <p className="font-semibold">{careerDetail.companyName}</p>
+        </div>
+      )}
 
-    {careerDetail.city && careerDetail.country && (
-      <div className="flex items-center mb-4">
-        <p className="mr-2">Location:</p>
-        <p className="font-semibold">{careerDetail.city}, {careerDetail.country}</p>
-      </div>
-    )}
+      {careerDetail.city && careerDetail.country && (
+        <div className="flex items-center mb-4">
+          <p className="mr-2">Location:</p>
+          <p className="font-semibold">{careerDetail.city}, {careerDetail.country}</p>
+        </div>
+      )}
 
-    {careerDetail.datePosted && (
-      <div className="flex items-center mb-4">
-        <p className=" mr-2">Date Posted:</p>
-        <p className=" font-semibold">{careerDetail.datePosted}</p>
-      </div>
-    )}
+      {careerDetail.datePosted && (
+        <div className="flex items-center mb-4">
+          <p className=" mr-2">Date Posted:</p>
+          <p className=" font-semibold">{careerDetail.datePosted}</p>
+        </div>
+      )}
 
-{careerDetail.industry && (
-      <div className="flex items-center mb-4">
-        <p className="mr-2">Industry:</p>
-        <p className="font-semibold">{careerDetail.industry}</p>
-      </div>
-)}
+      {careerDetail.industry && (
+        <div className="flex items-center mb-4">
+          <p className="mr-2">Industry:</p>
+          <p className="font-semibold">{careerDetail.industry}</p>
+        </div>
+      )}
 
-{careerDetail.workLoc && (
-      <div className="flex items-center mb-4">
-        <p className=" mr-2">Work Location:</p>
-        <p className=" font-semibold">{careerDetail.workLoc}</p>
-      </div>
-)}
-{careerDetail.salary && (
+      {careerDetail.workLoc && (
+        <div className="flex items-center mb-4">
+          <p className=" mr-2">Work Location:</p>
+          <p className=" font-semibold">{careerDetail.workLoc}</p>
+        </div>
+      )}
+      {careerDetail.salary && (
 
-      <div className="flex items-center mb-4">
-        <p className=" mr-2"> Estimated Salary:</p>
-        <p className=" font-semibold">{careerDetail.salary}</p>
-      </div>
- )}
+        <div className="flex items-center mb-4">
+          <p className=" mr-2"> Estimated Salary:</p>
+          <p className=" font-semibold">{careerDetail.salary}</p>
+        </div>
+      )}
       <div
-        className="mb-4"
-        dangerouslySetInnerHTML={{ __html: careerDetail.description }}
+  style={{ wordBreak: 'break-all' }}
+  dangerouslySetInnerHTML={{ __html: careerDetail.description }}
       ></div>
 
       <Button

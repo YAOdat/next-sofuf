@@ -6,7 +6,8 @@ import { app } from '../../../config/firebase';
 // import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // import the styles
 import dynamic from 'next/dynamic';
-import {Select, SelectItem} from "@nextui-org/react";
+import {Select, SelectItem, Avatar} from "@nextui-org/react";
+import countries from '@/public/countries.json'
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 const JobSubmissionForm = () => {
@@ -61,6 +62,7 @@ const JobSubmissionForm = () => {
     }
   };
 
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className="mb-4">
@@ -103,13 +105,23 @@ const JobSubmissionForm = () => {
         <label htmlFor="country" className={`${styles.label}`}>
           Country:
         </label>
-        <input
-          type="text"
-          id="country"
-          value={jobData.country}
-          onChange={(e) => setJobData({ ...jobData, country: e.target.value })}
-          className={`${styles.input} focus:border-blue-300`}
-        />
+        <Select
+  className="max-w-xs"
+  label="Select country"
+  value={jobData.country}
+  onChange={(e) => setJobData({ ...jobData, country: e.target.value })}
+
+>
+{countries.sort((a, b) => a.country.localeCompare(b.country)).map((country) => (
+    <SelectItem
+      key={country.country || ''}
+      startContent={<Avatar alt={country.country} className="w-6 h-6" src={country.flag} />}
+    >
+      {country.country}
+    </SelectItem>
+  ))}
+</Select>
+
       </div>
       <div className="mb-4">
         <label htmlFor="datePosted" className={`${styles.label}`}>
@@ -198,7 +210,7 @@ const JobSubmissionForm = () => {
         />
       </div>
       <button type="submit" className={styles.button}>
-        Submit Career
+        Submit Job
       </button>
     </form>
   );
