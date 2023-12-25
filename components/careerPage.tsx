@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../config/firebase';
 import { Link, Button } from "@nextui-org/react";
+import Head from 'next/head';
+import { FiShare2 } from 'react-icons/fi';
 
 interface CareerDetail {
   jobTitle: string;
@@ -49,8 +51,33 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
     return <p>Loading...</p>; // You might want to add a loading state while fetching data
   }
 
+  const shareCareer = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: careerDetail.jobTitle,
+          text: 'Check out this job opportunity!',
+          url: window.location.href,
+        });
+      } catch (error) {
+        console.error('Something went wrong sharing the career', error);
+      }
+    } else {
+      console.log('Share not supported on this browser, do it manually!');
+    }
+  };
+  
+  
   return (
     <div className="container mx-auto px-4 py-8">
+       <Head>
+      <title>{careerDetail.jobTitle}</title>
+      <meta name="description" content={careerDetail.description} />
+      <meta property="og:title" content={careerDetail.jobTitle} />
+      <meta property="og:description" content={careerDetail.description} />
+      <meta property="og:url" content={window.location.href} />
+      <meta property="og:type" content="website" />
+    </Head>
       <h1 className="text-3xl font-bold mb-4">{careerDetail.jobTitle}</h1>
       {careerDetail.companyName && (
         <div className="flex items-center mb-4">
@@ -109,6 +136,11 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
       >
         Apply
       </Button>
+      
+    <Button onClick={shareCareer} className="mt-4 mx-3 text-white" color="warning">
+    <FiShare2 className="mr-1" />
+      Share
+    </Button>
     </div>
   );
 };
