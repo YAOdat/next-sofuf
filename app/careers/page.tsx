@@ -8,6 +8,7 @@ import SubNav from "@/components/subNavBar";
 import { Menu, Transition } from '@headlessui/react'
 import { FiMapPin, FiDollarSign, FiCalendar, FiHexagon } from "react-icons/fi";
 import {Link} from "@nextui-org/react";
+import { useTheme } from "next-themes";
 
 interface Career {
   id: string;
@@ -32,6 +33,8 @@ export default function CareersPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const auth = getAuth();
   const db = getFirestore();
+
+  const { theme, setTheme } = useTheme();
 
   onAuthStateChanged(auth, async (user) => {
     if (user) {
@@ -90,7 +93,7 @@ export default function CareersPage() {
 
               <div className="min-w-0 flex-1">
                 <Link href={`careers/${career.id}`}>
-                <h2 className="text-2xl font-bold leading-7 sm:text-3xl sm:tracking-tight lg:text-2xl text-white">
+                <h2 className={`text-2xl font-bold leading-7 sm:text-3xl sm:tracking-tight lg:text-2xl no-underline ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
   {career.jobTitle}
 </h2>
                 </Link>
