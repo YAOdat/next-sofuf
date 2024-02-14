@@ -1,7 +1,7 @@
 'use client';
 import React, {useEffect, useState} from 'react';
 
-const blogPost = () => {
+const BlogPost = () => {
     const [blogId, setBlogId] = useState<string | null>(null);
 
     useEffect(() => {
@@ -23,4 +23,4 @@ const blogPost = () => {
     
 }
 
-export default blogPost;
+export default BlogPost;
