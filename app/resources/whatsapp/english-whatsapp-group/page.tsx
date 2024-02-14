@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, Link, Code, Image } from "@nextui-org/react";
-import Head from 'next/head'
 
 const englishGroups = [
   { name: 'English Group 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English' },
@@ -47,14 +46,15 @@ const langGroups = [
 export default function WhatsApp() {
   return (
     <div className="container mx-auto mt-8">
-        <Head>
+        <head>
       <title>English WhatsApp Group - Learn and Practice English on WhatsApp</title>
-      <meta name="keywords" content="English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp" />
-      <meta name="description" content="Join English WhatsApp Groups to learn and practice English through writing, reading, speaking, and listening activities. Follow the group link to join." />
+      <meta name="keywords" content="English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp,Best English Language Exchange on WhatsApp " />
+      <meta name="description" content="Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!" />
       <meta name="author" content="Odat" />
       <meta name="language" content="en" />
       <meta name="robots" content="index, follow"/>
-    </Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
       <Card>
         <CardBody>
           <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">

@@ -53,7 +53,7 @@ export default function RootLayout({
 								// title="Odat homepage"
 							>
 								<span className="text-default-600">Powered by</span>
-								<p className="text-primary">Yaser Odat</p>
+								<p className="text-primary">Sofuf</p>
 							</Link>
 						</footer>
 					</div>
