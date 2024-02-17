@@ -89,7 +89,7 @@ export default function CareersPage() {
       {careersData.length > 0 ? (
         <div>
           {careersData.sort((a, b) => new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()).map((career) => (
-            <div className="lg:flex lg:items-center lg:justify-between" key={career.id}>
+            <div className="lg:flex lg:items-center lg:justify-between py-4" key={career.id}>
 
               <div className="min-w-0 flex-1">
                 <Link href={`careers/${career.id}`}>
@@ -190,8 +190,12 @@ export default function CareersPage() {
                   </button>
                 )}
               </div>
+
+
             </div>
           ))}
+
+
 
         </div>
       ) : (

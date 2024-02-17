@@ -38,7 +38,7 @@ export default function RootLayout({
 					"min-h-screen bg-background font-sans antialiased",
 					fontSans.variable
 				)}
-			>
+				>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
@@ -51,7 +51,7 @@ export default function RootLayout({
 								className="flex items-center gap-1 text-current"
 								href="/odat"
 								// title="Odat homepage"
-							>
+								>
 								<span className="text-default-600">Powered by</span>
 								<p className="text-primary">Sofuf</p>
 							</Link>

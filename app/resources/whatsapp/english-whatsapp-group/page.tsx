@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody, Link, Code, Image } from "@nextui-org/react";
+import type { Metadata } from 'next'
 
 const englishGroups = [
   { name: 'English Group 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English' },
@@ -43,18 +44,16 @@ const langGroups = [
   }
 ];
 
+export const metadata: Metadata = {
+  title: 'English WhatsApp Group - Learn and Practice English on WhatsApp',
+  keywords: 'English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp',
+  description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
+  robots: 'index, follow',
+  viewport: 'width=device-width, initial-scale=1',
+}
 export default function WhatsApp() {
   return (
     <div className="container mx-auto mt-8">
-        <head>
-      <title>English WhatsApp Group - Learn and Practice English on WhatsApp</title>
-      <meta name="keywords" content="English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp,Best English Language Exchange on WhatsApp " />
-      <meta name="description" content="Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!" />
-      <meta name="author" content="Odat" />
-      <meta name="language" content="en" />
-      <meta name="robots" content="index, follow"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
       <Card>
         <CardBody>
           <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">
