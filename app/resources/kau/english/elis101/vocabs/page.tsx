@@ -1,7 +1,6 @@
 import React from "react";
-import Head from 'next/head'
 import Script from 'next/script'
-
+import type { Metadata } from 'next'
 const vocabularyData = [
     {
         English: "Company",
@@ -878,18 +877,17 @@ const collocationsData = [
     }
   ];
       
+   export const metadata: Metadata = {
+    title: 'الكلمات المطلوب حفظها في الاختبار النهائي - جامعة الملك عبد العزيز',
+    keywords: 'اللغة الإنجليزية، جامعة الملك عبد العزيز، انقلش جامعة الملك عبد العزيز، فوكاب الفاينل جامعة الملك عبد العزيز، معهد اللغة الإنجليزية جامعة الملك عبد العزيز.',
+    description: 'الكلمات المطلوب حفظها في الاختبار النهائي لجامعة الملك عبد العزيز المستوى الأول علمي',
+    robots: 'index, follow',
+  }
+
 export default function Vocabs() {
     return (
         <div className="container mx-auto mt-8 overflow-x-auto ">
-            <Head>
-                <title>الكلمات المطلوب حفظها في الاختبار النهائي - جامعة الملك عبد العزيز</title>
-                <meta name="keywords" content="اللغة الإنجليزية، جامعة الملك عبد العزيز، انقلش جامعة الملك عبد العزيز، فوكاب الفاينل جامعة الملك عبد العزيز، معهد اللغة الإنجليزية جامعة الملك عبد العزيز." />
-                <meta name="description" content="الكلمات المطلوب حفظها في الاختبار النهائي لجامعة الملك عبد العزيز المستوى الأول علمي" />
-                <meta name="author" content="Odat" />
-                <meta name="language" content="ar" />
-                <meta name="robots" content="index, follow" />
-      
-            </Head>
+        
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33"></Script>
         
         <Script id="google-analytics">

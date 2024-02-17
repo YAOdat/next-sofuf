@@ -11,36 +11,7 @@ export default function Home() {
 
 	return (
 		<> 
-		<head>
-			<title>Home | Sofuf</title>
-			<meta name="description" content="Sofuf is a comprehensive platform for learning and resources." />
-			<meta name="keywords" content="sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof" />
-			<meta name="author" content="Yaser Odat" />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<meta name="robots" content="index, follow" />
-			<meta property="og:title" content="Sofuf" />
-			<meta property="og:description" content="Sofuf is a comprehensive platform for learning and resources." />
-			<meta property="og:type" content="website" />
-			<meta property="og:url" content="https://sofuf.com/" />
-			<meta property="og:site_name" content="Sofuf" />
-			<script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
-		  
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                window.dataLayer.push(arguments);
-              }
-              gtag('js', new Date());
-              gtag('config', 'G-FJ4P5C4K33');
-            `,
-          }}
-        />
-			</head>
+
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
 			<div className="inline-block max-w-lg text-center justify-center">
 				<h1 className={title()}>Your&nbsp;</h1>
