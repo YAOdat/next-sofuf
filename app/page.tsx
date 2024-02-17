@@ -5,15 +5,7 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { MdBusinessCenter } from "react-icons/md";
-// import type { Metadata } from 'next'
 
-// export const meta: Metadata = {
-// 	title: 'Home | Sofuf',
-// 	description: 'Sofuf is a comprehensive platform for learning and resources.',
-// 	keywords: 'sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof',
-// 	viewport: 'width=device-width, initial-scale=1.0',
-// 	robots: 'index, follow',
-// }
 
 export default function Home() {
 
