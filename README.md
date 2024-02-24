@@ -13,6 +13,9 @@ Sofuf is a platform for educational resources and career opportunities.
 - [next-themes](https://github.com/pacocoursey/next-themes)
 - [Firebase]
 
+## Technologies Used
+
+Deployment Link: www.sofuf.com
 
 
 
