@@ -12,12 +12,11 @@ export const metadata: Metadata = {
 	title: 'Home | Sofuf',
 	description: 'Sofuf is a comprehensive platform for learning and resources.',
 	keywords: 'sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof',
-	viewport: 'width=device-width, initial-scale=1.0',
 	robots: 'index, follow',
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
+	// themeColor: [
+	// 	{ media: "(prefers-color-scheme: light)", color: "white" },
+	// 	{ media: "(prefers-color-scheme: dark)", color: "black" },
+	// ],
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
