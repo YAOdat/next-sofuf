@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@blocknote/core": "^0.11.2",
+    "@blocknote/react": "^0.11.2",
     "@headlessui/react": "^1.7.17",
     "@nextui-org/button": "2.0.26",
     "@nextui-org/code": "2.0.24",
@@ -21,6 +23,7 @@
     "@nextui-org/switch": "2.0.25",
     "@nextui-org/system": "2.0.15",
     "@nextui-org/theme": "2.1.17",
+    "@nytimes/react-prosemirror": "github:nytimes/react-prosemirror",
     "@react-aria/ssr": "^3.8.0",
     "@react-aria/visually-hidden": "^3.8.6",
     "@types/node": "20.5.7",
@@ -38,6 +41,9 @@
     "next": "14.0.2",
     "next-themes": "^0.2.1",
     "postcss": "8.4.31",
+    "prosemirror": "^0.11.1",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.33.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.12.0",
