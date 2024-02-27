@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
-import Image from 'next/image';
+import { Image } from "@nextui-org/react";
 
 // import type { Metadata } from 'next'
 

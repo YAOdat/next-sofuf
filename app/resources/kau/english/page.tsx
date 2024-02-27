@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   keywords: 'اللغة الإنجليزية، جامعة الملك عبد العزيز، اللغة الإنجليزية في جامعة الملك عبد العزيز، انقلش جامعة الملك عبد العزيز، انجليزي جامعة الملك عبدالعزيز، شرح انقلش جامعة',
 
 }
-
-
  
 
 const EnglishResources = () => {
@@ -19,11 +17,29 @@ const EnglishResources = () => {
       <p>مصادر تعليمية لمنهاج اللغة الإنجليزية في جامعة الملك عبد العزيز</p>
       <br></br>
       <Link href="/resources/kau/english/elis101"> 
-      <Card className="py-4 max-w-10">
+      <Card className="py-4 max-w-10 my-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large">ELIS 101 انجليزي علمي 1</h4>
+        <h4 className="font-bold text-large">ELIS 101 إنجليزي علمي 1</h4>
         <small className="text-default-500">2023-2024</small>
         <p dir='rtl' className="text-tiny font-bold whitespace-pre-line">مصادر تعليمية لمنهاج اللغة الإنجليزية المستوى الأول علمي</p>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="English WhatsApp Group Blog Post"
+          className="object-cover rounded-xl"
+          src="/elis.png"
+          width={270}
+          height={200}
+        />
+      </CardBody>
+    </Card>
+    </Link>
+    <Link href="/resources/kau/english/elis120"> 
+      <Card className="py-4 max-w-10">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <h4 className="font-bold text-large">ELIS 120 إنجليزي علمي 2</h4>
+        <small className="text-default-500">2023-2024</small>
+        <p dir='rtl' className="text-tiny font-bold whitespace-pre-line">مصادر تعليمية لمنهاج اللغة الإنجليزية المستوى الثاني علمي</p>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         <Image
