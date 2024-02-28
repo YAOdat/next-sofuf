@@ -116,13 +116,13 @@ export default function PracticeTest() {
         }
     }, [currentQuestionIndex]);
 
-    const handleRadioChange = (e) => {
+    const handleRadioChange = (e: { target: { value: any; }; }) => {
         const newAnswers = [...answers];
         newAnswers[currentQuestionIndex] = e.target.value;
         setAnswers(newAnswers);
     }
 
-    const handleMultipleChoiceChange = (e) => {
+    const handleMultipleChoiceChange = (e: { target: { checked: any; value: any; }; }) => {
         const newMultipleChoiceAnswers = [...multipleChoiceAnswers];
         const selectedOptions = newMultipleChoiceAnswers[currentQuestionIndex];
 
@@ -193,13 +193,13 @@ export default function PracticeTest() {
             <div className="my-2 py-1"> Section: <Chip color="warning" variant="dot">Reading</Chip> </div>
             <h1 className="text-3xl font-bold mb-4 my-2">Careem: Ride-sharing that Transformed Transportation</h1>
             <div className="container mx-auto px-4 py-8 text-left">
-                <p className="mb-4">Careem is a ride sharing company with over 30 million users. It operates in over 90 cities in 14 different countries. It is a new company which has changed transport and the way people move around. Careem was started in 2012 in Dubai by two men, Mubashir Sheika and Magnus Dickson. At first, Careem was only for business and was website based. Companies could schedule their employees trips online through the website. Due to the huge demand, they began working on a product for the general public. The popular public app didn't come around until 2015.
+                <p className="mb-4">Careem is a ride sharing company with over 30 million users. It operates in over 90 cities in 14 different countries. It is a new company which has changed transport and the way people move around. Careem was started in 2012 in Dubai by two men, Mubashir Sheika and Magnus Dickson. At first, Careem was only for business and was website based. Companies could schedule their employees trips online through the website. Due to the huge demand, they began working on a product for the general public. The popular public app did not come around until 2015.
                 </p>
 
                 <p className="mb-4">Careem began operating in the UAE, but then quickly spread to other countries in the Middle East. Saudi Arabia is now its largest market. Following this, Careem grew as far west as Morocco, as far north as Turkey, and as far east as Pakistan. Careem has other ride sharing forms of transport, including bicycles and buses. These are only in a few cities.
                 </p>
 
-                <p className="mb-4">Another ride sharing company is Uber, but there are some key differences. Uber started doing business in the Middle East in 2013. Careem was a new, small company trying to compete with Uber, a very large company with a lot of money. It had to develop aspects of the company that made it different from Uber. The two main aspects were the ability to choose a ride in advance (now Uber has this option) and through a more personal customer service experience (something that Uber still lacks). These differences have helped Careem to grow quickly throughout the Middle East, Africa, and South Asia, even though Uber is in those same places. However, Careem thinks the biggest competitor is people owning cars, not another company. Most people that use Careem today, didn't switch from using taxis or other companies. They used to drive their own cars.</p>
+                <p className="mb-4">Another ride sharing company is Uber, but there are some key differences. Uber started doing business in the Middle East in 2013. Careem was a new, small company trying to compete with Uber, a very large company with a lot of money. It had to develop aspects of the company that made it different from Uber. The two main aspects were the ability to choose a ride in advance (now Uber has this option) and through a more personal customer service experience (something that Uber still lacks). These differences have helped Careem to grow quickly throughout the Middle East, Africa, and South Asia, even though Uber is in those same places. However, Careem thinks the biggest competitor is people owning cars, not another company. Most people that use Careem today, did not switch from using taxis or other companies. They used to drive their own cars.</p>
                 <p className="mb-4">In 2019, Uber bought Careem for $3.1 billion, though the companies have both continued to operate separately. Careem has over 1 million drivers, or captains, providing many jobs in the countries it works in. Careem thinks that it will grow a lot in the future and has big ideas of what is next.
                 </p>
 
