@@ -38,7 +38,7 @@ export default function ELIS120() {
         <Image
           alt="انجليزي جامعة الملك عبد العزيز"
           className="object-cover rounded-xl"
-          src="/vocabs.jpg"
+          src="/practice-test.jpg"
           width={270}
           height={200}
         />
