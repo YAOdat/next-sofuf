@@ -3,15 +3,8 @@ import React, {useEffect, useState} from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 import { Image } from "@nextui-org/react";
+import type { Metadata } from 'next'
 
-// import type { Metadata } from 'next'
-
-// export const metadata: Metadata = {
-//     title: '',
-//     keywords: '',
-//     description: '',
-//     robots: 'index, follow',
-//   }
 
 interface PostDetails {
     title: string;
@@ -59,17 +52,14 @@ const BlogPost = () => {
         return <p>Loading...</p>;
     }
 
+    const metadata: Metadata = {
+      title: postDetails?.title,
+      keywords: postDetails?.keywords,
+      description: postDetails?.description,
+      robots: 'index, follow',
+    }
     return (
         <div className="p-4">
-                <head>
-                <>
-                    <title>{postDetails?.title}</title>
-                    <meta name="description" content={postDetails?.description} />
-                    <meta name="keywords" content={postDetails?.keywords} />
-                </>
-            
-        </head>
-        
             {postDetails && (
                 <>
                     <h1 className="text-2xl font-bold mb-4">{postDetails.title}</h1>

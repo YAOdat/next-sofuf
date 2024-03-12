@@ -2,6 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { Pagination, Chip, Button } from "@nextui-org/react";
 import { FaRedo } from "react-icons/fa";
+import type { Metadata } from 'next'
+
+const metadata: Metadata = {
+    title: 'امتحان تجريبي للغة - جامعة الملك عبد العزيز',
+    description: ' اختبار تجريبي للغة الإنجليزية للمستوى الثاني - علمي  في جامعة الملك عبد العزيز.',
+    keywords: 'تسريبات اختبار اللغة الإنجليزية، اختبار سابق انقلش، جامعة الملك عبد العزيز، معهد اللغة الإنجليزية.'
+}
 
 const readingQuestions = [
     {
@@ -106,7 +113,7 @@ export default function PracticeTest() {
     const [answers, setAnswers] = useState(new Array(readingQuestions.length).fill(null));
     const [multipleChoiceAnswers, setMultipleChoiceAnswers] = useState(new Array(readingQuestions.length).fill([]));
     const [isSubmitted, setIsSubmitted] = useState(false);
-
+    const [Section, setSection] = useState('Reading');
 
     useEffect(() => {
         // Clear answers only when the component mounts
@@ -190,7 +197,8 @@ export default function PracticeTest() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Practice Test</h1>
-            <div className="my-2 py-1"> Section: <Chip color="warning" variant="dot">Reading</Chip> </div>
+            {Section === 'Grammar' && <div className="my-2 py-1"> Section: <Chip color="warning" variant="dot">Grammar</Chip> </div>}
+            {Section === 'Reading' && <div className="my-2 py-1"> Section: <Chip color="warning" variant="dot">Reading</Chip> </div>}
             <h1 className="text-3xl font-bold mb-4 my-2">Careem: Ride-sharing that Transformed Transportation</h1>
             <div className="container mx-auto px-4 py-8 text-left">
                 <p className="mb-4">Careem is a ride sharing company with over 30 million users. It operates in over 90 cities in 14 different countries. It is a new company which has changed transport and the way people move around. Careem was started in 2012 in Dubai by two men, Mubashir Sheika and Magnus Dickson. At first, Careem was only for business and was website based. Companies could schedule their employees trips online through the website. Due to the huge demand, they began working on a product for the general public. The popular public app did not come around until 2015.
@@ -249,17 +257,17 @@ export default function PracticeTest() {
                                 <div>
                                     {/* // if the score is equal to 11 do not show */}
                                     {calculateScore() !== 11 &&
-                                    <>
-                                    <h3>Incorrect Answers:</h3>
-                                    <ul>
-                                        {getIncorrectAnswers().map((incorrectAnswer, index) => (
-                                            <li key={index} className="my-2">
-                                                <strong>Question {index + 1}:</strong> {incorrectAnswer.question} <br />
-                                                <strong>Correct Answer:</strong> {incorrectAnswer.correctAnswer} <br />
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    </>
+                                        <>
+                                            <h3>Incorrect Answers:</h3>
+                                            <ul>
+                                                {getIncorrectAnswers().map((incorrectAnswer, index) => (
+                                                    <li key={index} className="my-2">
+                                                        <strong>Question {index + 1}:</strong> {incorrectAnswer.question} <br />
+                                                        <strong>Correct Answer:</strong> {incorrectAnswer.correctAnswer} <br />
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </>
                                     }
                                 </div>
                             )}

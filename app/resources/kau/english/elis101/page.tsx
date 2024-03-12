@@ -28,7 +28,7 @@ export default function WhatsApp() {
     <Link href="https://www.youtube.com/watch?v=KZ2Jq2NHM_8&t" isExternal> 
     <Card className="py-4 max-w-10 m-2">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large">Grammar Revision</h4>
+        <h4 className="font-bold text-large">Final Grammar Revision</h4>
         <small className="text-default-500">2023-2024</small>
         <p dir='rtl' className="text-tiny font-bold whitespace-pre-line">مراجعة قواعد الاختبار النهائي</p>
       </CardHeader>

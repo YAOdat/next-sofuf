@@ -7,6 +7,8 @@ import { getFirestore, collection, doc, getDoc, getDocs, deleteDoc } from 'fireb
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { app, firestore } from '@/config/firebase';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import type { Metadata } from 'next'
+
 
 interface Post {
 	id: string;
@@ -20,6 +22,13 @@ interface Post {
 	category: string;
 	keywords: string[];
 
+}
+
+const metadata: Metadata = {
+	title: 'Sofuf Blog',
+	keywords: 'blog, posts, articles, news, updates, Sofuf blog, Sofuf posts, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, No copy right blog posts, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sof',
+	description: 'Read the latest blog posts from Sofuf.',
+	robots: 'index, follow',
 }
 
 
