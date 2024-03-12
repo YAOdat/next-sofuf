@@ -48,7 +48,7 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
   }, [careerId]);
 
   if (!careerDetail) {
-    return <p>Loading...</p>; // You might want to add a loading state while fetching data
+    return <p>Loading...</p>; 
   }
 
   const shareCareer = async () => {
