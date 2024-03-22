@@ -26,6 +26,15 @@
       "link": {
         "url": "/resources/whatsapp"
       }
+    },
+    {
+      "name": "Sentence Counter",
+      "fullName": "Sofuf",
+      "logoSrc": "/favicon.ico", 
+      "description": "Sentence counter tool that helps you count the number of sentences in your text.",
+      "link": {
+        "url": "/resources/sentence-counter"
+      }
     }
   ]
 }
