@@ -3,8 +3,6 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@n
 import { GrResources } from "react-icons/gr";
 import resourceData from "@/public/resourceData.json";
 
-
-
 export default function ResourcesPage() {
   const { institutions } = resourceData;
 
