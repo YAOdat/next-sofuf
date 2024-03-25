@@ -1,5 +1,4 @@
 # Sofuf
-
 Sofuf is a platform for educational resources and career opportunities.
 
 ## Technologies Used
@@ -11,9 +10,10 @@ Sofuf is a platform for educational resources and career opportunities.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
-- [Firebase]
+- [Firebase](https://firebase.google.com/)
+- [React](react.dev)
 
-## Technologies Used
+## Live Link
 
 Deployment Link: www.sofuf.com
 
