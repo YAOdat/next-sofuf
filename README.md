@@ -1,7 +1,5 @@
 # Sofuf
-
 Sofuf is a platform for educational resources and career opportunities.
-
 
 ## Technologies Used
 
@@ -18,7 +16,6 @@ Sofuf is a platform for educational resources and career opportunities.
 ## Live Link
 
 Deployment Link: www.sofuf.com
-
 
 
 
