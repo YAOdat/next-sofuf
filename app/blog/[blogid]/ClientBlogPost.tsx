@@ -1,9 +1,9 @@
 'use client';
-//
+
 import { useState, useEffect  } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
-import { Image } from "@nextui-org/react";
+import { Image, Spinner } from "@nextui-org/react";
 import React from 'react';
 
 interface PostDetails {
@@ -42,7 +42,8 @@ const ClientBlogPost = ({ params }: { params: { blogid: string } }) => {
   }, [params]);
 
   if (!postDetails) {
-    return <div>Loading...</div>;
+    return     <Spinner label="Loading..." color="primary" />;
+
   }
 
   return (

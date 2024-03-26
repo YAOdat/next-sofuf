@@ -2,12 +2,11 @@
 
 import { title } from "@/components/primitives";
 import { useState, useEffect } from 'react';
-import { Card, CardHeader, Link, Image } from "@nextui-org/react";
+import { Card, CardHeader, Link, Image, Spinner } from "@nextui-org/react";
 import { getFirestore, collection, doc, getDoc, getDocs, deleteDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { app, firestore } from '@/config/firebase';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import type { Metadata } from 'next'
 
 
 interface Post {
@@ -24,18 +23,13 @@ interface Post {
 
 }
 
-const metadata: Metadata = {
-	title: 'Sofuf Blog',
-	keywords: 'blog, posts, articles, news, updates, Sofuf blog, Sofuf posts, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, No copy right blog posts, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf news, Sofuf updates, Sofuf blog news, Sofuf blog updates, Sofuf updates, Sofuf blog updates, Sofuf blog posts, Sofuf blog articles, Sofuf blog news, Sofuf blog updates, Sofuf articles, Sofuf news, Sofuf updates, Sofuf blog articles, Sof',
-	description: 'Read the latest blog posts from Sofuf.',
-	robots: 'index, follow',
-}
-
 
 export default function BlogPage() {
 
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [postData, setPostData] = useState<Post[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
+
 	const auth = getAuth();
 	const db = getFirestore();
 
@@ -57,6 +51,7 @@ export default function BlogPage() {
 	});
 
 	useEffect(() => {
+		setIsLoading(true);
 		const db = getFirestore(app);
 		const postCollection = collection(db, 'posts');
 
@@ -65,16 +60,13 @@ export default function BlogPage() {
 				const postData: Post[] = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })) as Post[];
 				setPostData(postData);
 				console.log('Posts:', postData);
+				setIsLoading(false);
 			})
 			.catch((error) => {
+				setIsLoading(false);
 				console.error('Error fetching careers:', error);
 			});
 	}, []);
-
-	const handleAddPost = () => {
-		// Navigate to the Add Post page
-		window.location.href = '/blog/add';
-	};
 
 	const handleDeletePost = async (postId: string) => {
 
@@ -101,9 +93,14 @@ export default function BlogPage() {
 					</div>
 				</Link>
 			)}
-			<div className="grid grid-cols-1 gap-4 mt-4">
-				{postData.length > 0 ? (
-					postData.map((post) => (
+
+			{isLoading ? (
+				<div className="flex justify-center items-center py-10">
+					<Spinner />
+				</div>
+			) : (
+				<div className="grid grid-cols-1 gap-4 mt-4">
+					{postData.map((post) => (
 						<div key={post.id} className="flex flex-col items-stretch">
 							<Card className="col-span-12 sm:col-span-4 h-[10em] w-[20em] relative">
 								<a href={`blog/${post.id}`}>
@@ -111,50 +108,35 @@ export default function BlogPage() {
 										<p className="text-tiny text-white/60 uppercase font-bold">{post.title}</p>
 										<h4 className="text-white font-medium text-large">{truncate(post.description, 100)}</h4>
 									</CardHeader>
-										
 									{post.image && (
 										<div className="relative">
-									<a href={`blog/${post.id}`}>
-											<Image
-												removeWrapper
-												alt={post.title}
-												className="z-0 w-full h-full object-cover"
-												src={post.image}
-											/>
+											<a href={`blog/${post.id}`}>
+												<Image
+													removeWrapper
+													alt={post.title}
+													className="z-0 w-full h-full object-cover"
+													src={post.image}
+												/>
 											</a>
 											<div className="absolute inset-0 bg-black opacity-50"></div>
-
 										</div>
 									)}
 								</a>
-
 							</Card>
 							{isAdmin && (
 								<div className="mt-auto">
 									<button
 										onClick={() => handleDeletePost(post.id)}
-										className="
-    bg-red-500
-    text-white
-    px-4
-    my-2
-    rounded
-    w-24
-    h-10
-    text-xs
-  "
+										className="bg-red-500 text-white px-4 my-2 rounded w-24 h-10 text-xs"
 									>
 										Delete Post
 									</button>
 								</div>
 							)}
 						</div>
-					))
-				) : (
-					<p>No blog posts found.</p>
-				)}
-			</div>
+					))}
+				</div>
+			)}
 		</div>
 	);
-
 }
