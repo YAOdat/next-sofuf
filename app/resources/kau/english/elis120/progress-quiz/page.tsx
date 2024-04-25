@@ -66,8 +66,8 @@ export default function ProgressQuiz() {
                                 <div className="flex justify-center items-center m-1 p-1">
                                     <Chip color="default">{quiz.book}</Chip>
                                 </div>                             
-                                <p>Reading: <a href={quiz.reading} className="text-cyan-500">Click here</a></p>
                                 <p>Listening: <a href={quiz.listening} className="text-cyan-500">Click here</a></p>
+                                <p>Reading: <a href={quiz.reading} className="text-cyan-500">Click here</a></p>
                             </CardBody>
                         </Card>
                     </Tab>
