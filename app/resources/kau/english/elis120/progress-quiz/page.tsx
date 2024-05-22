@@ -65,9 +65,9 @@ export default function ProgressQuiz() {
                                 <h2 className="text-xl font-bold">{quiz.unit}: {quiz.unitTitle}</h2>
                                 <div className="flex justify-center items-center m-1 p-1">
                                     <Chip color="default">{quiz.book}</Chip>
-                                </div>                             
-                                <p>Listening: <a href={quiz.listening} className="text-cyan-500">Click here</a></p>
-                                <p>Reading: <a href={quiz.reading} className="text-cyan-500">Click here</a></p>
+                                </div>
+                                <p>Listening: <a href={quiz.listening} target="_blank" rel="noopener noreferrer" className="text-cyan-500">Click here</a></p>
+                                <p>Reading: <a href={quiz.reading}  target="_blank" rel="noopener noreferrer" className="text-cyan-500">Click here</a></p>
                             </CardBody>
                         </Card>
                     </Tab>
