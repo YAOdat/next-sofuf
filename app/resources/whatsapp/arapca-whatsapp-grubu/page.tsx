@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   viewport: 'width=device-width, initial-scale=1',
 }
-export default function WhatsApp() {
+export default function Arabca() {
   return (
     <div className="container mx-auto mt-8">
       <Card>
@@ -36,7 +36,7 @@ export default function WhatsApp() {
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">Neden Bu Gruba Katılmalısınız?</h2>
               <ul className="list-disc pl-6 mb-4">
                 <li className="mb-2"><span className="font-bold"> Deneyimli Arapça öğrencileriyle etkileşim: </span> Sorularınıza cevap alın ve tecrübelerinizi paylaşın.</li>
-                <li className="mb-2"><span className="font-bold">Günlük konuşma pratiği:</span> Arapça'yı günlük hayatta kullanarak kendinizi geliştirin.</li>
+                <li className="mb-2"><span className="font-bold">Günlük konuşma pratiği:</span> Arapça&apos;yı günlük hayatta kullanarak kendinizi geliştirin.</li>
                 <li className="mb-2"><span className="font-bold">Konuşma becerileri üzerinde yoğunlaşma: </span>Dilediğiniz zaman sesli mesaj göndererek konuşma pratiği yapın.</li>
                 <li><span className="font-bold">Destekleyici ortam:</span> Motivasyonunuzu yüksek tutun ve öğrenme sürecinden keyif alın.</li>
               </ul>
