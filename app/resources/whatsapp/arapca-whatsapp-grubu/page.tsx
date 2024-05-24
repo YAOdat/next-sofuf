@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
-import { Avatar } from "@nextui-org/react";
 import type { Metadata } from 'next'
 import CommentSection from "../../../../components/commentSection";
 
@@ -12,11 +11,11 @@ const arabicGroups = [
 
 export const metadata: Metadata = {
   title: 'Arapça WhatsApp Grubu',
-  keywords: ['Arapça WhatsApp grubu', 'Arapça WhatsApp grubu bağlantısı', 'WhatsApp\'tan Arapça öğrenmek', 'Arapça konuşma pratiği WhatsApp grubu', 'Arapça öğrenme grubu WhatsApp', 'Arapça dil becerilerini geliştirme WhatsApp grubu', 'Arapça ile konuşma pratiği', 'Arapça konuşma WhatsApp', 'Arapça sohbet grubu', 'Arapça öğrenme uygulaması'], 
-  description: 'Arapça öğrenin ve konuşun! Yeni kelimeler, dilbilgisi kuralları öğrenin ve ana dili Arapça olan kişilerle iletişim kurun. Sadece Arapça!',
+  keywords: ['Arapça WhatsApp grubu', 'arapça whatsapp grupları', 'Arapça WhatsApp grubu bağlantısı', 'WhatsApp\'tan Arapça öğrenmek', 'Arapça konuşma pratiği WhatsApp grubu', 'Arapça öğrenme grubu WhatsApp', 'Arapça dil becerilerini geliştirme WhatsApp grubu', 'Arapça ile konuşma pratiği', 'Arapça konuşma WhatsApp', 'Arapça sohbet grubu', 'Arapça öğrenme uygulaması'], 
+  description: 'Arapça öğrenme grubu WhatsApp! Yeni kelimeler, dilbilgisi kuralları öğrenin ve ana dili Arapça olanlarla Arapça konuşma pratiği yapın. WhatsApp üzerinden Arapça öğrenin!',
   robots: 'index, follow',
-  viewport: 'width=device-width, initial-scale=1',
 }
+
 export default function Arabca() {
   return (
     <div className="container mx-auto mt-8">
