@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
-import { Avatar } from "@nextui-org/react";
 import type { Metadata } from 'next'
 import CommentSection from "@/components/commentSection";
 
@@ -47,7 +46,7 @@ const langGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: 'English WhatsApp Group - Learn and Practice English on WhatsApp',
+  title: 'English WhatsApp Group Link',
   keywords: 'English WhatsApp groups, English WhatsApp group, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024',
   description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
   robots: 'index, follow',
