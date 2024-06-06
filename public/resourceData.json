@@ -10,12 +10,12 @@
       }
     },
     {
-      "name": "MOE UAE",
-      "fullName": "Ministry of Education of UAE",
+      "name": "ESE UAE",
+      "fullName": "Emirates Schools Establishment",
       "logoSrc": "https://pbs.twimg.com/profile_images/1633122884238311424/DtqRjmp3_400x400.jpg", 
-      "description": "Explore educational resources from the Ministry of Education of the United Arab Emirates.",
+      "description": "Explore educational materials that support your learning at Emirates schools.",
       "link": {
-        "url": "/resources/MOE-UAE"
+        "url": "/resources/ese"
       }
     },
     {
