@@ -47,11 +47,16 @@ const langGroups = [
 
 export const metadata: Metadata = {
   title: 'English WhatsApp Group Link',
-  keywords: 'English WhatsApp groups, English WhatsApp group, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024',
+  keywords: 'English WhatsApp group, English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024',
   description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
   robots: 'index, follow',
-  viewport: 'width=device-width, initial-scale=1',
 }
+
+export const viewport = {
+  initialScale: 1.0,  
+  width: 'device-width',
+ }
+ 
 export default function WhatsApp() {
   return (
     <div className="container mx-auto mt-8">

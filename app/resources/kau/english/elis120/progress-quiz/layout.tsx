@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     description: 'حلول اختبارات التقدم  - جامعة الملك عبد العزيز - علمي المستوى الثاني ELIS 120',
     keywords: 'حلول اختبارات التقدم, جامعة الملك عبد العزيز, علمي المستوى الثاني, ELIS 120, معهد اللغة الإنجليزية جامعة الملك عبد العزيز، موقع صفوف',
     robots: 'index, follow',
-    viewport: 'width=device-width, initial-scale=1',
     openGraph: {
         title: 'حلول اختبارات التقدم - علمي 2',
         description: 'حلول اختبارات التقدم - جامعة الملك عبد العزيز - علمي المستوى الثاني ELIS 120',
@@ -34,6 +33,10 @@ export const metadata: Metadata = {
   
     };
 
+ export const viewport = {
+  initialScale: 1.0,  
+  width: 'device-width',
+ }
  
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (

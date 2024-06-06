@@ -65,7 +65,7 @@ export default function Arabca() {
               <Image
                 alt="Arapça WhatsApp grubu 2024"
                 className="object-cover rounded-xl"
-                src="https://media-sin6-3.cdn.whatsapp.net/v/t61.24694-24/341101225_1109362833789229_8306012962624055979_n.jpg?ccb=11-4&oh=01_Q5AaIEY6Au8Sm8pycCAxSqNp6YmjcClZ-miOs_DU5EF1rkZq&oe=665B0528&_nc_sid=e6ed6c&_nc_cat=100"
+                src="https://external-preview.redd.it/RqmBj2CfpZUCyg_SqB_ivZRpWwi1-s9bFvdab0Cu5aA.jpg?auto=webp&s=245b9c36dc8410a715c4dfd4d255da5a9935a7b3"
                 width={300}
               /></div>
 
