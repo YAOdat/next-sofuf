@@ -1,9 +1,15 @@
 import { title } from "@/components/primitives";
 
 export default function AboutPage() {
-	return (
-		<div>
-			<h1 className={title()}>About</h1>
-		</div>
-	);
+  return (
+    <div className="p-4">
+      <h1 className={title()}>About</h1>
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Sofuf is a platform dedicated to helping students by providing resources, links to WhatsApp learning groups, and much more to assist students in their academic journey.
+      </p>
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Our goal is to create a supportive and engaging environment for students, where they can find the help they need to succeed in their studies.
+      </p>
+    </div>
+  );
 }

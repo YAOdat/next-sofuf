@@ -43,10 +43,6 @@ export const siteConfig = {
 			href: "/blog",
 		},
 		{
-			label: "Contact",
-			href: "/contact",
-		},
-		{
 			label: "About",
 			href: "/about",
 		},
@@ -56,7 +52,5 @@ export const siteConfig = {
 		github: "/careers",
 		twitter: "https://t.me/odatt",
 		docs: "/resources",
-		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
 	},
 };
