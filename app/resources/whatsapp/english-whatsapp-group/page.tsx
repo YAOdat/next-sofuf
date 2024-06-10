@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
 
 const englishGroups = [
@@ -10,8 +10,8 @@ const englishGroups = [
   { name: 'English Group 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1', language: 'English' },
   { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'English' },
   { name: 'English Arabic Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'EnglishArabic' }
-
 ];
+
 const langGroups = [
   {
     name: "Arabic | English",
@@ -46,17 +46,21 @@ const langGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: 'English WhatsApp Group Link',
-  keywords: 'English WhatsApp group, English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024',
+  title: {
+    absolute: 'English WhatsApp Group Link | Learn and Practice English',
+  },
+  keywords: 'English WhatsApp group, English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024, English learning, English practice',
   description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
   robots: 'index, follow',
-}
 
-export const viewport = {
-  initialScale: 1.0,  
-  width: 'device-width',
- }
- 
+  openGraph: {
+    title: 'English WhatsApp Group Link | Learn and Practice English',
+    description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide.',
+    url: 'https://www.sofuf.com/english-whatsapp-group',
+    images: ['/ewg-blog.png'],
+  },
+};
+
 export default function WhatsApp() {
   return (
     <div className="container mx-auto mt-8">
@@ -142,7 +146,7 @@ export default function WhatsApp() {
      
       <Spacer y={1} />
       
-<CommentSection commenterName={""} comment={""} commentDate={""} postID={"whatsapp-group"} />
+      <CommentSection commenterName={""} comment={""} commentDate={""} postID={"whatsapp-group"} />
     </div>
   );
 }

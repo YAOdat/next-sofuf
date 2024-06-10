@@ -13,15 +13,20 @@ export const metadata: Metadata = {
 	description: 'Sofuf is a comprehensive platform for learning and resources.',
 	keywords: 'sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof',
 	robots: 'index, follow',
-	// themeColor: [
-	// 	{ media: "(prefers-color-scheme: light)", color: "white" },
-	// 	{ media: "(prefers-color-scheme: dark)", color: "black" },
-	// ],
+
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
 	},
+		openGraph: {
+			images: ['/favicon.ico'],
+		  },	
+  metadataBase: new URL("https://sofuf.com"), 
+
+};
+
+export const viewport = {
+	initialScale: 1.0,
 };
 
 export default function RootLayout({
@@ -64,10 +69,8 @@ export default function RootLayout({
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
 							<Link
-								isExternal
 								className="flex items-center gap-1 text-current"
-								href="/odat"
-								// title="Odat homepage"
+								href="/about"
 								>
 								<span className="text-default-600">Powered by</span>
 								<p className="text-primary">Sofuf</p>
