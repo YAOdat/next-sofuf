@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'English WhatsApp Group Link | Learn and Practice English',
   },
-  keywords: 'English WhatsApp group, English WhatsApp groups, learn English online, language exchange, English whatsapp group link, practice English on WhatsApp, Best English Language Exchange on WhatsApp, Chat in English on WhatsApp, Free English WhatsApp Group 2024, English learning, English practice',
+  keywords: ['English WhatsApp group', 'English WhatsApp groups', 'learn English online', 'language exchange', 'English whatsapp group link', 'practice English on WhatsApp', 'Best English Language Exchange on WhatsApp', 'Chat in English on WhatsApp', 'Free English WhatsApp Group 2024', 'English learning whatsapp', 'English practice whatsapp'],
   description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
   robots: 'index, follow',
 
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'English WhatsApp Group Link | Learn and Practice English',
     description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide.',
     url: 'https://www.sofuf.com/english-whatsapp-group',
-    images: ['/ewg-blog.png'],
+    images: 'https://www.sofuf.com/ewg-blog.png',
   },
 };
 

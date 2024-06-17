@@ -11,7 +11,7 @@ import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
 	title: 'Home | Sofuf',
 	description: 'Sofuf is a comprehensive platform for learning and resources.',
-	keywords: 'sofuf, odat, KAU, MOE, King AbdulAziz University, Sofof',
+	keywords: ["sofuf", "odat", "KAU", "ESE", "King AbdulAziz University", "Sofof", "صفوف"],
 	robots: 'index, follow',
 
 	icons: {
