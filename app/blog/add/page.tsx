@@ -19,6 +19,7 @@ const AddBlogPost = () => {
     contentImage: '',
     content: '',
     category: '',
+    keywords: [] as string[],
   });
 
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
@@ -30,7 +31,7 @@ const AddBlogPost = () => {
     try {
       await addDoc(postCollection, blogData);
       console.log('Blog submitted successfully!');
-      setBlogData({ author: '', image: '', title: '', datePosted: '', description: '', content: '', contentImage: '', category: '' });
+      setBlogData({ author: '', image: '', title: '', datePosted: '', description: '', content: '', contentImage: '', category: '', keywords: []});
 
     } catch (error) {
       console.error('Error submitting post:', error);
@@ -59,6 +60,11 @@ const AddBlogPost = () => {
       <br />
       <input className={`${styles.input}`}
         placeholder='Write a short description, used as meta' type="text" id='description' value={blogData.description} onChange={(e) => setBlogData({ ...blogData, description: e.target.value })} required />
+      <br />
+      <label htmlFor="keywords" className={`${styles.label}`}>
+        Keywords:
+      </label>
+      <input type="text" id="keywords" value={blogData.keywords.join(', ')} onChange={(e) => setBlogData({ ...blogData, keywords: e.target.value.split(', ') })} className={`${styles.input}`} />
       <label className={`${styles.label}`}>
         Content:
       </label>

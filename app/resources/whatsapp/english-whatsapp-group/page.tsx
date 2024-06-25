@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     absolute: 'English WhatsApp Group Link | Learn and Practice English',
   },
   keywords: ['English WhatsApp group', 'English WhatsApp groups', 'learn English online', 'language exchange', 'English whatsapp group link', 'practice English on WhatsApp', 'Best English Language Exchange on WhatsApp', 'Chat in English on WhatsApp', 'Free English WhatsApp Group 2024', 'English learning whatsapp', 'English practice whatsapp'],
-  description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
+  description: 'Learn & practice English on WhatsApp with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
   robots: 'index, follow',
 
   openGraph: {
@@ -68,7 +68,7 @@ export default function WhatsApp() {
         <CardBody>
           <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
-            <p className="text-xs md:text-sm font-thin mb-4">2024 - 04 - 03 / Author: Odat</p>
+            <p className="text-xs md:text-sm font-thin mb-4">2024 - 06 - 05 / Author: Odat</p>
             <div className="mb-4">
               <p className="md:text-base">
                 Welcome to our <span className="font-bold">English Learning WhatsApp Groups</span>! WhatsApp Messenger, a versatile instant messaging app, empowers users to exchange text and voice messages, conduct voice and video calls, and share various media formats, including images, documents, and user locations. Leveraging this platform for English language practice has proven highly beneficial, as I personally discovered.
@@ -146,7 +146,7 @@ export default function WhatsApp() {
      
       <Spacer y={1} />
       
-      <CommentSection commenterName={""} comment={""} commentDate={""} postID={"whatsapp-group"} />
+      <CommentSection postID={"whatsapp-group"} />
     </div>
   );
 }
