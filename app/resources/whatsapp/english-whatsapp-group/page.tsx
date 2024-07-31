@@ -46,20 +46,18 @@ const langGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'English WhatsApp Group Link | Learn and Practice English',
-  },
-  keywords: ['English WhatsApp group', 'English WhatsApp groups', 'learn English online', 'language exchange', 'English whatsapp group link', 'practice English on WhatsApp', 'Best English Language Exchange on WhatsApp', 'Chat in English on WhatsApp', 'Free English WhatsApp Group 2024', 'English learning whatsapp', 'English practice whatsapp'],
-  description: 'Learn & practice English on WhatsApp with others! Join free WhatsApp groups & connect with learners worldwide. Improve reading, writing, speaking, & listening through real-life conversations. Find your WhatsApp group link & start today!',
+  title: 'Join Free English WhatsApp Groups | Practice & Learn English Online',
+  keywords: 'English WhatsApp group, learn English online, language exchange, English WhatsApp group link, practice English on WhatsApp, free English WhatsApp groups 2024',
+  description: 'Join free English WhatsApp groups to practice and learn English with native speakers. Improve your speaking, writing, and listening skills through real conversations. Find your perfect English language exchange group now!',
   robots: 'index, follow',
-
   openGraph: {
-    title: 'English WhatsApp Group Link | Learn and Practice English',
-    description: 'Learn & practice English with others! Join free WhatsApp groups & connect with learners worldwide.',
+    title: 'Join Free English WhatsApp Groups | Practice & Learn English Online',
+    description: 'Connect with English learners worldwide. Join our free WhatsApp groups to improve your English skills through real conversations.',
     url: 'https://www.sofuf.com/english-whatsapp-group',
-    images: 'https://www.sofuf.com/ewg-blog.png',
+    images: [{ url: 'https://www.sofuf.com/ewg-blog.png', alt: 'English WhatsApp Group Link 2024' }],
   },
 };
+
 
 export default function WhatsApp() {
   return (
@@ -108,11 +106,12 @@ export default function WhatsApp() {
             </div>
             <div className="mb-4" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Image
-                alt="English WhatsApp Group Link 2024"
+                alt="Join English WhatsApp Group"
                 className="object-cover rounded-xl"
                 src="/ewg-blog.png"
                 width={300}
-              /></div>
+              />
+            </div>
 
             <div className="max-w-full md:max-w-2xl mx-auto">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">Enhance Your English with Language Exchange Groups</h3>
@@ -143,9 +142,9 @@ export default function WhatsApp() {
           </article>
         </CardBody>
       </Card>
-     
+
       <Spacer y={1} />
-      
+
       <CommentSection postID={"whatsapp-group"} />
     </div>
   );
