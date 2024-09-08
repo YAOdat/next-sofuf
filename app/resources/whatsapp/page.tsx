@@ -52,6 +52,43 @@ export default function WhatsApp() {
       </CardBody>
     </Card>
     </Link>
+    <Link href="/resources/whatsapp/voice-chat-whatsapp-group">
+    <Card className="py-4 m-2">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <h4 className="font-bold text-large">Voice Chat WhatsApp Group</h4>
+        <small className="text-default-500">2024-2025</small>
+        <p className="text-tiny font-bold">Practice spoken English on WhatsApp.</p>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="English WhatsApp Group Blog Post"
+          className="object-cover rounded-xl"
+          src="/voice-notes.jpg"
+          width={270}
+          height={200}
+        />
+      </CardBody>
+    </Card>
+    </Link>
+    <Link href="/resources/whatsapp/ingilizce-whatsapp-grubu">
+    <Card className="py-4 m-2">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <h4 className="font-bold text-large">Ingilizce WhatsApp Grubu</h4>
+        <small className="text-default-500">2024-2025</small>
+        <p className="text-tiny font-bold">Practice and learn Turkish on WhatsApp.</p>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="Turkish WhatsApp Group Blog Post"
+          className="object-cover rounded-xl"
+          src="/whatsappgroups.png"
+          width={270}
+          height={200}
+        />
+      </CardBody>
+    </Card>
+    </Link>
+
     </>
   );
 }

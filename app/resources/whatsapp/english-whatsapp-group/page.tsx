@@ -46,14 +46,14 @@ const langGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Join Free English WhatsApp Groups | Practice & Learn English Online',
-  keywords: 'English WhatsApp group, learn English online, language exchange, English WhatsApp group link, practice English on WhatsApp, free English WhatsApp groups 2024',
+  title: 'Join English WhatsApp Groups | Learn English on WhatsApp',
+  keywords: 'English WhatsApp group, learn English online, language exchange, English WhatsApp group link, practice English on WhatsApp, free English WhatsApp groups 2024, English speaking whatsapp group',
   description: 'Join free English WhatsApp groups to practice and learn English with native speakers. Improve your speaking, writing, and listening skills through real conversations. Find your perfect English language exchange group now!',
   robots: 'index, follow',
   openGraph: {
     title: 'Join Free English WhatsApp Groups | Practice & Learn English Online',
     description: 'Connect with English learners worldwide. Join our free WhatsApp groups to improve your English skills through real conversations.',
-    url: 'https://www.sofuf.com/english-whatsapp-group',
+    url: 'https://www.sofuf.com/resources/whatsapp/english-whatsapp-group',
     images: [{ url: 'https://www.sofuf.com/ewg-blog.png', alt: 'English WhatsApp Group Link 2024' }],
   },
 };
@@ -65,8 +65,10 @@ export default function WhatsApp() {
       <Card>
         <CardBody>
           <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
-            <p className="text-xs md:text-sm font-thin mb-4">2024 - 06 - 05 / Author: Odat</p>
+            <header>
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
+              <p className="text-xs md:text-sm font-thin mb-4">2024 - 09 - 05 / Author: Odat</p>
+            </header>
             <div className="mb-4">
               <p className="md:text-base">
                 Welcome to our <span className="font-bold">English Learning WhatsApp Groups</span>! WhatsApp Messenger, a versatile instant messaging app, empowers users to exchange text and voice messages, conduct voice and video calls, and share various media formats, including images, documents, and user locations. Leveraging this platform for English language practice has proven highly beneficial, as I personally discovered.
@@ -106,11 +108,13 @@ export default function WhatsApp() {
             </div>
             <div className="mb-4" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Image
-                alt="Join English WhatsApp Group"
+                alt="Join Free English WhatsApp Groups 2024"
                 className="object-cover rounded-xl"
                 src="/ewg-blog.png"
                 width={300}
+                loading="lazy"
               />
+
             </div>
 
             <div className="max-w-full md:max-w-2xl mx-auto">
