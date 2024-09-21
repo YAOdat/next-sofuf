@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 // import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
@@ -18,11 +18,10 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
 	},
-		openGraph: {
-			images: ['/favicon.ico'],
-		  },	
-  metadataBase: new URL("https://sofuf.com"), 
-
+	openGraph: {
+		images: ['/favicon.ico'],
+	},	
+	metadataBase: new URL("https://sofuf.com"), 
 };
 
 export const viewport = {
@@ -36,31 +35,38 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<head >
-			<script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
-		  
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                window.dataLayer.push(arguments);
-              }
-              gtag('js', new Date());
-              gtag('config', 'G-FJ4P5C4K33');
-            `,
-          }}
-        />
+			<head>
+				{/* Google Ads Script */}
+				<script 
+					async 
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356653471120890"
+					crossOrigin="anonymous"
+					></script>
+
+				{/* Google Analytics */}
+				<script
+					async
+					src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
+				/>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							window.dataLayer = window.dataLayer || [];
+							function gtag() {
+								window.dataLayer.push(arguments);
+							}
+							gtag('js', new Date());
+							gtag('config', 'G-FJ4P5C4K33');
+						`,
+					}}
+				/>
 			</head>
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
 					fontSans.variable
 				)}
-				>
+			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
@@ -71,7 +77,7 @@ export default function RootLayout({
 							<Link
 								className="flex items-center gap-1 text-current"
 								href="/about"
-								>
+							>
 								<span className="text-default-600">Powered by</span>
 								<p className="text-primary">Sofuf</p>
 							</Link>
@@ -79,7 +85,6 @@ export default function RootLayout({
 					</div>
 				</Providers>
 				<Analytics />
-
 			</body>
 		</html>
 	);
