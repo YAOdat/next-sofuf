@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
 
 export const metadata: Metadata = {
-  title: 'Join Free Voice Chat WhatsApp Group | Improve Your Speaking Skills',
+  title: 'Join English Voice Chat WhatsApp Group',
   keywords: 'Voice chat WhatsApp group, improve speaking skills, practice English speaking, WhatsApp group for speaking, voice message group, ESL voice chat group, English speaking WhatsApp group, language practice online',
   description: 'Join our free Voice Chat WhatsApp Group to improve your English speaking skills. Practice speaking with others by sending voice messages and receiving feedback. Perfect for ESL learners!',
   robots: 'index, follow',
