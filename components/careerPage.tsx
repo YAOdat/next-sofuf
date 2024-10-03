@@ -6,6 +6,7 @@ import { app } from '../config/firebase';
 import { Link, Button } from "@nextui-org/react";
 import Head from 'next/head';
 import { FiShare2 } from 'react-icons/fi';
+import AdComponent from "./AdComponent";
 
 interface CareerDetail {
   jobTitle: string;
@@ -124,6 +125,16 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
   style={{ wordBreak: 'break-all' }}
   dangerouslySetInnerHTML={{ __html: careerDetail.description }}
       ></div>
+      	<section className="flex flex-col items-center justify-center gap-4 py-6 bg-gray-100 border-t" aria-label="Sponsored Advertisement">
+				<h3 className={title({ color: "violet" })}>Sponsored Ad</h3>
+				<p className="text-center text-sm text-gray-600 mb-4">
+					Support us by checking out this sponsored content.
+				</p>
+
+				{/* Ad Component */}
+				<AdComponent />
+
+			</section>
 
       <Button
         href={careerDetail.applicationLink}
