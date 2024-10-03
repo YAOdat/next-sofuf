@@ -1,4 +1,5 @@
 // components/AdComponent.tsx
+'use client'
 import React,  { useEffect } from "react";
 
 export default function AdComponent() {
