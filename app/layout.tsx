@@ -36,6 +36,9 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				{/* Meta Tag */}
+				<meta name="2d5c652bc6a334b927c4ad98677b376d50b4bc83" content="2d5c652bc6a334b927c4ad98677b376d50b4bc83" />
+				
 				{/* Google Ads Script */}
 				<script 
 					async 
