@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import type { Metadata } from 'next';
-// import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
@@ -13,15 +12,14 @@ export const metadata: Metadata = {
 	description: 'Sofuf is a comprehensive platform for learning and resources.',
 	keywords: ["sofuf", "odat", "KAU", "ESE", "King AbdulAziz University", "Sofof", "صفوف"],
 	robots: 'index, follow',
-
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
 	},
 	openGraph: {
 		images: ['/favicon.ico'],
-	},	
-	metadataBase: new URL("https://sofuf.com"), 
+	},
+	metadataBase: new URL("https://sofuf.com"),
 };
 
 export const viewport = {
@@ -36,17 +34,14 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
-				{/* Meta Tag */}
 				<meta name="2d5c652bc6a334b927c4ad98677b376d50b4bc83" content="2d5c652bc6a334b927c4ad98677b376d50b4bc83" />
-				
-				{/* Google Ads Script */}
-				<script 
-					async 
+
+				<script
+					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356653471120890"
 					crossOrigin="anonymous"
-					></script>
+				></script>
 
-				{/* Google Analytics */}
 				<script
 					async
 					src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
@@ -54,13 +49,13 @@ export default function RootLayout({
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `
-							window.dataLayer = window.dataLayer || [];
-							function gtag() {
-								window.dataLayer.push(arguments);
-							}
-							gtag('js', new Date());
-							gtag('config', 'G-FJ4P5C4K33');
-						`,
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                window.dataLayer.push(arguments);
+              }
+              gtag('js', new Date());
+              gtag('config', 'G-FJ4P5C4K33');
+            `,
 					}}
 				/>
 			</head>
@@ -73,8 +68,10 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-							{children}
+						<main className="container mx-auto w-full max-w-full pt-16 px-6 flex-grow">
+							<div className="max-w-7xl mx-auto w-full">
+								{children}
+							</div>
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
 							<Link
