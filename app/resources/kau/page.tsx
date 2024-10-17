@@ -18,44 +18,43 @@ const subjects = [
         image: "https://cdn-icons-png.flaticon.com/512/3254/3254075.png",
         description: "شروحات، ملخصات، تسريبات لمادة الفيزياء في جامعة الملك عبد العزيز",
     },
-
-]
-
+];
 
 export default function ResourcesPage() {
-
-
     return (
-        <div dir="rtl">
-            <h1 className={`${title()}`}>جامعة الملك عبد العزيز</h1>
-            {subjects.map((subject) => (
-                <Card key={subject.name} className="max-w-[400px] mt-4">
-                    <CardHeader className="flex gap-3">
-                        <Image
-                            alt={`${subject.name} logo`}
-                            height={40}
-                            radius="sm"
-                            src={subject.image}
-                            width={40}
-                        />
-                        <div className="flex flex-col justify-start items-start">
-                            <p className="text-md">{subject.name}</p>
-                            {/* <p className="text-small text-default-500">{subject.fullName}</p> */}
-                        </div>
-                    </CardHeader>
-                    <Divider />
-                    <CardBody className="text-right">
-                        <p dir="rtl">{subject.description}</p>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter className="flex justify-end">
-                        <Link href={subject.link}>
-                            <GrResources className="mt-1" />
-                            <span className="mr-1">تصفح</span>
-                        </Link>
-                    </CardFooter>
-                </Card>
-            ))}
+        <div dir="rtl" className="flex flex-col items-center container mx-auto px-4 py-10">
+            <h1 className={`${title()} text-center text-4xl md:text-5xl mb-12`}>
+                جامعة الملك عبد العزيز
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
+                {subjects.map((subject) => (
+                    <Card key={subject.name} className="max-w-[400px] mx-auto shadow-lg">
+                        <CardHeader className="flex gap-4 items-center p-4">
+                            <Image
+                                alt={`${subject.name} logo`}
+                                height={40}
+                                radius="sm"
+                                src={subject.image}
+                                width={40}
+                            />
+                            <div className="text-right">
+                                <p className="text-lg font-semibold">{subject.name}</p>
+                            </div>
+                        </CardHeader>
+                        <Divider />
+                        <CardBody className="text-right p-4">
+                            <p className="text-sm text-gray-700 dark:text-gray-300">{subject.description}</p>
+                        </CardBody>
+                        <Divider />
+                        <CardFooter className="flex justify-end p-4">
+                            <Link href={subject.link} className="flex items-center text-primary hover:underline">
+                                <span className="mr-1">تصفح</span>
+                                <GrResources className="ml-1" />
+                            </Link>
+                        </CardFooter>
+                    </Card>
+                ))}
+            </div>
         </div>
     );
 }
