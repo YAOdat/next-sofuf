@@ -63,8 +63,8 @@ export default function VocabularyList() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold m-1">Vocabulary</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+        <h1 className="text-3xl font-bold">Vocabulary</h1>
         <div className="flex items-center gap-4">
           <Switch
             checked={isArabic}
@@ -86,24 +86,26 @@ export default function VocabularyList() {
       <Accordion selectionMode="multiple" className="mb-10">
         {vocabData.map((category, index) => (
           <AccordionItem key={index} title={category.category}>
-            <Table aria-label={`Vocabulary for ${category.category}`}>
-              <TableHeader>
-                <TableColumn>{isArabic ? 'الكلمة' : 'Word'}</TableColumn>
-                <TableColumn>{isArabic ? 'الترجمة الإنجليزية' : 'Arabic Translation'}</TableColumn>
-                <TableColumn className="hidden md:table-cell">{isArabic ? 'مثال (عربي)' : 'Example (English)'}</TableColumn>
-                <TableColumn className="hidden md:table-cell">{isArabic ? 'مثال (إنجليزي)' : 'Example (Arabic)'}</TableColumn>
-              </TableHeader>
-              <TableBody>
-                {category.words.map((word, idx) => (
-                  <TableRow key={idx}>
-                    <TableCell>{isArabic ? word.arTranslation : word.word}</TableCell>
-                    <TableCell>{isArabic ? word.word : word.arTranslation}</TableCell>
-                    <TableCell className="hidden md:table-cell">{isArabic ? word.example_ar : word.example}</TableCell>
-                    <TableCell className="hidden md:table-cell">{isArabic ? word.example : word.example_ar}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <div className="overflow-x-auto">
+              <Table aria-label={`Vocabulary for ${category.category}`}>
+                <TableHeader>
+                  <TableColumn>{isArabic ? 'الكلمة' : 'Word'}</TableColumn>
+                  <TableColumn>{isArabic ? 'الترجمة الإنجليزية' : 'Arabic Translation'}</TableColumn>
+                  <TableColumn>{isArabic ? 'مثال (عربي)' : 'Example (English)'}</TableColumn>
+                  <TableColumn>{isArabic ? 'مثال (إنجليزي)' : 'Example (Arabic)'}</TableColumn>
+                </TableHeader>
+                <TableBody>
+                  {category.words.map((word, idx) => (
+                    <TableRow key={idx}>
+                      <TableCell>{isArabic ? word.arTranslation : word.word}</TableCell>
+                      <TableCell>{isArabic ? word.word : word.arTranslation}</TableCell>
+                      <TableCell>{isArabic ? word.example_ar : word.example}</TableCell>
+                      <TableCell>{isArabic ? word.example : word.example_ar}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </AccordionItem>
         ))}
       </Accordion>
