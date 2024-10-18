@@ -20,6 +20,12 @@ const resourceCards: Record<string, ResourceCard[]> = {
       link: "/resources/kau/english/elis120/vocabs"
     },
     {
+      title: "Mid Exam Revision",
+      description: "مراجعة شامل للاختبار النصفي",
+      imageSrc: "https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016.png",
+      link: "https://www.youtube.com/watch?v=GbK4ZuatSIk&t=9s"
+    },
+    {
       title: "Mid Practice Test",
       description: "اختبار تجريبي يحاكي الاختبار الفعلي النصفي",
       imageSrc: "/practice-test.jpg",
@@ -37,7 +43,7 @@ const resourceCards: Record<string, ResourceCard[]> = {
       title: "Final Grammar Revision",
       description: "مراجعة شاملة لقواعد اللغة الإنجليزية للاختبار النهائي",
       imageSrc: "https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016.png",
-      link: "/resources/kau/english/elis120/final-grammar"
+      link: "https://www.youtube.com/watch?v=5ZFq2bGjMMY"
     }
   ]
 };
