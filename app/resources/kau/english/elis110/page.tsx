@@ -54,6 +54,15 @@ const resources: ResourceItem[] = [
     type: 'midterm',
     year:'OCT 2024'
   },
+  {
+    title: "Mid Exam Vocabs",
+    description: "الكلمات المطلوب حفظها بالاختبار النصفي",
+    imageUrl: "/mid-vocabs.jpg",
+    imageAlt: "الكلمات المطلوب حفظها بالاختبار النصفي",
+    link: "/resources/kau/english/elis110/mid-vocabs",
+    type: "midterm",
+    year: "OCT 2024",
+  },
 ];
 
 export default function ELIS110() {
@@ -96,7 +105,7 @@ function ResourceGrid({ resources }: { resources: ResourceItem[] }) {
             <CardBody className="overflow-visible py-2">
               <Image
                 alt={resource.imageAlt}
-                className="object-cover rounded-xl w-full h-40"
+                className="object-cover rounded-xl w-full"
                 src={resource.imageUrl}
               />
             </CardBody>
