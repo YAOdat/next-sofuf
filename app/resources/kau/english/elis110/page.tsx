@@ -3,7 +3,7 @@
 import React from "react"
 import { Card, CardBody, CardHeader, Image, Link, Tabs, Tab } from "@nextui-org/react"
 import Head from 'next/head'
-import { ExternalLink } from "lucide-react"
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 type ResourceItem = {
   title: string
@@ -120,7 +120,7 @@ function ResourceGrid({ resources }: { resources: ResourceItem[] }) {
                 <div className="flex justify-between items-start mb-2">
                   <h4 className="text-lg font-semibold text-foreground">{resource.title}</h4>
                   {resource.isExternal && (
-                    <ExternalLink className="w-4 h-4 text-primary" />
+                    <FaExternalLinkAlt className="w-4 h-4 text-primary" />
                   )}
                 </div>
                 <p className="text-sm text-default-500 mb-2">{resource.year}</p>
