@@ -1,0 +1,794 @@
+[
+    {
+        "category": "Family",
+        "words": [
+            {
+                "word": "Brother",
+                "arTranslation": "أخ",
+                "example": "My brother is taller than me.",
+                "example_ar": "أخي أطول مني."
+            },
+            {
+                "word": "Sister",
+                "arTranslation": "أخت",
+                "example": "She loves her sister very much.",
+                "example_ar": "هي تحب أختها كثيرا."
+            },
+            {
+                "word": "Mother",
+                "arTranslation": "أم",
+                "example": "My mother cooks delicious food.",
+                "example_ar": "أمي تطبخ طعامًا لذيذًا."
+            },
+            {
+                "word": "Father",
+                "arTranslation": "أب",
+                "example": "My father works at a bank.",
+                "example_ar": "والدي يعمل في بنك."
+            },
+            {
+                "word": "Son",
+                "arTranslation": "ابن",
+                "example": "His son is very smart.",
+                "example_ar": "ابنه ذكي جدا."
+            },
+            {
+                "word": "Daughter",
+                "arTranslation": "ابنة",
+                "example": "She has one daughter and two sons.",
+                "example_ar": "لديها ابنة واحدة وابنان."
+            },
+            {
+                "word": "Aunt",
+                "arTranslation": "عمة / خالة",
+                "example": "My aunt lives in the city.",
+                "example_ar": "تعيش عمتي في المدينة."
+            },
+            {
+                "word": "Uncle",
+                "arTranslation": "عم / خال",
+                "example": "My uncle is a teacher.",
+                "example_ar": "عمي معلم."
+            },
+            {
+                "word": "Grandfather",
+                "arTranslation": "جد",
+                "example": "My grandfather tells great stories.",
+                "example_ar": "جدي يروي قصصًا رائعة."
+            },
+            {
+                "word": "Parents",
+                "arTranslation": "والدان",
+                "example": "My parents are very kind.",
+                "example_ar": "والداي لطيفان جدا."
+            },
+            {
+                "word": "Family",
+                "arTranslation": "عائلة",
+                "example": "I love spending time with my family.",
+                "example_ar": "أحب قضاء الوقت مع عائلتي."
+            },
+            {
+                "word": "Parents",
+                "arTranslation": "والدان",
+                "example": "والديّ يحبون السفر.",
+                "example_ar": "My parents love to travel."
+            }
+        ]
+    },
+    {
+        "category": "Jobs",
+        "words": [
+            {
+                "word": "Worker",
+                "arTranslation": "عامل",
+                "example": "He is a hard worker.",
+                "example_ar": "هو عامل مجتهد."
+            },
+            {
+                "word": "Student",
+                "arTranslation": "طالب",
+                "example": "She is a good student.",
+                "example_ar": "هي طالبة جيدة."
+            },
+            {
+                "word": "Doctor",
+                "arTranslation": "طبيب",
+                "example": "The doctor helps people.",
+                "example_ar": "الطبيب يساعد الناس."
+            },
+            {
+                "word": "Engineer",
+                "arTranslation": "مهندس",
+                "example": "My brother is an engineer.",
+                "example_ar": "أخي مهندس."
+            },
+            {
+                "word": "Manager",
+                "arTranslation": "مدير",
+                "example": "The manager is very busy.",
+                "example_ar": "المدير مشغول جدا."
+            },
+            {
+                "word": "Businessman",
+                "arTranslation": "رجل أعمال",
+                "example": "The businessman travels a lot.",
+                "example_ar": "رجل الأعمال يسافر كثيرا."
+            },
+            {
+                "word": "Businesswoman",
+                "arTranslation": "سيدة أعمال",
+                "example": "The businesswoman has a big company.",
+                "example_ar": "سيدة الأعمال لديها شركة كبيرة."
+            },
+            {
+                "word": "Chef",
+                "arTranslation": "طاهٍ",
+                "example": "The chef cooks delicious meals.",
+                "example_ar": "الطاهي يطبخ وجبات لذيذة."
+            },
+            {
+                "word": "Scientist",
+                "arTranslation": "عالم",
+                "example": "The scientist works in a lab.",
+                "example_ar": "العالم يعمل في المختبر."
+            },
+            {
+                "word": "Teacher",
+                "arTranslation": "معلم",
+                "example": "The teacher explains the lesson.",
+                "example_ar": "المعلم يشرح الدرس."
+            },
+            {
+                "word": "Writer",
+                "arTranslation": "كاتب",
+                "example": "She is a famous writer.",
+                "example_ar": "هي كاتبة مشهورة."
+            },
+            {
+                "word": "Actor",
+                "arTranslation": "ممثل",
+                "example": "He is a famous actor.",
+                "example_ar": "هو ممثل مشهور."
+            },
+            {
+                "word": "Director",
+                "arTranslation": "مخرج",
+                "example": "The director makes movies.",
+                "example_ar": "المخرج يصنع أفلامًا."
+            },
+            {
+                "word": "Footballer",
+                "arTranslation": "لاعب كرة قدم",
+                "example": "The footballer plays for a famous team.",
+                "example_ar": "لاعب كرة القدم يلعب لفريق مشهور."
+            },
+            {
+                "word": "Gardener",
+                "arTranslation": "بستاني",
+                "example": "The gardener takes care of the plants.",
+                "example_ar": "البستاني يعتني بالنباتات."
+            },
+            {
+                "word": "Photographer",
+                "arTranslation": "مصور",
+                "example": "The photographer takes beautiful pictures.",
+                "example_ar": "المصور يلتقط صورًا جميلة."
+            },
+            {
+                "word": "Designer",
+                "arTranslation": "مصمم",
+                "example": "She is a talented designer.",
+                "example_ar": "هي مصممة موهوبة."
+            },
+            {
+                "word": "Artist",
+                "arTranslation": "فنان",
+                "example": "The artist paints landscapes.",
+                "example_ar": "الفنان يرسم مناظر طبيعية."
+            },
+            {
+                "word": "Journalist",
+                "arTranslation": "صحفي",
+                "example": "The journalist writes articles.",
+                "example_ar": "الصحفي يكتب مقالات."
+            },
+            {
+                "word": "Farmer",
+                "arTranslation": "مزارع",
+                "example": "The farmer grows vegetables.",
+                "example_ar": "المزارع يزرع الخضروات."
+            }
+        ]
+    },
+    {
+        "category": "Verb + -er/-r",
+        "words": [
+            {
+                "word": "Writer",
+                "arTranslation": "كاتب",
+                "example": "He is a famous writer.",
+                "example_ar": "هو كاتب مشهور."
+            },
+            {
+                "word": "Painter",
+                "arTranslation": "رسام",
+                "example": "The painter creates beautiful art.",
+                "example_ar": "الرسام يبدع فنًا جميلاً."
+            },
+            {
+                "word": "Manager",
+                "arTranslation": "مدير",
+                "example": "The manager works in an office.",
+                "example_ar": "المدير يعمل في مكتب."
+            },
+            {
+                "word": "Player",
+                "arTranslation": "لاعب",
+                "example": "He is a football player.",
+                "example_ar": "هو لاعب كرة قدم."
+            },
+            {
+                "word": "Presenter",
+                "arTranslation": "مقدم برامج",
+                "example": "The presenter talks on TV.",
+                "example_ar": "المقدم يتحدث في التلفاز."
+            },
+            {
+                "word": "Teacher",
+                "arTranslation": "معلم",
+                "example": "The teacher explains the lesson.",
+                "example_ar": "المعلم يشرح الدرس."
+            },
+            {
+                "word": "Actor",
+                "arTranslation": "ممثل",
+                "example": "He is a famous actor.",
+                "example_ar": "هو ممثل مشهور."
+            },
+            {
+                "word": "Director",
+                "arTranslation": "مخرج",
+                "example": "The director makes movies.",
+                "example_ar": "المخرج يصنع أفلامًا."
+            },
+            {
+                "word": "Footballer",
+                "arTranslation": "لاعب كرة قدم",
+                "example": "The footballer plays for a famous team.",
+                "example_ar": "لاعب كرة القدم يلعب لفريق مشهور."
+            },
+            {
+                "word": "Gardener",
+                "arTranslation": "بستاني",
+                "example": "The gardener takes care of the plants.",
+                "example_ar": "البستاني يعتني بالنباتات."
+            },
+            {
+                "word": "Photographer",
+                "arTranslation": "مصور",
+                "example": "The photographer takes beautiful pictures.",
+                "example_ar": "المصور يلتقط صورًا جميلة."
+            },
+            {
+                "word": "Designer",
+                "arTranslation": "مصمم",
+                "example": "She is a talented designer.",
+                "example_ar": "هي مصممة موهوبة."
+            },
+            {
+                "word": "Engineer",
+                "arTranslation": "مهندس",
+                "example": "The engineer designs new machines.",
+                "example_ar": "المهندس يصمم آلات جديدة."
+            },
+            {
+                "word": "Driver",
+                "arTranslation": "سائق",
+                "example": "The driver is very careful.",
+                "example_ar": "السائق حذر جدًا."
+            },
+            {
+                "word": "Artist",
+                "arTranslation": "فنان",
+                "example": "The artist paints landscapes.",
+                "example_ar": "الفنان يرسم مناظر طبيعية."
+            }
+        ]
+    },
+    {
+        "category": "Activity",
+        "words": [
+            {
+                "word": "Play computer games",
+                "arTranslation": "يلعب ألعاب الكمبيوتر",
+                "example": "He likes to play computer games after school.",
+                "example_ar": "يحب أن يلعب ألعاب الكمبيوتر بعد المدرسة."
+            },
+            {
+                "word": "Exercise",
+                "arTranslation": "يتمرن",
+                "example": "I exercise every morning.",
+                "example_ar": "أتمرن كل صباح."
+            },
+            {
+                "word": "Sleep",
+                "arTranslation": "ينام",
+                "example": "She sleeps for eight hours every night.",
+                "example_ar": "هي تنام لمدة ثماني ساعات كل ليلة."
+            },
+            {
+                "word": "Watch TV",
+                "arTranslation": "يشاهد التلفاز",
+                "example": "They watch TV after dinner.",
+                "example_ar": "هم يشاهدون التلفاز بعد العشاء."
+            },
+            {
+                "word": "Go online",
+                "arTranslation": "يتصفح الإنترنت",
+                "example": "I go online to shop.",
+                "example_ar": "أتسوق عبر الإنترنت."
+            },
+            {
+                "word": "Do homework",
+                "arTranslation": "يحل الواجبات",
+                "example": "She does her homework every evening.",
+                "example_ar": "هي تحل واجباتها كل مساء."
+            },
+            {
+                "word": "Go to the cinema",
+                "arTranslation": "يذهب إلى السينما",
+                "example": "نحن نذهب إلى السينما في عطلة نهاية الأسبوع.",
+                "example_ar": "We go to the cinema on weekends."
+            },
+            {
+                "word": "Play sports",
+                "arTranslation": "يمارس الرياضة",
+                "example": "أحب ممارسة الرياضة.",
+                "example_ar": "I love playing sports."
+            },
+            {
+                "word": "Text",
+                "arTranslation": "يرسل رسالة نصية",
+                "example": "He texts his friend every day.",
+                "example_ar": "يرسل رسالة نصية إلى صديقه كل يوم."
+            },
+            {
+                "word": "Go to the gym",
+                "arTranslation": "يذهب إلى صالة الألعاب الرياضية",
+                "example": "They go to the gym in the morning.",
+                "example_ar": "هم يذهبون إلى صالة الألعاب الرياضية في الصباح."
+            },
+            {
+                "word": "Eat at home",
+                "arTranslation": "يأكل في المنزل",
+                "example": "We usually eat at home.",
+                "example_ar": "نحن عادة نأكل في المنزل."
+            },
+            {
+                "word": "Have a class",
+                "arTranslation": "يحضر حصة دراسية",
+                "example": "She has a class at 10 a.m.",
+                "example_ar": "هي تحضر حصة دراسية في الساعة العاشرة صباحًا."
+            },
+            {
+                "word": "Have coffee",
+                "arTranslation": "يشرب القهوة",
+                "example": "He has coffee with friends.",
+                "example_ar": "هو يشرب القهوة مع الأصدقاء."
+            },
+            {
+                "word": "Have breakfast",
+                "arTranslation": "يتناول الإفطار",
+                "example_ar": "أنا أفطر كل يوم.",
+                "example": "I have breakfast everyday"
+            },
+            {
+                "word": "Have lunch",
+                "arTranslation": "يتناول الغداء",
+                "example_ar": "أتغدى كل يوم.",
+                "example": "I have lunch everyday"
+            },
+            {
+                "word": "Have dinner",
+                "arTranslation": "يتناول العشاء",
+                "example_ar": "أتعشى كل يوم.",
+                "example": "I have dinner everyday"
+            },
+            {
+                "word": "Cook food for your family",
+                "arTranslation": "يطبخ الطعام لعائلتك",
+                "example_ar": "أنا أطبخ الطعام لعائلتي.",
+                "example": "I cook food for my family."
+            },
+            {
+                "word": "Eat out at restaurants",
+                "arTranslation": "يأكل في المطاعم",
+                "example_ar": "نحن نأكل في المطاعم كل عطلة نهاية الأسبوع.",
+                "example": "We eat out at restaurants every weekend."
+            },
+            {
+                "word": "Relax with friends",
+                "arTranslation": "يستريح مع الأصدقاء",
+                "example_ar": "أحب الاسترخاء مع الأصدقاء.",
+                "example": "I love relaxing with friends."
+            },
+            {
+                "word": "Study in the library",
+                "arTranslation": "يدرس في المكتبة",
+                "example_ar": "يجب علي الدراسة في المكتبة.",
+                "example": "I have to study in the library."
+            },
+            {
+                "word": "Make dinner",
+                "arTranslation": "يعد العشاء",
+                "example_ar": "أنا أعد العشاء الآن.",
+                "example": "I am making dinner now."
+            },
+            {
+                "word": "Make lunch",
+                "arTranslation": "يعد الغداء",
+                "example_ar": "أنا أعد الغداء.",
+                "example": "I am making lunch."
+            },
+            {
+                "word": "Make breakfast",
+                "arTranslation": "يعد الإفطار",
+                "example_ar": "سأعد الإفطار غدًا.",
+                "example": "I will make breakfast tomorrow."
+            },
+            {
+                "word": "Unusual",
+                "arTranslation": "غير عادي",
+                "example_ar": "هذا أمر غير عادي.",
+                "example": "This is unusual."
+            },
+            {
+                "word": "Work",
+                "arTranslation": "عمل",
+                "example_ar": "يعمل في شركة كبيرة.",
+                "example": "He works at a big company."
+            },
+            {
+                "word": "Interested in",
+                "arTranslation": "مهتم بـ",
+                "example_ar": "أنا مهتم بالكتب.",
+                "example": "I am interested in books."
+            },
+            {
+                "word": "Music",
+                "arTranslation": "موسيقى",
+                "example_ar": "لا أحب الاستماع إلى الموسيقى.",
+                "example": "I don't love listening to music."
+            },
+            {
+                "word": "Watch",
+                "arTranslation": "يشاهد",
+                "example_ar": "شاهدت فيلمًا رائعًا.",
+                "example": "I watched a great movie."
+            },
+            {
+                "word": "Get up",
+                "arTranslation": "يستيقظ",
+                "example_ar": "أنا أستيقظ مبكرًا.",
+                "example": "I get up early."
+            },
+            {
+                "word": "Cook",
+                "arTranslation": "يطبخ",
+                "example_ar": "أحب الطبخ.",
+                "example": "I love to cook."
+            },
+            {
+                "word": "Breakfast",
+                "arTranslation": "إفطار",
+                "example_ar": "الإفطار هو أهم وجبة.",
+                "example": "Breakfast is the most important meal."
+            },
+            {
+                "word": "Lunch",
+                "arTranslation": "غداء",
+                "example_ar": "تناول الغداء مع الأصدقاء.",
+                "example": "Have lunch with friends."
+            },
+            {
+                "word": "Dinner",
+                "arTranslation": "عشاء",
+                "example_ar": "أحب تناول العشاء في المنزل.",
+                "example": "I love having dinner at home."
+            },
+            {
+                "word": "Travel",
+                "arTranslation": "يسافر",
+                "example_ar": "أنا أحب السفر.",
+                "example": "I love to travel."
+            },
+            {
+                "word": "Meet",
+                "arTranslation": "يلتقي",
+                "example_ar": "سألتقي بأصدقائي غدًا.",
+                "example": "I will meet my friends tomorrow."
+            },
+            {
+                "word": "Swim",
+                "arTranslation": "يسبح",
+                "example_ar": "أحب السباحة في الصيف.",
+                "example": "I love to swim in the summer."
+            },
+            {
+                "word": "Afternoon",
+                "arTranslation": "بعد الظهر",
+                "example_ar": "سأدرس بعد الظهر.",
+                "example": "I will study in the afternoon."
+            },
+            {
+                "word": "Timetable",
+                "arTranslation": "جدول زمني",
+                "example_ar": "أحتاج إلى مراجعة جدولي الزمني.",
+                "example": "I need to check my timetable."
+            },
+            {
+                "word": "Morning",
+                "arTranslation": "صباح",
+                "example_ar": "أحب صباحات هادئة.",
+                "example": "I love quiet mornings."
+            },
+            {
+                "word": "Relax",
+                "arTranslation": "يستريح",
+                "example_ar": "أحتاج إلى الاستراحة.",
+                "example": "I need to relax."
+            },
+            {
+                "word": "Evening",
+                "arTranslation": "مساء",
+                "example_ar": "أحب الأمسيات الجميلة.",
+                "example": "I love beautiful evenings."
+            },
+            {
+                "word": "Weekdays",
+                "arTranslation": "أيام الأسبوع",
+                "example_ar": "أعمل في أيام الأسبوع.",
+                "example": "I work on weekdays."
+            },
+            {
+                "word": "Weekend",
+                "arTranslation": "عطلة نهاية الأسبوع",
+                "example_ar": "أحب عطلة نهاية الأسبوع.",
+                "example": "I love the weekend."
+            },
+            {
+                "word": "Difficult",
+                "arTranslation": "صعب",
+                "example": "This is difficult.",
+                "example_ar": "هذا صعب"
+            }
+        ]
+    },
+    {
+        "category": "Places & Locations",
+        "words": [
+            {
+                "word": "Library",
+                "arTranslation": "مكتبة",
+                "example": "She studies at the library every day.",
+                "example_ar": "هي تدرس في المكتبة كل يوم."
+            },
+            {
+                "word": "Bank",
+                "arTranslation": "بنك",
+                "example": "I need to go to the bank.",
+                "example_ar": "أحتاج إلى الذهاب إلى البنك."
+            },
+            {
+                "word": "Hospital",
+                "arTranslation": "مستشفى",
+                "example": "He works at the hospital.",
+                "example_ar": "هو يعمل في المستشفى."
+            },
+            {
+                "word": "Park",
+                "arTranslation": "حديقة",
+                "example": "They walk in the park every evening.",
+                "example_ar": "هم يمشون في الحديقة كل مساء."
+            },
+            {
+                "word": "University",
+                "arTranslation": "جامعة",
+                "example": "She studies at the university.",
+                "example_ar": "هي تدرس في الجامعة."
+            },
+            {
+                "word": "Museum",
+                "arTranslation": "متحف",
+                "example": "We visited the museum last week.",
+                "example_ar": "زرنا المتحف الأسبوع الماضي."
+            },
+            {
+                "word": "Train station",
+                "arTranslation": "محطة القطار",
+                "example": "I am waiting at the train station.",
+                "example_ar": "أنا أنتظر في محطة القطار."
+            },
+            {
+                "word": "Cinema",
+                "arTranslation": "سينما",
+                "example": "We are going to the cinema tonight.",
+                "example_ar": "نحن ذاهبون إلى السينما الليلة."
+            },
+            {
+                "word": "Supermarket",
+                "arTranslation": "سوبر ماركت",
+                "example": "I buy groceries from the supermarket.",
+                "example_ar": "أشتري البقالة من السوبر ماركت."
+            },
+            {
+                "word": "Department store",
+                "arTranslation": "متجر متعدد الأقسام",
+                "example": "They are shopping at the department store.",
+                "example_ar": "هم يتسوقون في المتجر متعدد الأقسام."
+            },
+            {
+                "word": "Building",
+                "arTranslation": "بناية",
+                "example": "هذه البناية جميلة.",
+                "example_ar": "This building is beautiful."
+            },
+            {
+                "word": "Directions",
+                "arTranslation": "اتجاهات",
+                "example": "أحتاج إلى الاتجاهات إلى المكتبة.",
+                "example_ar": "I need directions to the library."
+            },
+            {
+                "word": "Location",
+                "arTranslation": "موقع",
+                "example": "الموقع رائع.",
+                "example_ar": "The location is great."
+            },
+            {
+                "word": "Map",
+                "arTranslation": "خريطة",
+                "example": "استخدم الخريطة للعثور على الطريق.",
+                "example_ar": "Use the map to find the way."
+            },
+            {
+                "word": "Safe",
+                "arTranslation": "آمن",
+                "example": "هذه المنطقة آمنة.",
+                "example_ar": "This area is safe."
+            },
+            {
+                "word": "Bridge",
+                "arTranslation": "جسر",
+                "example": "الجسر يمتد فوق النهر.",
+                "example_ar": "The bridge spans over the river."
+            },
+            {
+                "word": "Factory",
+                "arTranslation": "مصنع",
+                "example": "يعملون في المصنع.",
+                "example_ar": "They work at the factory."
+            },
+            {
+                "word": "Library",
+                "arTranslation": "مكتبة",
+                "example": "أحب قراءة الكتب في المكتبة.",
+                "example_ar": "I love reading books at the library."
+            },
+            {
+                "word": "Food court",
+                "arTranslation": "ساحة الطعام",
+                "example": "يوجد العديد من المطاعم في ساحة الطعام.",
+                "example_ar": "There are many restaurants in the food court."
+            },
+            {
+                "word": "Shopping centre",
+                "arTranslation": "مركز التسوق",
+                "example": "ذهبنا إلى مركز التسوق لشراء الملابس.",
+                "example_ar": "We went to the shopping centre to buy clothes."
+            },
+            {
+                "word": "Car park",
+                "arTranslation": "موقف سيارات",
+                "example": "أين موقف السيارات؟",
+                "example_ar": "Where is the car park?"
+            },
+            {
+                "word": "Playground",
+                "arTranslation": "ملعب",
+                "example": "الأطفال يلعبون في الملعب.",
+                "example_ar": "The kids are playing in the playground."
+            },
+            {
+                "word": "Toilets",
+                "arTranslation": "مراحيض",
+                "example": "المراحيض في الطابق الأول.",
+                "example_ar": "The toilets are on the first floor."
+            },
+            {
+                "word": "Campus",
+                "arTranslation": "حرم الجامعة",
+                "example": "الحرم الجامعي جميل.",
+                "example_ar": "The campus is beautiful."
+            },
+            {
+                "word": "Capital",
+                "arTranslation": "عاصمة",
+                "example": "عاصمة البلاد هي مدينة كبيرة.",
+                "example_ar": "The capital of the country is a big city."
+            },
+            {
+                "word": "Modern",
+                "arTranslation": "حديث",
+                "example": "التصميم حديث جدًا.",
+                "example_ar": "The design is very modern."
+            },
+            {
+                "word": "International",
+                "arTranslation": "دولي",
+                "example": "تدير الشركة عمليات دولية.",
+                "example_ar": "The company manages international operations."
+            },
+            {
+                "word": "Popular",
+                "arTranslation": "شائع",
+                "example": "هذا المكان شائع بين السياح.",
+                "example_ar": "This place is popular among tourists."
+            }
+        ]
+    },
+    {
+        "category": "Nature & Geography",
+        "words": [
+            {
+                "word": "Lake",
+                "arTranslation": "بحيرة",
+                "example": "We swam in the lake.",
+                "example_ar": "سبحنا في البحيرة."
+            },
+            {
+                "word": "Mountain",
+                "arTranslation": "جبل",
+                "example": "He climbed the mountain last summer.",
+                "example_ar": "هو تسلق الجبل الصيف الماضي."
+            },
+            {
+                "word": "River",
+                "arTranslation": "نهر",
+                "example": "The river flows through the town.",
+                "example_ar": "النهر يتدفق عبر المدينة."
+            },
+            {
+                "word": "Ocean",
+                "arTranslation": "محيط",
+                "example": "The ocean is very deep.",
+                "example_ar": "المحيط عميق جدًا."
+            },
+            {
+                "word": "Beach",
+                "arTranslation": "شاطئ",
+                "example": "We went to the beach yesterday.",
+                "example_ar": "ذهبنا إلى الشاطئ أمس."
+            },
+            {
+                "word": "Island",
+                "arTranslation": "جزيرة",
+                "example": "The island is beautiful.",
+                "example_ar": "الجزيرة جميلة."
+            },
+            {
+                "word": "Forest",
+                "arTranslation": "غابة",
+                "example": "We walked through the forest.",
+                "example_ar": "مَشَيْنا عبر الغابة."
+            },
+            {
+                "word": "Sea",
+                "arTranslation": "بحر",
+                "example": "The sea was calm today.",
+                "example_ar": "كان البحر هادئًا اليوم."
+            }
+        ]
+    }
+]

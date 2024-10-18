@@ -43,7 +43,17 @@ const resources: ResourceItem[] = [
     link: "/resources/kau/english/elis110/progress-quiz",
     type: 'midterm',
     year:'2023-2024'
-  }
+  },
+  {
+    title: "Mid Term Grammar Revision",
+    description: "مراجعة قواعد الاختبار النصفي",
+    imageUrl: "https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016.png",
+    imageAlt: "مراجعة قواعد الاختبار النصفي",
+    link: "https://www.youtube.com/watch?v=Y6PQ655-Gxk",
+    isExternal: true,
+    type: 'midterm',
+    year:'OCT 2024'
+  },
 ];
 
 export default function ELIS110() {
