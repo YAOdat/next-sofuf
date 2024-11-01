@@ -50,7 +50,6 @@ export default function Home() {
           </Snippet>
         </div>
       </section>
-    <p> AD:</p>
       <AdComponent /> {/* Integrate AdComponent here */}
     </>
   );

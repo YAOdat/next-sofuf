@@ -60,13 +60,6 @@ export default function RootLayout({
 						`,
 					}}
 				/>
-
-				{/* HilltopAds Script */}
-				<script
-					async
-					src="https://lovingassociate.com/b/3UVi0JP.3/pxv/bOmXV/JbZODA0/1sN/jUYXzKNyzBAZyKLET/Uu2zNkjHMZ3YMWDIMJ"
-					crossOrigin="anonymous"
-				></script>
 			</head>
 			<body
 				className={clsx(
