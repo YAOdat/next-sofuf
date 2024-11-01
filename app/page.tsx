@@ -7,7 +7,7 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { MdBusinessCenter } from "react-icons/md";
-import AdComponent from "@/components/AdComponent"; // Import AdComponent
+import AdComponent from "@/components/AdComponent"; 
 
 export default function Home() {
   return (
@@ -50,7 +50,7 @@ export default function Home() {
           </Snippet>
         </div>
       </section>
-      <AdComponent /> {/* Integrate AdComponent here */}
+      <AdComponent /> 
     </>
   );
 }

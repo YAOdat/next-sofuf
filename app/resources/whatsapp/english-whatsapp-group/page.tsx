@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
+import AdComponent from "@/components/AdComponent";
 
 const englishGroups = [
   { name: 'English Group 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English' },
@@ -114,7 +115,6 @@ export default function WhatsApp() {
                 width={300}
                 loading="lazy"
               />
-
             </div>
 
             <div className="max-w-full md:max-w-2xl mx-auto">
@@ -148,7 +148,6 @@ export default function WhatsApp() {
       </Card>
 
       <Spacer y={1} />
-
       <CommentSection postID={"whatsapp-group"} />
     </div>
   );

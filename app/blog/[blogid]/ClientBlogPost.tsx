@@ -5,6 +5,7 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 import { Image, Spinner } from "@nextui-org/react";
 import React from 'react';
+import AdComponent from '@/components/AdComponent';
 
 interface PostDetails {
   title: string;
@@ -54,6 +55,8 @@ const ClientBlogPost = ({ params }: { params: { blogid: string } }) => {
       <a href={`${params.blogid}`}>
         <Image src={postDetails.contentImage} alt={postDetails.title} />
       </a>
+      <br/>
+      <AdComponent />
     </div>
   );
 };

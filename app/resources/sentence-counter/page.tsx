@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chip, Spacer, Spinner } from "@nextui-org/react";
 import dynamic from 'next/dynamic';
+import AdComponent  from '@/components/AdComponent';
 
 // Dynamically import the Editor component with SSR disabled
 const DynamicEditor = dynamic(
@@ -36,8 +37,6 @@ const SentenceCounter: React.FC = () => {
 
     return (
         <div className="lg:w-[35rem] w-full">
-
-
             <h1 className="font-bold text-3xl">Text Analyzer</h1>
             <Spacer y={2} />
             <DynamicEditor value={sentence} onChange={setSentence} />
@@ -45,6 +44,9 @@ const SentenceCounter: React.FC = () => {
             <Chip size='md' variant="flat">Number of sentences: {count}</Chip>
             <Spacer y={1} />
             <Chip variant="flat">Number of words: {wordCount}</Chip>
+            <Spacer y={2} />
+            <AdComponent />
+            
         </div>
     );
 };
