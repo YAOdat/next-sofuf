@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const AdComponent: React.FC = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://lovingassociate.com/bA3qVp0/P.3Rpfv/b/mcV/JgZADK0_1JN-jNAp3/Npz/gMy/LuTSUp2xM/DHcx3gOhDuMT';
+    script.src = 'https://lovingassociate.com/b-3.Vv0/Pp3ppyvjbXmvVeJIZgDX0B1lNZz/A/xhM/TQQw2SL-TOUA3FMCDWEUxtNTDZck';
     script.async = true;
     document.body.appendChild(script);
 
