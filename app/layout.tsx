@@ -36,12 +36,14 @@ export default function RootLayout({
 			<head>
 				<meta name="2d5c652bc6a334b927c4ad98677b376d50b4bc83" content="2d5c652bc6a334b927c4ad98677b376d50b4bc83" />
 
+				{/* Google Ads */}
 				<script
 					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9356653471120890"
 					crossOrigin="anonymous"
 				></script>
 
+				{/* Google Analytics */}
 				<script
 					async
 					src={`https://www.googletagmanager.com/gtag/js?id=G-FJ4P5C4K33`}
@@ -49,15 +51,22 @@ export default function RootLayout({
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                window.dataLayer.push(arguments);
-              }
-              gtag('js', new Date());
-              gtag('config', 'G-FJ4P5C4K33');
-            `,
+							window.dataLayer = window.dataLayer || [];
+							function gtag() {
+								window.dataLayer.push(arguments);
+							}
+							gtag('js', new Date());
+							gtag('config', 'G-FJ4P5C4K33');
+						`,
 					}}
 				/>
+
+				{/* HilltopAds Script */}
+				<script
+					async
+					src="https://lovingassociate.com/b/3UVi0JP.3/pxv/bOmXV/JbZODA0/1sN/jUYXzKNyzBAZyKLET/Uu2zNkjHMZ3YMWDIMJ"
+					crossOrigin="anonymous"
+				></script>
 			</head>
 			<body
 				className={clsx(

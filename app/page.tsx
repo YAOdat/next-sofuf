@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { MdBusinessCenter } from "react-icons/md";
 import AdComponent from "@/components/AdComponent";
+import NewAd from "@/components/NewAd";
 
 export default function Home() {
   return (
@@ -58,6 +59,11 @@ export default function Home() {
         </p>
         <AdComponent />
       </section>
+      <NewAd
+      adUrl="https://lovingassociate.com/b/3UVi0JP.3/pxv/bOmXV/JbZODA0/1sN/jUYXzKNyzBAZyKLET/Uu2zNkjHMZ3YMWDIMJ"
+      height="250px"
+      width="300px"
+    />
     </>
   );
 }
