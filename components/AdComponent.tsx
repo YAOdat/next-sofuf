@@ -1,23 +1,35 @@
-'use client'
-import React, { useEffect } from "react";
+import { useEffect } from 'react';
 
-export default function AdComponent() {
+const AdComponent: React.FC = () => {
   useEffect(() => {
-    const adContainer = document.getElementById("ad-container");
-    const script = document.createElement("script");
-    script.src = "https://lovingassociate.com/b/3UVi0JP.3/pxv/bOmXV/JbZODA0/1sN/jUYXzKNyzBAZyKLET/Uu2zNkjHMZ3YMWDIMJ";
+    const script = document.createElement('script');
+    script.src = 'https://lovingassociate.com/bA3qVp0/P.3Rpfv/b/mcV/JgZADK0_1JN-jNAp3/Npz/gMy/LuTSUp2xM/DHcx3gOhDuMT';
     script.async = true;
-    script.crossOrigin = "anonymous";
-    if (adContainer) {
-      adContainer.appendChild(script);
-    }
+    document.body.appendChild(script);
 
     return () => {
-      if (adContainer) {
-        adContainer.removeChild(script);
-      }
+      document.body.removeChild(script);
     };
   }, []);
 
-  return <div id="ad-container" className="my-4"></div>;
-}
+  return (
+    <div>
+      <h3>Sponsored Ad</h3>
+      <p>Check out our latest offers!</p>
+      {/* Placeholder for the ad script */}
+      <div id="ad-script-placeholder" />
+    </div>
+  );
+};
+
+const adCardStyle = {
+  border: '1px solid #ccc',
+  padding: '16px',
+  borderRadius: '8px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  textAlign: 'center',
+  maxWidth: '300px',
+  margin: '0 auto',
+};
+
+export default AdComponent;

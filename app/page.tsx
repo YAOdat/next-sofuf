@@ -7,8 +7,7 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { MdBusinessCenter } from "react-icons/md";
-import AdComponent from "@/components/AdComponent";
-import NewAd from "@/components/NewAd";
+import AdComponent from "@/components/AdComponent"; // Import AdComponent
 
 export default function Home() {
   return (
@@ -51,19 +50,8 @@ export default function Home() {
           </Snippet>
         </div>
       </section>
-
-      <section className="flex flex-col items-center justify-center gap-4 py-6 bg-gray-100 border-t w-full max-w-5xl mx-auto" aria-label="Sponsored Advertisement">
-        <h3 className={title({ color: "violet" })}>Sponsored Ad</h3>
-        <p className="text-center text-sm text-gray-600 mb-4">
-          Support us by checking out this sponsored content.
-        </p>
-        <AdComponent />
-      </section>
-      <NewAd
-      adUrl="https://lovingassociate.com/b/3UVi0JP.3/pxv/bOmXV/JbZODA0/1sN/jUYXzKNyzBAZyKLET/Uu2zNkjHMZ3YMWDIMJ"
-      height="250px"
-      width="300px"
-    />
+    <p> AD:</p>
+      <AdComponent /> {/* Integrate AdComponent here */}
     </>
   );
 }
