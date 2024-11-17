@@ -14,15 +14,26 @@ const courses = [
     code: "ELIS 110",
     title: "إنجليزي علمي 1",
     description: "مصادر تعليمية لمنهاج اللغة الإنجليزية المستوى الأول علمي",
-    link: "/resources/kau/english/elis110"
+    link: "/resources/kau/english/elis110",
+    image: "/elis.png"
   },
   {
     code: "ELIS 120",
     title: "إنجليزي علمي 2",
     description: "مصادر تعليمية لمنهاج اللغة الإنجليزية المستوى الثاني علمي",
-    link: "/resources/kau/english/elis120"
+    link: "/resources/kau/english/elis120",
+    image: "/elis.png"
+  },
+  {
+    code: "ELIB 201",
+    title: "اللغة الإنجليزية المتقدمة 1 - إدارة الأعمال",
+    description: "مصادر تعليمية لمنهاج اللغة الإنجليزية   ELIB 201 - إدارة الأعمال",
+    link: "/resources/kau/english/elib201",
+    image: "https://fea.kau.edu.sa/images/120/images/fealogo.png"
   }
+  
 ];
+
 
 const EnglishResources = () => {
   return (
@@ -50,7 +61,7 @@ const EnglishResources = () => {
                 <Image
                   alt={`${course.code} Course Image`}
                   className="object-cover rounded-xl mb-4"
-                  src="/elis.png"
+                  src={course.image}
                   width={270}
                   height={200}
                 />
