@@ -1,63 +1,387 @@
 {
-    "title": "ELIB 201 - Past Final Exam",
-    "titleArabic": "اختبار نهائي سابق",
-    "sections": [
-      {
-        "id": 1,
-        "title": "Questions 1-5: Choose the correct answer from (A-C) to complete the following sentences.",
-        "paragraph": "In the dynamic world of start-ups, securing enough [1] is often a crucial step for founders aiming to set up and grow their businesses. Typically, an aspiring entrepreneur will [2] their business idea to potential investors, including business [3]. The goal of these presentations is to showcase a solid [4] plan and a clear [5] market that promises substantial profit.",
-        "questions": [
-          {
-            "id": 1,
-            "gapId": "[1]",
-            "options": [
-              { "value": "A", "label": "financial" },
-              { "value": "B", "label": "funding" },
-              { "value": "C", "label": "back-up" }
-            ],
-            "correctAnswer": "B"
-          },
-          {
-            "id": 2,
-            "gapId": "[2]",
-            "options": [
-              { "value": "A", "label": "pitch" },
-              { "value": "B", "label": "recommend" },
-              { "value": "C", "label": "hand" }
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "id": 3,
-            "gapId": "[3]",
-            "options": [
-              { "value": "A", "label": "founders" },
-              { "value": "B", "label": "promoters" },
-              { "value": "C", "label": "angels" }
-            ],
-            "correctAnswer": "C"
-          },
-          {
-            "id": 4,
-            "gapId": "[4]",
-            "options": [
-              { "value": "A", "label": "financial" },
-              { "value": "B", "label": "currency" },
-              { "value": "C", "label": "economy" }
-            ],
-            "correctAnswer": "A"
-          },
-          {
-            "id": 5,
-            "gapId": "[5]",
-            "options": [
-              { "value": "A", "label": "goal" },
-              { "value": "B", "label": "objective" },
-              { "value": "C", "label": "target" }
-            ],
-            "correctAnswer": "C"
-          }
-        ]
-      }
-    ]
-  }
+  "title": "ELIB 201 - Past Final Exam",
+  "titleArabic": "اختبار نهائي سابق",
+  "sections": [
+    {
+      "id": 1,
+      "type": "paragraph-gap",
+      "title": "Questions 1-5: Choose the correct answer from (A-C) to complete the following sentences.",
+      "paragraph": "In the dynamic world of start-ups, securing enough [1] is often a crucial step for founders aiming to set up and grow their businesses. Typically, an aspiring entrepreneur will [2] their business idea to potential investors, including business [3]. The goal of these presentations is to showcase a solid [4] plan and a clear [5] market that promises substantial profit.",
+      "questions": [
+        {
+          "id": 1,
+          "gapId": "[1]",
+          "type": "paragraph-gap",
+          "options": [
+            { "value": "A", "label": "financial" },
+            { "value": "B", "label": "funding" },
+            { "value": "C", "label": "back-up" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 2,
+          "gapId": "[2]",
+          "type": "paragraph-gap",
+          "options": [
+            { "value": "A", "label": "pitch" },
+            { "value": "B", "label": "recommend" },
+            { "value": "C", "label": "hand" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 3,
+          "gapId": "[3]",
+          "type": "paragraph-gap",
+          "options": [
+            { "value": "A", "label": "founders" },
+            { "value": "B", "label": "promoters" },
+            { "value": "C", "label": "angels" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 4,
+          "gapId": "[4]",
+          "type": "paragraph-gap",
+          "options": [
+            { "value": "A", "label": "financial" },
+            { "value": "B", "label": "currency" },
+            { "value": "C", "label": "economy" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 5,
+          "gapId": "[5]",
+          "type": "paragraph-gap",
+          "options": [
+            { "value": "A", "label": "goal" },
+            { "value": "B", "label": "objective" },
+            { "value": "C", "label": "target" }
+          ],
+          "correctAnswer": "C"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "title": "Questions 6-12: Complete the sentences by choosing the correct answer (A-C).",
+      "questions": [
+        {
+          "id": 6,
+          "text": "Not showing respect to people in authority is considered ____ in my country.",
+          "type": "multiple-choice",
+          "options": [
+            { "value": "A", "label": "impossible" },
+            { "value": "B", "label": "impolite" },
+            { "value": "C", "label": "impatient" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "text": "There is booming demand for housing units and other structures which makes real estate a very ____ business in the kingdom nowadays.",
+          "options": [
+            { "value": "A", "label": "risky" },
+            { "value": "B", "label": "informative" },
+            { "value": "C", "label": "profitable" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "text": "As a leader of her team, Leena had to make key ____ about the organization of her office.",
+          "options": [
+            { "value": "A", "label": "nuances" },
+            { "value": "B", "label": "decisions" },
+            { "value": "C", "label": "directions" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "text": "Some multinational companies require the applicant to be ____ in two or more languages to be able to deal with international customers.",
+          "options": [
+            { "value": "A", "label": "fluent" },
+            { "value": "B", "label": "friendly" },
+            { "value": "C", "label": "understanding" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "text": "As the business conference approached, the CEO realized she needed to ____ tasks to her team to divide the workload.",
+          "options": [
+            { "value": "A", "label": "delegate" },
+            { "value": "B", "label": "manage" },
+            { "value": "C", "label": "prioritize" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 11,
+          "type": "multiple-choice",
+          "text": "The _____ standards largely decide the costs of the manufacturing process and the performance of the manufacturing plant.",
+          "options": [
+            { "value": "A", "label": "recruitment" },
+            { "value": "B", "label": "brand image" },
+            { "value": "C", "label": "quality control" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 12,
+          "type": "multiple-choice",
+          "text": "My job _____ planning and arranging training programmes for the staff as well as recruiting new employees.",
+          "options": [
+            { "value": "A", "label": "leads" },
+            { "value": "B", "label": "involves" },
+            { "value": "C", "label": "appoints" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 13,
+          "type": "multiple-choice",
+          "text": "The new customised software takes orders, processes them to production, and does the _____ .",
+          "options": [
+            { "value": "A", "label": "marketing" },
+            { "value": "B", "label": "invoicing" },
+            { "value": "C", "label": "health and safety" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 14,
+          "type": "multiple-choice",
+          "text": "Employees should avoid using _____ expressions during job interviews.",
+          "options": [
+            { "value": "A", "label": "clichéd" },
+            { "value": "B", "label": "stressful" },
+            { "value": "C", "label": "skillful" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 15,
+          "type": "multiple-choice",
+          "text": "The continuous offering of too many discounts and deals may _____ your products.",
+          "options": [
+            { "value": "A", "label": "decrease" },
+            { "value": "B", "label": "devalue" },
+            { "value": "C", "label": "decline" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 16,
+          "type": "multiple-choice",
+          "text": "The _____ management structure used by McDonald’s restaurants allows for more flexibility and local decision-making, which is important for a business that operates in many different countries and cultures.",
+          "options": [
+            { "value": "A", "label": "centralized" },
+            { "value": "B", "label": "decentralized" },
+            { "value": "C", "label": "informal" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 17,
+          "type": "multiple-choice",
+          "text": "For companies to survive in the e-commerce market, they have to develop _____ to adapt to growth.",
+          "options": [
+            { "value": "A", "label": "strategies" },
+            { "value": "B", "label": "growth" },
+            { "value": "C", "label": "competition" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 18,
+          "type": "multiple-choice",
+          "text": "Email marketing, polls, surveys, and giveaways are all forms of _____ .",
+          "options": [
+            { "value": "A", "label": "brand awareness" },
+            { "value": "B", "label": "interactive marketing" },
+            { "value": "C", "label": "base of clients" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 19,
+          "type": "multiple-choice",
+          "text": "\"Thank you everyone for coming today! We have to end the meeting earlier than planned. ____\"",
+          "options": [
+            { "value": "A", "label": "Let's go and meet the rest of the team." },
+            { "value": "B", "label": "Lovely to see you again." },
+            { "value": "C", "label": "Sorry to be in a rush like this." }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 20,
+          "type": "multiple-choice",
+          "text": "Interviewer: \"Thank you for coming today, Ahmad. Could you tell me how you would add _____ to our company? Why are you the right person for this job?\"",
+          "options": [
+            { "value": "A", "label": "profit" },
+            { "value": "B", "label": "value" },
+            { "value": "C", "label": "funds" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 21,
+          "type": "multiple-choice",
+          "text": "\"There are a few important points that I would like to _____ here before we proceed.\"",
+          "options": [
+            { "value": "A", "label": "make" },
+            { "value": "B", "label": "feel" },
+            { "value": "C", "label": "said" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 22,
+          "type": "multiple-choice",
+          "text": "\"So, I'll _____ there. It was a pleasure having you as my audience and hopefully we'll meet again soon.\"",
+          "options": [
+            { "value": "A", "label": "start" },
+            { "value": "B", "label": "close" },
+            { "value": "C", "label": "begin" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 23,
+          "type": "multiple-choice",
+          "text": "I can understand your interruption is important, but can we stick to the ____ during the meeting, please?",
+          "options": [
+            { "value": "A", "label": "thinking" },
+            { "value": "B", "label": "creativity" },
+            { "value": "C", "label": "agenda" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 24,
+          "type": "multiple-choice",
+          "text": "Just to ____, do you mean that the deadline has been updated?",
+          "options": [
+            { "value": "A", "label": "bargain" },
+            { "value": "B", "label": "clarify" },
+            { "value": "C", "label": "agree" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 25,
+          "type": "multiple-choice",
+          "text": "My manager offered ____ by stating: 'Your presentation seemed to be one-sided. Next time try to discuss the pros and cons of the subject at hand.'",
+          "options": [
+            { "value": "A", "label": "positive feedback" },
+            { "value": "B", "label": "negative feedback" },
+            { "value": "C", "label": "developmental feedback" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 26,
+          "type": "multiple-choice",
+          "text": "The budget ____ approved by the management yet.",
+          "options": [
+            { "value": "A", "label": "haven't been" },
+            { "value": "B", "label": "has been" },
+            { "value": "C", "label": "hasn't been" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 27,
+          "type": "multiple-choice",
+          "text": "All the problems ____ in the meeting tomorrow.",
+          "options": [
+            { "value": "A", "label": "will discuss" },
+            { "value": "B", "label": "will be discussed" },
+            { "value": "C", "label": "has discussed" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 28,
+          "type": "multiple-choice",
+          "text": "After I ____ Sami, I knew he was not the right person for the post.",
+          "options": [
+            { "value": "A", "label": "recruite" },
+            { "value": "B", "label": "recruited" },
+            { "value": "C", "label": "had recruited" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 29,
+          "type": "multiple-choice",
+          "text": "The house, ____ was built 60 years ago, was torn down to make way for a shopping mall.",
+          "options": [
+            { "value": "A", "label": "that" },
+            { "value": "B", "label": "which" },
+            { "value": "C", "label": "where" }
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": 30,
+          "type": "multiple-choice",
+          "text": "New factory regulations state everyone ____ wear hard hats at all times inside the premises.",
+          "options": [
+            { "value": "A", "label": "should" },
+            { "value": "B", "label": "will" },
+            { "value": "C", "label": "must" }
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": 31,
+          "type": "multiple-choice",
+          "text": "It’s a good idea to take a training course. You ____ book it now.",
+          "options": [
+            { "value": "A", "label": "should" },
+            { "value": "B", "label": "may" },
+            { "value": "C", "label": "will" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 32,
+          "type": "multiple-choice",
+          "text": "2020 is ________ Covid-19 began and changed the way business is now conducted.",
+          "options": [
+            { "value": "A", "label": "when" },
+            { "value": "B", "label": "where" },
+            { "value": "C", "label": "which" }
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "id": 33,
+          "type": "multiple-choice",
+          "text": "Social media influencers have ____ started to practice a growing trend by taking breaks from social media to reset their goals and step away from the digital world.",
+          "options": [
+            { "value": "A", "label": "recently" },
+            { "value": "B", "label": "for instance" },
+            { "value": "C", "label": "first of all" }
+          ],
+          "correctAnswer": "A"
+        }
+        
+        
+      ]
+    }
+  ]
+  
+}

@@ -1,43 +1,131 @@
-'use client'
-
+'use client';
 import { useState } from 'react'
 import { Button, Card, CardBody, CardFooter, CardHeader, Radio, RadioGroup, Pagination, Spacer } from '@nextui-org/react'
-import examData from '@/public/elib201exam.json'
+import examDataJson from '@/public/elib201exam.json'
+import AdComponent from "@/components/AdComponent";
+
+// Base interface for common question properties
+interface BaseQuestion {
+    id: number;
+    options: {
+        value: string;
+        label: string;
+    }[];
+    correctAnswer: string;
+}
+
+// Interface for paragraph gap questions
+interface ParagraphGapQuestion extends BaseQuestion {
+    type: 'paragraph-gap';
+    gapId: string;
+}
+
+// Interface for multiple choice questions
+interface MultipleChoiceQuestion extends BaseQuestion {
+    type: 'multiple-choice';
+    text: string;
+}
+
+// Union type for all question types
+type Question = ParagraphGapQuestion | MultipleChoiceQuestion;
+
+// Section interfaces
+interface BaseSection {
+    id: number;
+    type: string;
+    title: string;
+}
+
+interface ParagraphGapSection extends BaseSection {
+    type: 'paragraph-gap';
+    paragraph: string;
+    questions: ParagraphGapQuestion[];
+}
+
+interface MultipleChoiceSection extends BaseSection {
+    type: 'multiple-choice';
+    questions: MultipleChoiceQuestion[];
+}
+
+type Section = ParagraphGapSection | MultipleChoiceSection;
+
+// Main exam interface
+interface Exam {
+    title: string;
+    titleArabic: string;
+    sections: Section[];
+}
+
+// Typecast the JSON to `Exam`
+const examData: Exam = examDataJson as Exam;
 
 export default function ExamPage() {
-    const [currentQuestion, setCurrentQuestion] = useState(0)
-    const [answers, setAnswers] = useState<Record<number, string>>({})
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    const [score, setScore] = useState(0)
+    const [currentSection, setCurrentSection] = useState<number>(0)
+    const [currentQuestion, setCurrentQuestion] = useState<number>(0)
+    const [answers, setAnswers] = useState<Record<string, string>>({})
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+    const [score, setScore] = useState<number>(0)
 
-    const currentSection = examData.sections[0]
-    const currentQuestionData = currentSection.questions[currentQuestion]
+    const section = examData.sections[currentSection]
+    const currentQuestionData = section.questions[currentQuestion]
+    const totalQuestions = examData.sections.reduce((acc, section) => acc + section.questions.length, 0)
 
     const handleAnswer = (value: string) => {
         setAnswers(prev => ({
             ...prev,
-            [currentQuestion]: value
+            [`${currentSection}-${currentQuestion}`]: value
         }))
     }
 
     const handlePageChange = (page: number) => {
-        setCurrentQuestion(page - 1)
+        let questionCount = 0
+        let targetSection = 0
+        let targetQuestion = 0
+
+        for (let i = 0; i < examData.sections.length; i++) {
+            const sectionQuestionCount = examData.sections[i].questions.length
+            if (questionCount + sectionQuestionCount >= page) {
+                targetSection = i
+                targetQuestion = page - questionCount - 1
+                break
+            }
+            questionCount += sectionQuestionCount
+        }
+
+        setCurrentSection(targetSection)
+        setCurrentQuestion(targetQuestion)
+    }
+
+    const getCurrentQuestionNumber = (): number => {
+        let questionNumber = currentQuestion + 1
+        for (let i = 0; i < currentSection; i++) {
+            questionNumber += examData.sections[i].questions.length
+        }
+        return questionNumber
     }
 
     const handleSubmit = () => {
-        const correctAnswers = currentSection.questions.reduce((acc, question) => {
-            if (answers[question.id - 1] === question.correctAnswer) {
-                return acc + 1
-            }
-            return acc
-        }, 0)
+        let correct = 0
+        let total = 0
 
-        setScore((correctAnswers / currentSection.questions.length) * 100)
+        examData.sections.forEach((section, sectionIndex) => {
+            section.questions.forEach((question, questionIndex) => {
+                const answer = answers[`${sectionIndex}-${questionIndex}`]
+                if (answer === question.correctAnswer) {
+                    correct++
+                }
+                total++
+            })
+        })
+
+        setScore((correct / total) * 100)
         setIsSubmitted(true)
     }
 
     const renderParagraphWithHighlight = () => {
-        const parts = currentSection.paragraph.split(/(\[\d+\])/)
+        if (section.type !== 'paragraph-gap' || !section.paragraph) return null
+
+        const parts = section.paragraph.split(/(\[\d+\])/)
         return (
             <p className="text-lg leading-relaxed">
                 {parts.map((part, index) => {
@@ -45,20 +133,21 @@ export default function ExamPage() {
                     if (gapMatch) {
                         const gapNumber = parseInt(gapMatch[1])
                         const isCurrentGap = gapNumber === currentQuestionData.id
+                        const answer = answers[`${currentSection}-${gapNumber - 1}`]
                         return (
                             <span
                                 key={index}
                                 className={`px-1 py-0.5 rounded ${
                                     isCurrentGap 
                                         ? 'bg-yellow-200 dark:bg-yellow-900 font-bold' 
-                                        : answers[gapNumber - 1]
+                                        : answer
                                         ? 'bg-blue-100 dark:bg-blue-900'
                                         : 'bg-gray-100 dark:bg-gray-800'
                                 }`}
                             >
-                                {answers[gapNumber - 1] 
-                                    ? currentSection.questions[gapNumber - 1].options.find(
-                                        opt => opt.value === answers[gapNumber - 1]
+                                {answer
+                                    ? section.questions[gapNumber - 1].options.find(
+                                        opt => opt.value === answer
                                       )?.label
                                     : `[${gapNumber}]`
                                 }
@@ -71,27 +160,38 @@ export default function ExamPage() {
         )
     }
 
+    const renderQuestionText = (question: Question): string => {
+        if ('text' in question) {
+            return question.text
+        }
+        return `Select the answer for gap [${question.id}]:`
+    }
+
     return (
         <div className="container mx-auto py-8 px-4">
             <Card className="max-w-3xl mx-auto">
                 <CardHeader className="flex flex-col items-start">
                     <h1 className="text-2xl font-bold">{examData.title}</h1>
                     <h2 className="text-lg font-bold" dir='rtl'>{examData.titleArabic}</h2>
-                    <h3 className="text-md font-medium mt-4">{currentSection.title}</h3>
+                    <h3 className="text-md font-medium mt-4">{section.title}</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                        Question {currentQuestion + 1} of {currentSection.questions.length}
+                        Question {getCurrentQuestionNumber()} of {totalQuestions}
                     </p>
                 </CardHeader>
                 <CardBody>
                     {!isSubmitted ? (
                         <div className="space-y-6">
-                            <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                                {renderParagraphWithHighlight()}
-                            </div>
+                            {section.type === 'paragraph-gap' && section.paragraph && (
+                                <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                                    {renderParagraphWithHighlight()}
+                                </div>
+                            )}
                             <div className="mt-4">
-                                <p className="font-medium mb-2">Select the answer for gap [{currentQuestionData.id}]:</p>
+                                <p className="font-medium mb-2">
+                                    {renderQuestionText(currentQuestionData)}
+                                </p>
                                 <RadioGroup
-                                    value={answers[currentQuestion] || ''}
+                                    value={answers[`${currentSection}-${currentQuestion}`] || ''}
                                     onValueChange={handleAnswer}
                                 >
                                     {currentQuestionData.options.map((option) => (
@@ -108,70 +208,76 @@ export default function ExamPage() {
                                 <p className="font-bold">Exam Complete!</p>
                                 <p>Your score: {score.toFixed(1)}%</p>
                             </div>
-                            <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                                {renderParagraphWithHighlight()}
-                            </div>
-                            <div className="space-y-4">
-                                {currentSection.questions.map((question, index) => (
-                                    <div key={question.id} className="border dark:border-gray-700 rounded-lg p-4">
-                                        <div className="flex items-start gap-2">
-                                            {answers[index] === question.correctAnswer ? (
-                                                <span className="text-green-500">✓</span>
-                                            ) : (
-                                                <span className="text-red-500">✗</span>
-                                            )}
-                                            <div>
-                                                <p className="font-medium">Gap [{question.id}]</p>
-                                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                                    Your answer: {answers[index] 
-                                                        ? question.options.find(opt => opt.value === answers[index])?.label 
-                                                        : 'Not answered'}
-                                                </p>
-                                                {answers[index] !== question.correctAnswer && (
-                                                    <p className="text-sm text-red-500 dark:text-red-400">
-                                                        Correct answer: {question.options.find(
-                                                            opt => opt.value === question.correctAnswer
-                                                        )?.label}
-                                                    </p>
+                            {examData.sections.map((section, sectionIndex) => (
+                                <div key={sectionIndex} className="space-y-4">
+                                    <h4 className="font-medium">{section.title}</h4>
+                                    {section.type === 'paragraph-gap' && section.paragraph && (
+                                        <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                                            {renderParagraphWithHighlight()}
+                                        </div>
+                                    )}
+                                    {section.questions.map((question, questionIndex) => (
+                                        <div key={question.id} className="border dark:border-gray-700 rounded-lg p-4">
+                                            <div className="flex items-start gap-2">
+                                                {answers[`${sectionIndex}-${questionIndex}`] === question.correctAnswer ? (
+                                                    <span className="text-green-500">✓</span>
+                                                ) : (
+                                                    <span className="text-red-500">✗</span>
                                                 )}
+                                                <div>
+                                                    <p className="font-medium">
+                                                        {'text' in question 
+                                                            ? question.text
+                                                            : `Gap [${question.id}]`
+                                                        }
+                                                    </p>
+                                                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                                                        Your answer: {answers[`${sectionIndex}-${questionIndex}`]
+                                                            ? question.options.find(opt => opt.value === answers[`${sectionIndex}-${questionIndex}`])?.label
+                                                            : 'No answer'
+                                                        }
+                                                    </p>
+                                                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                                                        Correct answer: {question.options.find(opt => opt.value === question.correctAnswer)?.label}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
+                                    ))}
+                                </div>
+                            ))}
                         </div>
                     )}
                 </CardBody>
-                <CardFooter className="flex justify-between">
-                    {!isSubmitted ? (
-                        <>
-                            <Pagination
-                                total={currentSection.questions.length}
-                                page={currentQuestion + 1}
-                                onChange={handlePageChange}
-                            />
-                            <Spacer x={4} />
-                            {currentQuestion === currentSection.questions.length - 1 ? (
-                                <Button color="primary" onClick={handleSubmit}>Submit Exam</Button>
-                            ) : (
-                                <Button color="primary" onClick={() => handlePageChange(currentQuestion + 2)}>Next Question</Button>
-                            )}
-                        </>
-                    ) : (
+                {!isSubmitted && (
+                    <CardFooter className="flex justify-between">
                         <Button
-                            color="primary"
-                            onClick={() => {
-                                setIsSubmitted(false)
-                                setCurrentQuestion(0)
-                                setAnswers({})
-                                setScore(0)
-                            }}
+                            disabled={currentQuestion === 0 && currentSection === 0}
+                            onPress={() => handlePageChange(getCurrentQuestionNumber() - 1)}
                         >
-                            Retake Exam
+                            Previous
                         </Button>
-                    )}
-                </CardFooter>
+                        <Pagination
+                            page={getCurrentQuestionNumber()}
+                            total={totalQuestions}
+                            onChange={(page) => handlePageChange(page)}
+                            showControls
+                            showShadow
+                            className="flex justify-center"
+                        />
+                        <Button
+                            color="success"
+                            onPress={currentQuestion + 1 === section.questions.length && currentSection + 1 === examData.sections.length ? handleSubmit : () => handlePageChange(getCurrentQuestionNumber() + 1)}
+                        >
+                            {currentQuestion + 1 === section.questions.length && currentSection + 1 === examData.sections.length
+                                ? 'Submit'
+                                : 'Next'}
+                        </Button>
+                    </CardFooter>
+                )}
             </Card>
+            <Spacer y={12} />
+            <AdComponent />
         </div>
     )
 }
