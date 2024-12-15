@@ -1,12 +1,12 @@
 'use client';
-import { title } from "./primitives";
+
 import React, { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../config/firebase';
-import { Link, Button } from "@nextui-org/react";
+import { Link, Button, Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import Head from 'next/head';
-import { FiShare2 } from 'react-icons/fi';
-import AdComponent from "./AdComponent";
+import { FiShare2, FiMapPin, FiCalendar, FiBriefcase, FiHome, FiDollarSign } from 'react-icons/fi';
+import AdComponent from './AdComponent';
 
 interface CareerDetail {
   jobTitle: string;
@@ -26,22 +26,21 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
 
   useEffect(() => {
     const fetchCareerDetail = async () => {
-      if (careerId) {
+      if (!careerId) return;
+
+      try {
         const db = getFirestore(app);
-        const careerDocRef = doc(db, 'careers', careerId as string);
+        const careerDocRef = doc(db, 'careers', careerId);
+        const careerDocSnapshot = await getDoc(careerDocRef);
 
-        try {
-          const careerDocSnapshot = await getDoc(careerDocRef);
-
-          if (careerDocSnapshot.exists()) {
-            const careerData = careerDocSnapshot.data() as CareerDetail;
-            setCareerDetail(careerData);
-          } else {
-            console.error('Career not found with ID:', careerId);
-          }
-        } catch (error) {
-          console.error('Error fetching career details:', error);
+        if (careerDocSnapshot.exists()) {
+          const careerData = careerDocSnapshot.data() as CareerDetail;
+          setCareerDetail(careerData);
+        } else {
+          console.error('Career not found with ID:', careerId);
         }
+      } catch (error) {
+        console.error('Error fetching career details:', error);
       }
     };
 
@@ -49,7 +48,11 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
   }, [careerId]);
 
   if (!careerDetail) {
-    return <p>Loading...</p>; 
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    );
   }
 
   const shareCareer = async () => {
@@ -61,100 +64,120 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
           url: window.location.href,
         });
       } catch (error) {
-        console.error('Something went wrong sharing the career', error);
+        console.error('Error sharing the career:', error);
       }
     } else {
-      console.log('Share not supported on this browser, do it manually!');
+      console.log('Sharing not supported on this browser.');
     }
   };
-  
-  
+
   return (
-    <div className="container mx-auto px-4 py-8">
-       <Head>
-      <title>{careerDetail.jobTitle}</title>
-      <meta name="description" content={careerDetail.description} />
-      <meta property="og:title" content={careerDetail.jobTitle} />
-      <meta property="og:description" content={careerDetail.description} />
-      <meta property="og:url" content={window.location.href} />
-      <meta property="og:type" content="website" />
-    </Head>
-      <h1 className="text-3xl font-bold mb-4">{careerDetail.jobTitle}</h1>
-      {careerDetail.companyName && (
-        <div className="flex items-center mb-4">
-          <p className="mr-2">Company:</p>
-          <p className="font-semibold">{careerDetail.companyName}</p>
-        </div>
-      )}
+    <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <Head>
+        <title>{careerDetail.jobTitle}</title>
+        <meta name="description" content={careerDetail.description} />
+        <meta property="og:title" content={careerDetail.jobTitle} />
+        <meta property="og:description" content={careerDetail.description} />
+        <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
+        <meta property="og:type" content="website" />
+      </Head>
 
-      {careerDetail.city && careerDetail.country && (
-        <div className="flex items-center mb-4">
-          <p className="mr-2">Location:</p>
-          <p className="font-semibold">{careerDetail.city}, {careerDetail.country}</p>
-        </div>
-      )}
+      <Card className="w-full shadow-lg rounded-lg">
+        <CardHeader className="flex flex-col items-start">
+          <h1 className="text-3xl font-bold mb-2 text-gradient">{careerDetail.jobTitle}</h1>
+          {careerDetail.companyName && (
+            <p className="text-xl text-default-500 italic">{careerDetail.companyName}</p>
+          )}
+        </CardHeader>
+        <Divider />
+        <CardBody>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {careerDetail.city && careerDetail.country && (
+              <div className="flex items-center">
+                <FiMapPin className="mr-2 text-primary" />
+                <div>
+                  <p className="font-semibold">Location</p>
+                  <p>{careerDetail.city}, {careerDetail.country}</p>
+                </div>
+              </div>
+            )}
+            {careerDetail.datePosted && (
+              <div className="flex items-center">
+                <FiCalendar className="mr-2 text-primary" />
+                <div>
+                  <p className="font-semibold">Date Posted</p>
+                  <p>{careerDetail.datePosted}</p>
+                </div>
+              </div>
+            )}
+            {careerDetail.industry && (
+              <div className="flex items-center">
+                <FiBriefcase className="mr-2 text-primary" />
+                <div>
+                  <p className="font-semibold">Industry</p>
+                  <p>{careerDetail.industry}</p>
+                </div>
+              </div>
+            )}
+            {careerDetail.workLoc && (
+              <div className="flex items-center">
+                <FiHome className="mr-2 text-primary" />
+                <div>
+                  <p className="font-semibold">Work Location</p>
+                  <p>{careerDetail.workLoc}</p>
+                </div>
+              </div>
+            )}
+            {careerDetail.salary && (
+              <div className="flex items-center">
+                <FiDollarSign className="mr-2 text-primary" />
+                <div>
+                  <p className="font-semibold">Estimated Salary</p>
+                  <p>{careerDetail.salary}</p>
+                </div>
+              </div>
+            )}
+          </div>
 
-      {careerDetail.datePosted && (
-        <div className="flex items-center mb-4">
-          <p className=" mr-2">Date Posted:</p>
-          <p className=" font-semibold">{careerDetail.datePosted}</p>
-        </div>
-      )}
+          <Divider className="my-4" />
 
-      {careerDetail.industry && (
-        <div className="flex items-center mb-4">
-          <p className="mr-2">Industry:</p>
-          <p className="font-semibold">{careerDetail.industry}</p>
-        </div>
-      )}
+          <div className="mt-4">
+            <h2 className="text-2xl font-bold mb-2">Job Description</h2>
+            <div
+              className="prose max-w-none"
+              dangerouslySetInnerHTML={{ __html: careerDetail.description }}
+            ></div>
+          </div>
 
-      {careerDetail.workLoc && (
-        <div className="flex items-center mb-4">
-          <p className=" mr-2">Work Location:</p>
-          <p className=" font-semibold">{careerDetail.workLoc}</p>
-        </div>
-      )}
-      {careerDetail.salary && (
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Button
+              as={Link}
+              href={careerDetail.applicationLink}
+              color="primary"
+              variant="solid"
+              target="_blank"
+              className="flex-grow md:flex-grow-0"
+            >
+              Apply Now
+            </Button>
+            <Button
+              onClick={shareCareer}
+              color="warning"
+              variant="solid"
+              className="flex-grow md:flex-grow-0"
+            >
+              <FiShare2 className="mr-2" />
+              Share
+            </Button>
+          </div>
+        </CardBody>
+      </Card>
 
-        <div className="flex items-center mb-4">
-          <p className=" mr-2"> Estimated Salary:</p>
-          <p className=" font-semibold">{careerDetail.salary}</p>
-        </div>
-      )}
-      <div
-  style={{ wordBreak: 'break-all' }}
-  dangerouslySetInnerHTML={{ __html: careerDetail.description }}
-      ></div>
-      	<section className="flex flex-col items-center justify-center gap-4 py-6 bg-gray-100 border-t" aria-label="Sponsored Advertisement">
-				<h3 className={title({ color: "violet" })}>Sponsored Ad</h3>
-				<p className="text-center text-sm text-gray-600 mb-4">
-					Support us by checking out this sponsored content.
-				</p>
-
-				{/* Ad Component */}
-				<AdComponent />
-
-			</section>
-
-      <Button
-        href={careerDetail.applicationLink}
-        as={Link}
-        color="primary"
-        showAnchorIcon
-        variant="solid"
-        className="mt-4"
-        target="_blank"
-      >
-        Apply
-      </Button>
-      
-    <Button onClick={shareCareer} className="mt-4 mx-3 text-white" color="warning">
-    <FiShare2 className="mr-1" />
-      Share
-    </Button>
+      <div className="mt-8">
+        <AdComponent />
+      </div>
     </div>
   );
 };
 
 export default CareerDetailPage;
-

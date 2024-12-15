@@ -1,13 +1,13 @@
 'use client';
 import React, { useState, useEffect, Fragment } from 'react';
 import { getFirestore, collection, doc, getDoc, getDocs, deleteDoc } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '@/config/firebase';
 import { title } from "@/components/primitives";
 import SubNav from "@/components/subNavBar";
-import { Menu, Transition } from '@headlessui/react'
-import { FiMapPin, FiDollarSign, FiCalendar, FiHexagon } from "react-icons/fi";
-import {Link} from "@nextui-org/react";
+import { Menu, Transition } from '@headlessui/react';
+import { FiMapPin, FiDollarSign, FiCalendar, FiHexagon, FiExternalLink, FiTrash2, FiEdit } from "react-icons/fi";
+import { Link, Card, Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 
 interface Career {
@@ -24,186 +24,162 @@ interface Career {
   applicationLink: string;
 }
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
-
 export default function CareersPage() {
   const [careersData, setCareersData] = useState<Career[]>([]);
   const [isAdmin, setIsAdmin] = useState(false);
-  const auth = getAuth();
-  const db = getFirestore();
-
-  const { theme, setTheme } = useTheme();
-
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      // User is signed in
-      const userDoc = doc(db, 'users', user.uid);
-      const userSnapshot = await getDoc(userDoc);
-
-      if (userSnapshot.exists()) {
-        const userData = userSnapshot.data();
-        const email = userData.email;
-        const role = userData.role;
-        setIsAdmin(role === 'admin');
-      } else {
-        console.error('User document not found:', user.uid);
-      }
-    } 
-  });
+  const [isLoading, setIsLoading] = useState(true);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const { theme } = useTheme();
 
   useEffect(() => {
-    const db = getFirestore(app);
-    const careersCollection = collection(db, 'careers');
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const userDoc = doc(db, 'users', user.uid);
+        const userSnapshot = await getDoc(userDoc);
+        if (userSnapshot.exists()) {
+          const userData = userSnapshot.data();
+          setIsAdmin(userData.role === 'admin');
+        }
+      }
+    });
 
-    getDocs(careersCollection)
-      .then((snapshot) => {
-        const careersData: Career[] = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })) as Career[];
+    return () => unsubscribe();
+  }, [auth, db]);
+
+  useEffect(() => {
+    const fetchCareers = async () => {
+      try {
+        const careersCollection = collection(db, 'careers');
+        const snapshot = await getDocs(careersCollection);
+        const careersData: Career[] = snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id
+        })) as Career[];
         setCareersData(careersData);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Error fetching careers:', error);
-      });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCareers();
   }, []);
 
-
-  const handleDeleteJob = (jobId: string) => {
-    const db = getFirestore(app);
-    const jobRef = doc(db, 'careers', jobId);
-
-    deleteDoc(jobRef)
-      .then(() => {
-        const updatedCareersData = careersData.filter((career) => career.id !== jobId);
-        setCareersData(updatedCareersData);
-      })
-      .catch((error) => {
+  const handleDeleteJob = async (jobId: string) => {
+    if (window.confirm('Are you sure you want to delete this job posting?')) {
+      try {
+        const jobRef = doc(db, 'careers', jobId);
+        await deleteDoc(jobRef);
+        setCareersData(prev => prev.filter(career => career.id !== jobId));
+      } catch (error) {
         console.error('Error deleting job:', error);
-      });
+      }
+    }
   };
-  return (
-    <div className="flex flex-col justify-center">
-      <h1 className={`${title()}`}>Careers</h1>
-      <SubNav />
-      
-      {careersData.length > 0 ? (
-        <div>
-          {careersData.sort((a, b) => new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()).map((career) => (
-            <div className="lg:flex lg:items-center lg:justify-between py-4" key={career.id}>
 
-              <div className="min-w-0 flex-1">
-                <Link href={`careers/${career.id}`}>
-                <h2 className={`text-2xl font-bold leading-7 sm:text-3xl sm:tracking-tight lg:text-2xl no-underline ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-  {career.jobTitle}
-</h2>
-                </Link>
-                <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <FiHexagon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    {career.industry}
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-pulse text-gray-500">Loading careers...</div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <h1 className={`${title()} mb-8 text-center w-full`}>Careers</h1>
+      <SubNav />
+
+      <div className="mt-8 space-y-6">
+        {careersData.length > 0 ? (
+          careersData
+            .sort((a, b) => new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime())
+            .map((career) => (
+              <Card
+                key={career.id}
+                className={`p-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} shadow-lg transition-all hover:shadow-xl`}
+              >
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <Link
+                      href={`careers/${career.id}`}
+                      className={`text-2xl font-bold ${theme === 'dark' ? 'text-white hover:text-gray-300' : 'text-gray-900 hover:text-gray-700'} transition-colors`}
+                    >
+                      {career.jobTitle}
+                    </Link>
+                    <p className="mt-1 text-lg font-medium text-gray-500">{career.companyName}</p>
+
+                    <div className="mt-4 flex flex-wrap gap-4">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <FiHexagon className="mr-1.5 h-5 w-5 text-gray-400" />
+                        {career.industry}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <FiMapPin className="mr-1.5 h-5 w-5 text-gray-400" />
+                        {career.city}, {career.country}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <FiDollarSign className="mr-1.5 h-5 w-5 text-gray-400" />
+                        {career.salary}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <FiCalendar className="mr-1.5 h-5 w-5 text-gray-400" />
+                        {career.datePosted}
+                      </div>
+                    </div>
                   </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <FiMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    {career.city}, {career.country}
-                  </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <FiDollarSign className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    {career.salary} (Estimated)
-                  </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <FiCalendar className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    {career.datePosted}
+
+                  <div className="flex flex-wrap gap-3 mt-4 lg:mt-0">
+                    <Button
+                      as={Link}
+                      href={`careers/${career.id}`}
+                      className="bg-primary text-white"
+                    >
+                      View Details
+                    </Button>
+
+                    <Button
+                      as={Link}
+                      href={career.applicationLink}
+                      className="bg-success text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      startContent={<FiExternalLink />}
+                    >
+                      Apply Now
+                    </Button>
+
+                    {isAdmin && (
+                      <div className="flex gap-2">
+                        <Button
+                          className="bg-warning text-white"
+                          startContent={<FiEdit />}
+                          as={Link}
+                          href={`careers/edit/${career.id}`}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          className="bg-danger text-white"
+                          startContent={<FiTrash2 />}
+                          onClick={() => handleDeleteJob(career.id)}
+                        >
+                          Delete
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-5 flex lg:ml-4 lg:mt-0">
-                <span className="hidden sm:block">
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                  >
-                    {/* <PencilIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                    Edit
-                  </button>
-                </span>
-             
-                <button>
-                          <a
-                            href={`careers/${career.id}`}
-                            className="inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                            >
-                            View
-                          </a>
-                    
-                      </button>
-                {/* <span className="sm:ml-3">
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                  >
-                    Apply
-                  </button>
-                </span> */}
-
-                {/* Dropdown */}
-                <Menu as="div" className="relative ml-3 sm:hidden">
-                  <Menu.Button className="inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                  >
-                    More
-                    {/* <ChevronDownIcon className="-mr-1 ml-1.5 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                  </Menu.Button>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 -mr-1 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }: { active: boolean }) => (
-                          <a
-                            href={`${career.applicationLink}`}
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Apply
-                          </a>
-                        )}
-                      </Menu.Item>
-                   
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-              <div className="mt-5 flex lg:ml-4 lg:mt-0">
-                {isAdmin && ( // Display delete button only for admin users
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-                    onClick={() => handleDeleteJob(career.id)}
-                  >
-                    Delete
-                  </button>
-                )}
-              </div>
-
-
-            </div>
-          ))}
-
-
-
-        </div>
-      ) : (
-        <p>No careers found.</p>
-      )}
+              </Card>
+            ))
+        ) : (
+          <Card className="p-8 text-center">
+            <p className="text-gray-500 text-lg">No career opportunities available at the moment.</p>
+          </Card>
+        )}
+      </div>
     </div>
-
   );
-
 }
-
