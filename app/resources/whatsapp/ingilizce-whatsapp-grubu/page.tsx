@@ -15,7 +15,7 @@ const englishGroups = [
   { name: 'Türkçe Öğrenen Yabancılar', link: 'https://chat.whatsapp.com/EpzjPWqKTXwBa6F6q0yNBp' },
   { name: 'İngilizce Grubu 2', link: 'https://chat.whatsapp.com/L6BzyM6siWzCvwlFINGhUN' },
   { name: 'İngilizce Grubu 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1' },
-  { name: 'Daha Fazla İngilizce Grubu', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd' },
+  { name: 'Daha Fazla İngilizce Grubu', link: 'https://chat.whatsapp.com/HeBS7UaTuH2HtSDMl9hj9x' },
   { name: 'Arapça WhatsApp Grubu', link: 'arapca-whatsapp-grubu' }
 ];
 
