@@ -51,6 +51,7 @@ export default function ArabicWhatsAppGroups() {
                 <li><span className="font-semibold">Практика восприятия на слух:</span> Развивайте навыки слушания, прослушивая голосовые сообщения от участников группы.</li>
               </ul>
               <Card>
+              <Link className="font-bold mt-4" href='https://chat.whatsapp.com/GC59qnSlRtf9tC4NjqUuYY' style={{ color: 'cyan' }} isExternal rel="noopener noreferrer">Нажмите здесь, чтобы присоединиться</Link>
                 <CardBody>
                   <h4 className="font-semibold mb-2">Перед тем, как присоединиться:</h4>
                   <ol className="list-decimal pl-6 space-y-2">
@@ -61,6 +62,7 @@ export default function ArabicWhatsAppGroups() {
                   </ol>
                 </CardBody>
               </Card>
+
             </div>
             <div className="mb-8">
               <h3 className="text-lg sm:text-xl font-semibold mb-4">Присоединяйтесь к нашим WhatsApp-группам для изучения арабского языка:</h3>
@@ -102,9 +104,9 @@ export default function ArabicWhatsAppGroups() {
               </div>
             </div>
             <div className="flex justify-center mb-8">
-              <Image
+            <Image
                 alt="Присоединяйтесь к арабским WhatsApp-группам"
-                src="https://www.sofuf.com/arabic_whatsapp_group.webp"
+                src="/images/arabic_whatsapp_group.webp" 
                 width={300}
                 height={300}
               />
