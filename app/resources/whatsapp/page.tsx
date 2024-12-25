@@ -66,6 +66,14 @@ const groupCards = [
   description: "مارس وتعلم اللغة الإنجليزية على واتساب",
   imageUrl: "/whatsappgroups.png",
   imageAlt: "قروب واتساب اللغة الإنجليزية"
+},
+{
+  href: "/resources/whatsapp/software-developers-whatsapp-group",
+  title: "Software Developers WhatsApp Group",
+  date: "2025-2026",
+  description: "Disucss the latest news in the software development industry.",
+  imageUrl: "/developers-whatsapp.jpg",
+  imageAlt: "قروب واتساب اللغة الإنجليزية"
 }
 
 ];

@@ -64,7 +64,7 @@ export default function DevWhatsAppGroup() {
 
             <div className="max-w-full md:max-w-2xl mx-auto">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">Join Our Developer Community Today!</h3>
-              <p className="mb-8">Connect with developers worldwide, stay updated with tech news, and explore business opportunities together. Whether you're interested in emerging technologies or looking for your next big software business idea, there's a place for you here.</p>
+              <p className="mb-8">Connect with developers worldwide, stay updated with tech news, and explore business opportunities together. Whether you are interested in emerging technologies or looking for your next big software business idea, there is a place for you here.</p>
               <p className="mb-2">Join now using this link:</p>
               <Link isExternal href="https://chat.whatsapp.com/KxhKNzWg6qiHlQnyOCBWlc" className="text-blue-500">https://chat.whatsapp.com/KxhKNzWg6qiHlQnyOCBWlc</Link>
               <p className="my-8">
