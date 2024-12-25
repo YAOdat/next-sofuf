@@ -18,7 +18,7 @@ export default function DocsLayout({
 }
 
 export const metadata: Metadata = {
-    title: 'Text Analyzer',
-    description: 'Analyze text by counting the number of sentences and words in it.',
-    keywords: 'text, analyzer, text analyzer, sentence, word, sentence counter, word counter',
+    title: 'Sentence Counter | Analyze Your Text',
+	description: 'Quickly analyze your text with our Sentence & Word Counter. Count sentences, words, and improve your writing effortlessly.',
+	keywords: 'text analysis tool, sentence counter, word counter, text analyzer, writing tools, count words, count sentences, writing analysis, sentence and word counter',
 }

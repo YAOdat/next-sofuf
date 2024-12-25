@@ -106,7 +106,7 @@ export default function ArabicWhatsAppGroups() {
             <div className="flex justify-center mb-8">
             <Image
                 alt="Присоединяйтесь к арабским WhatsApp-группам"
-                src="/images/arabic_whatsapp_group.webp" 
+                src="/arabicgroup.jpg" 
                 width={300}
                 height={300}
               />

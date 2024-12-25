@@ -31,7 +31,7 @@ const groupCards = [
     title: "Arapça WhatsApp Grubu",
     date: "2024-2025",
     description: "Practice and learn Arabic on WhatsApp.",
-    imageUrl: "/arabic-grp.jpg",
+    imageUrl: "/arabicgroup.jpg",
     imageAlt: "Arabic WhatsApp Group Blog Post"
   },
   {
@@ -55,9 +55,19 @@ const groupCards = [
     title: "Группа WhatsApp для практики арабского языка",
     date: "2024-2025",
     description: "Изучайте и практикуйте арабский язык в WhatsApp-группах и Telegram.",
-    imageUrl: "/arabic-grp.jpg",
+    imageUrl: "/arabicgroup.jpg",
     imageAlt: "Группа WhatsApp для практики арабского языка"
-  }
+  },
+
+  {
+  href: "/resources/whatsapp/grob-whatsapp-englizi",
+  title: "مجموعة واتساب للغة الإنجليزية",
+  date: "2025-2026",
+  description: "مارس وتعلم اللغة الإنجليزية على واتساب",
+  imageUrl: "/whatsappgroups.png",
+  imageAlt: "قروب واتساب اللغة الإنجليزية"
+}
+
 ];
 
 export default function WhatsApp() {

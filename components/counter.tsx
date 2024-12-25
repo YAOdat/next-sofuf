@@ -13,4 +13,3 @@ export const Counter = () => {
 	);
 };
 
-//accept push
