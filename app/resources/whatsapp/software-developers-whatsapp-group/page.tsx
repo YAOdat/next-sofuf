@@ -5,7 +5,7 @@ import CommentSection from "@/components/commentSection";
 
 export const metadata: Metadata = {
   title: 'Join Software Developers WhatsApp Group',
-  keywords: 'software developer WhatsApp group, software engineer community, tech news, software business ideas, startup discussions, tech entrepreneurship, developer networking, software development news, tech innovation community, technology whatsapp group',
+  keywords: 'software developer WhatsApp group, software engineer community, tech news, software business ideas, startup discussions, tech entrepreneurship, developer networking, software development news, tech innovation community, technology whatsapp group, software whatsapp group, technology whatsapp group, developers whatsapp group, frontend whatsapp group, javascript whatsapp group, dev whatsapp group',
   description: 'Join our Software Developers WhatsApp Group to stay updated with latest tech news, share business ideas, and connect with fellow developers. Perfect for tech enthusiasts and entrepreneurs!',
   robots: 'index, follow',
   openGraph: {

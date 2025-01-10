@@ -5,7 +5,7 @@ import CommentSection from "@/components/commentSection";
 
 export const metadata: Metadata = {
   title: 'Join English Voice Chat WhatsApp Group',
-  keywords: 'Voice chat WhatsApp group, improve speaking skills, practice English speaking, WhatsApp group for speaking, voice message group, ESL voice chat group, English speaking WhatsApp group, language practice online',
+  keywords: 'Voice chat WhatsApp group, improve speaking skills, practice English speaking, WhatsApp group for speaking, voice message group, ESL voice chat group, English speaking WhatsApp group, language practice online, english speaking whatsapp group link, english speaking whatsapp group, free english speaking whatsapp group link, voice chat whatsapp group link, voice chat in english, practice spoken English',
   description: 'Join our free Voice Chat WhatsApp Group to improve your English speaking skills. Practice speaking with others by sending voice messages and receiving feedback. Perfect for ESL learners!',
   robots: 'index, follow',
   openGraph: {

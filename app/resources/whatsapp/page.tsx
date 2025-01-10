@@ -74,7 +74,31 @@ const groupCards = [
   description: "Disucss the latest news in the software development industry.",
   imageUrl: "/developers-whatsapp.jpg",
   imageAlt: "قروب واتساب اللغة الإنجليزية"
-}
+},
+{
+  href: "/resources/whatsapp/grupo-whatsapp-em-ingles",
+  title: "Grupos de inglês no WhatsApp",
+  date: "2025-2026",
+  description: "Conecte-se com aprendizes de inglês de todo o mundo.",
+  imageUrl: "/whatsappgroups.png",
+  imageAlt: "Grupos de inglês no WhatsApp"
+},
+{
+  href: "/resources/whatsapp/kelompok-bahasa-inggris",
+  title: "Grup WhatsApp Bahasa Inggris",
+  date: "2025-2026",
+  description: "Belajar dan Berlatih Bahasa Inggris di WhatsApp",
+  imageUrl: "/whatsappgroups.png",
+  imageAlt: "Belajar dan Berlatih Bahasa Inggris di WhatsApp"
+},
+{
+  href: "/resources/whatsapp/englisch-lernen-whatsapp-gruppen",
+  title: "Englische WhatsApp-Gruppen",
+  date: "2025-2026",
+  description: "Englisch auf WhatsApp lernen und üben",
+  imageUrl: "/whatsappgroups.png",
+  imageAlt: "Englische WhatsApp-Gruppen"
+},
 
 ];
 

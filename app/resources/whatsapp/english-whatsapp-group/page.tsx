@@ -9,6 +9,7 @@ const englishGroups = [
   { name: 'English Group 2', link: 'https://chat.whatsapp.com/L6BzyM6siWzCvwlFINGhUN', language: 'English' },
   { name: 'English Group 3', link: 'https://chat.whatsapp.com/FMOdmLdsbRQCOUDPsvGoyf', language: 'English' },
   { name: 'English Group 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1', language: 'English' },
+  {name: 'English Group 5', link: 'https://chat.whatsapp.com/CAL43yKsm919DnmmtdGVNT', language: 'English'},
   { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'English' },
   { name: 'English Arabic Group', link: 'https://chat.whatsapp.com/HeBS7UaTuH2HtSDMl9hj9x', language: 'EnglishArabic' }
 ];
@@ -48,7 +49,7 @@ const langGroups = [
 
 export const metadata: Metadata = {
   title: 'Join English WhatsApp Groups | Learn English on WhatsApp',
-  keywords: 'English WhatsApp group, learn English online, language exchange, English WhatsApp group link, practice English on WhatsApp, free English WhatsApp groups 2024, English speaking whatsapp group',
+  keywords: 'English WhatsApp group, learn English online, language exchange, English WhatsApp group link, practice English on WhatsApp, free English WhatsApp groups 2024, English speaking whatsapp group, english learning whatsapp group, english whatsapp group link, learn english whatsapp group, english chatting whatsapp group, learn english whatsapp, english whatsapp, english chatting group',
   description: 'Join free English WhatsApp groups to practice and learn English with native speakers. Improve your speaking, writing, and listening skills through real conversations. Find your perfect English language exchange group now!',
   robots: 'index, follow',
   openGraph: {
@@ -68,7 +69,7 @@ export default function WhatsApp() {
           <article className="max-w-full md:max-w-3xl lg:max-w-4xl mx-auto">
             <header>
               <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">English WhatsApp Group — Learn and Practice English on WhatsApp</h1>
-              <p className="text-xs md:text-sm font-thin mb-4">2024 - 09 - 05 / Author: Odat</p>
+              <p className="text-xs md:text-sm font-thin mb-4">2025 - 01 - 10 / Author: Odat</p>
             </header>
             <div className="mb-4">
               <p className="md:text-base">
