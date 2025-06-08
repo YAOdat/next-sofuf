@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Join Stickers WhatsApp Group 2025 – Share & Discover Funny Stickers',
         description: 'Join our active Stickers WhatsApp Group with 500+ members! Discover trending stickers and share custom packs.',
-        images: ['/stickers.png'],
+        images: ['/sticker.png'],
     },
     alternates: {
         canonical: '/groups/stickers-whatsapp-group'
@@ -47,7 +47,7 @@ export default function StickersGroup() {
         "@type": "SocialMediaPosting",
         "headline": "Join Stickers WhatsApp Group 2025 – Share & Discover Funny Stickers",
         "description": "Join our active Stickers WhatsApp Group with 500+ members! Discover trending stickers, share custom packs, request specific stickers, and connect with creators.",
-        "image": "/stickers.png",
+        "image": "/sticker.png",
         "author": {
             "@type": "Person",
             "name": "Odat"
@@ -115,7 +115,7 @@ export default function StickersGroup() {
                                     <Image
                                         alt="WhatsApp Stickers Group - Funny and Creative Sticker Collection"
                                         className="object-cover rounded-xl shadow-md mx-auto"
-                                        src="/stickers.png"
+                                        src="/sticker.png"
                                         width={400}
                                         height={300}
                                         loading="lazy"
@@ -131,7 +131,7 @@ export default function StickersGroup() {
                                         Welcome to the most active <strong>Stickers WhatsApp Group</strong> of 2025! Our vibrant community of over 1,000 members is dedicated to sharing, discovering, and creating the best WhatsApp stickers available.
                                     </p>
                                     <p className="text-base leading-relaxed">
-                                        Whether you're looking for funny memes, cute animals, expressive emotions, or custom designs, our group has everything you need to make your WhatsApp conversations more engaging and fun.
+                                        Whether you&apos;re looking for funny memes, cute animals, expressive emotions, or custom designs, our group has everything you need to make your WhatsApp conversations more engaging and fun.
                                     </p>
                                 </div>
 
@@ -202,7 +202,7 @@ export default function StickersGroup() {
                                 <section className="text-center mb-8">
                                     <h2 className="text-2xl font-bold mb-4">Ready to Join the Fun?</h2>
                                     <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
-                                        Don't miss out on the best sticker community on WhatsApp! Join thousands of members who are already enjoying amazing stickers daily.
+                                        Don&apos;t miss out on the best sticker community on WhatsApp! Join thousands of members who are already enjoying amazing stickers daily.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                         <Button
@@ -214,7 +214,7 @@ export default function StickersGroup() {
                                             className="font-bold text-white px-8"
                                             startContent={<span>🚀</span>}
                                         >
-                                            Join Now - It's Free!
+                                            Join Now - It&apos;s Free!
                                         </Button>
                                         <Button
                                             as={Link}
