@@ -13,7 +13,7 @@ import {
 import SearchModal from "@/components/searchModal";
 import FilterModal from "@/components/searchFilter";
 
-function SubNav() {
+function SubNav({ children }: { children?: React.ReactNode }) {
     const pathname = usePathname() || "";
     const [hoveredPath, setHoveredPath] = useState(pathname);
 
@@ -21,7 +21,7 @@ function SubNav() {
     let links = [
         { icons: <PiHouseSimpleThin />, path: "/" },
         { icons: <PiUserLight />, path: "##" },
-        { icons: <PiBagSimpleLight />, path: "#" },
+        // Removed PiBagSimpleLight for more space
     ];
 
     return (
@@ -74,16 +74,17 @@ function SubNav() {
                                 </React.Fragment>
                             );
                         })}
-                        <SearchModal />
+                        {/* Remove <SearchModal /> here, will be injected as children */}
                     </div>
-<div className="flex items-center gap-x-3">
-  <Link href={"/careers/add"}>
-    <div className="bg-black dark:bg-[#373737] px-2 sm:px-3 py-1 rounded-md flex items-center gap-x-2 sm:gap-x-3">
-      <AiOutlinePlusCircle className="text-white text-xs sm:text-3xl" />
-      <span className="text-white font-semibold text-xs sm:text-base">Add Job</span>
-    </div>
-  </Link>
-</div>
+                    <div className="flex items-center gap-x-3">
+                        <Link href={"/careers/add"}>
+                            <div className="bg-black dark:bg-[#373737] px-2 sm:px-3 py-1 rounded-md flex items-center gap-x-2 sm:gap-x-3">
+                                <AiOutlinePlusCircle className="text-white text-xs sm:text-3xl" />
+                                <span className="text-white font-semibold text-xs sm:text-base">Add Job</span>
+                            </div>
+                        </Link>
+                        {children}
+                    </div>
                 </div>
             </div>
         </nav>
