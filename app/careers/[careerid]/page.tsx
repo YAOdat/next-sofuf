@@ -276,7 +276,7 @@ const CareerDetail = async ({ params }: CareerDetailProps) => {
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Job Not Found</h1>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">The career opportunity you're looking for could not be found.</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">The career opportunity you&apos;re looking for could not be found.</p>
             <a 
               href="/careers" 
               className="inline-flex items-center px-6 py-3 bg-indigo-600 dark:bg-white text-white dark:text-black font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-gray-200 transition-colors duration-200"

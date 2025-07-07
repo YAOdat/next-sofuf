@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, Spacer, Link, Code } from "@nextui-org/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'İngilizce Öğrenmek ve Pratik Yapmak için WhatsApp Grupları',
@@ -60,10 +61,12 @@ export default function EnglishLearningGroups() {
               <li className="mb-2">Ana dili İngilizce olan kişilerle arkadaş olun.</li>
               <li className="mb-2">Daha özgüvenli hale gelin.</li>
             </ul>
-            <img
+            <Image
               src="/whatsappgroups.png"
               alt="İngilizce WhatsApp gruplarına katılarak öğrenme ve pratik yapma"
               className="w-full h-auto rounded-md mb-4"
+              width={1200}
+              height={600}
             />
             <div className="mb-4">
               <p className="md:text-base">
