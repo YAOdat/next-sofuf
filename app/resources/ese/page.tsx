@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 
 export default function Grades() {
   const grades = [9, 10, 11, 12];

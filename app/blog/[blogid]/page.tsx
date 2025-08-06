@@ -1,7 +1,7 @@
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 import { notFound } from 'next/navigation';
-import ClientBlogPost from './ClientBlogPost';
+import BlogPostClient from './BlogPostClient';
 
 interface PostDetails {
   title: string;
@@ -34,10 +34,10 @@ const fetchPostDetail = async (blogId: string): Promise<PostDetails | null> => {
 
 export const generateMetadata = async ({ params }: { params: { blogid: string } }) => {
   const { blogid } = params;
-  const postDetails = await fetchPostDetail(blogid); // Declare the postDetails variable
+  const postDetails = await fetchPostDetail(blogid);
 
   return {
-    title: postDetails?.title, // Access the title property of postDetails
+    title: postDetails?.title,
     description: postDetails?.description,
     keywords: postDetails?.keywords,
     robots: 'index, follow',
@@ -54,10 +54,8 @@ const BlogPost = async ({ params }: { params: { blogid: string } }) => {
 
   return (
     <div>
-     
-     {postDetails ? (
-      
-        <ClientBlogPost params={params} />
+      {postDetails ? (
+        <BlogPostClient params={params} />
       ) : (
         <div>Loading...</div>
       )}

@@ -1,15 +1,16 @@
 import React from "react";
-import { Card, CardBody, Spacer, Link, Code, Image, Button, Chip } from "@nextui-org/react";
+import { Card, CardBody, Spacer, Link, Code, Image, Button, Chip } from "@heroui/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
+import Script from 'next/script';
 
 const englishGroups = [
-  { name: 'English Group 1', link: 'https://chat.whatsapp.com/CAL43yKsm919DnmmtdGVNT', language: 'English', members: '220+' },
+  { name: 'English Group 1', link: 'https://chat.whatsapp.com/CAL43yKsm919DnmmtdGVNT', language: 'English', members: '850+' },
   { name: 'English Group 2', link: 'https://chat.whatsapp.com/L6BzyM6siWzCvwlFINGhUN', language: 'English', members: '500+' },
-  { name: 'English Group 3', link: 'https://chat.whatsapp.com/FMOdmLdsbRQCOUDPsvGoyf', language: 'English', members: '400+' },
-  { name: 'English Group 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1', language: 'English', members: '400+' },
-  { name: 'English Group 5', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English', members: '800+' },
-  { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'English', members: '400+', special: 'Voice Practice' },
+  { name: 'English Group 3', link: 'https://chat.whatsapp.com/FMOdmLdsbRQCOUDPsvGoyf', language: 'English', members: '650+' },
+  { name: 'English Group 4', link: 'https://chat.whatsapp.com/G4yKUNBwA6aAlwOPOUmpi1', language: 'English', members: '700+' },
+  { name: 'English Group 5', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', language: 'English', members: '200+' },
+  { name: 'Voice Notes Group', link: 'https://chat.whatsapp.com/DNAiOzxCkAVCsDA2oNnlJd', language: 'English', members: '900+', special: 'Voice Practice' },
   { name: 'English Arabic Group', link: 'https://chat.whatsapp.com/HeBS7UaTuH2HtSDMl9hj9x', language: 'EnglishArabic', members: '180+' }
 ];
 
@@ -53,21 +54,95 @@ const langGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Sumali sa mga English WhatsApp Group | Matuto ng English sa WhatsApp',
-  keywords: 'English WhatsApp group, matuto ng English online, palitan ng wika, English WhatsApp group link, magsanay ng English sa WhatsApp, libreng English WhatsApp groups 2024, English speaking whatsapp group, english learning whatsapp group, english whatsapp group link, learn english whatsapp group, english chatting whatsapp group, learn english whatsapp, english whatsapp, english chatting group',
-  description: 'Sumali sa mga libreng English WhatsApp group upang magsanay at matuto ng English kasama ang mga native speaker. Pagbutihin ang iyong pagsasalita, pagsusulat, at pakikinig sa mga totoong usapan.',
+  title: 'Libreng English WhatsApp Groups | Matuto ng English sa WhatsApp - Filipino Learners',
+  keywords: 'English WhatsApp group Filipino, matuto ng English online libre, palitan ng wika English Filipino, English WhatsApp group link 2024, magsanay ng English sa WhatsApp libre, libreng English WhatsApp groups 2025, English speaking whatsapp group Filipino, english learning whatsapp group Philippines, english whatsapp group link 2026, learn english whatsapp group Filipino, english chatting whatsapp group Philippines, learn english whatsapp Filipino, english whatsapp group Philippines, english chatting group Filipino, English practice WhatsApp group, English conversation group WhatsApp, English language exchange WhatsApp, English speaking practice group, English learning community WhatsApp, English study group WhatsApp, English communication practice, English fluency WhatsApp group, English proficiency practice, English speaking Filipino learners, English learning Filipino community, English practice Filipino speakers, English conversation Filipino WhatsApp, English language Filipino learners, English speaking Filipino group, English learning Filipino WhatsApp, English practice Filipino community',
+  description: 'Sumali sa mga libreng English WhatsApp group para sa mga Filipino learners. Matuto at magsanay ng English kasama ang mga native speaker at ibang learners. Pagbutihin ang inyong pagsasalita, pagsusulat, at pakikinig sa mga totoong usapan. Libre at bukas para sa lahat ng Filipino na gustong matuto ng English.',
   robots: 'index, follow',
   openGraph: {
-    title: 'Sumali sa Libreng English WhatsApp Groups | Magsanay at Matuto ng English Online',
-    description: 'Makipag-ugnayan sa mga English learner sa buong mundo. Sumali sa aming libreng WhatsApp group para paghusayin ang inyong English sa mga totoong usapan.',
-    url: 'https://www.sofuf.com/resources/whatsapp/english-whatsapp-group',
-    images: [{ url: 'https://www.sofuf.com/ewg-blog.png', alt: 'English WhatsApp Group Link 2024' }],
+    title: 'Libreng English WhatsApp Groups | Matuto ng English - Filipino Learners',
+    description: 'Sumali sa libreng English WhatsApp groups para sa mga Filipino learners. Magsanay ng English kasama ang mga native speaker at ibang learners sa buong mundo. Libre at bukas para sa lahat ng Filipino na gustong pagbutihin ang kanilang English.',
+    url: 'https://www.sofuf.com/resources/whatsapp/ingles-whatsapp-grupo',
+    images: [{ url: 'https://www.sofuf.com/ewg-blog.png', alt: 'Libreng English WhatsApp Groups para sa Filipino Learners' }],
+    type: 'website',
+    locale: 'tl_PH',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Libreng English WhatsApp Groups | Matuto ng English - Filipino Learners',
+    description: 'Sumali sa libreng English WhatsApp groups para sa mga Filipino learners. Magsanay ng English kasama ang mga native speaker at ibang learners sa buong mundo.',
+    images: ['https://www.sofuf.com/ewg-blog.png'],
+  },
+  alternates: {
+    canonical: 'https://www.sofuf.com/resources/whatsapp/ingles-whatsapp-grupo',
+  },
+  other: {
+    'geo.region': 'PH',
+    'geo.placename': 'Philippines',
+    'language': 'tl',
   },
 };
 
 export default function WhatsApp() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Libreng English WhatsApp Groups para sa Filipino Learners",
+    "description": "Sumali sa mga libreng English WhatsApp group para sa mga Filipino learners. Matuto at magsanay ng English kasama ang mga native speaker at ibang learners.",
+    "url": "https://www.sofuf.com/resources/whatsapp/ingles-whatsapp-grupo",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "English WhatsApp Groups for Filipino Learners",
+      "description": "Collection of free English WhatsApp groups for Filipino learners to practice and improve their English skills",
+      "numberOfItems": englishGroups.length + langGroups.length,
+      "itemListElement": [
+        ...englishGroups.map((group, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Organization",
+            "name": group.name,
+            "url": group.link,
+            "description": `English WhatsApp group for Filipino learners with ${group.members} members`
+          }
+        })),
+        ...langGroups.map((group, index) => ({
+          "@type": "ListItem",
+          "position": englishGroups.length + index + 1,
+          "item": {
+            "@type": "Organization",
+            "name": group.name,
+            "url": group.link,
+            "description": group.description
+          }
+        }))
+      ]
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Odat"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sofuf",
+      "url": "https://www.sofuf.com"
+    },
+    "inLanguage": ["tl", "en"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Filipino English Learners"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -76,10 +151,10 @@ export default function WhatsApp() {
             <span className="text-sm font-medium text-green-700 dark:text-green-300">WhatsApp Learning Groups</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-6">
-            English WhatsApp Groups
+            Libreng English WhatsApp Groups
           </h1>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Matuto at magsanay ng English sa mga aktibong WhatsApp community. Sumali sa libu-libong learners sa buong mundo!
+            Matuto at magsanay ng English sa mga aktibong WhatsApp community para sa mga Filipino learners. Sumali sa libu-libong learners sa buong mundo!
           </p>
           <Button 
             as={Link}
@@ -111,10 +186,15 @@ export default function WhatsApp() {
               {/* Introduction */}
               <div className="prose prose-lg max-w-none mb-12">
                 <p className="text-lg leading-relaxed">
-                  Maligayang pagdating sa aming <span className="font-bold text-green-600">English Learning WhatsApp Groups</span>! 
+                  Maligayang pagdating sa aming <span className="font-bold text-green-600">Libreng English Learning WhatsApp Groups para sa mga Filipino Learners</span>! 
                   Ang WhatsApp Messenger ay isang malawakang ginagamit na app para sa instant messaging na nagbibigay-daan 
                   sa pagpapadala ng text at voice messages, video calls, at pagbabahagi ng media. Napakahusay nitong gamitin 
-                  para sa pagsasanay sa English language, base sa aming personal na karanasan.
+                  para sa pagsasanay sa English language, lalo na para sa mga Filipino na gustong pagbutihin ang kanilang English skills.
+                </p>
+                <p className="text-lg leading-relaxed mt-4">
+                  Sa aming mga grupo, makakahanap kayo ng mga kapwa Filipino learners at native English speakers na handang 
+                  tumulong sa inyong pag-aaral. Libre ang lahat ng grupo at bukas para sa lahat ng antas - mula sa beginner 
+                  hanggang sa advanced level.
                 </p>
               </div>
 
@@ -187,7 +267,7 @@ export default function WhatsApp() {
               {/* English Groups Section */}
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                  🇺🇸 English WhatsApp Groups
+                  🇺🇸 Libreng English WhatsApp Groups para sa Filipino Learners
                 </h2>
                 <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
                   Upang sumali, i-click lamang ang link sa bawat grupo. Kung wala pa kayong WhatsApp, 
@@ -231,7 +311,7 @@ export default function WhatsApp() {
               <div className="flex justify-center mb-12">
                 <div className="relative">
                   <Image
-                    alt="Sumali sa Libreng English WhatsApp Groups 2024"
+                    alt="Sumali sa Libreng English WhatsApp Groups 2026"
                     className="object-cover rounded-xl shadow-2xl"
                     src="/ewg-blog.png"
                     width={400}
@@ -276,6 +356,35 @@ export default function WhatsApp() {
                 </div>
               </div>
 
+              {/* FAQ Section for SEO */}
+              <Card className="mb-12 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+                <CardBody className="p-8">
+                  <h2 className="text-3xl font-bold text-center mb-8">❓ Madalas Itanong (FAQ)</h2>
+                  <div className="space-y-6">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                      <h3 className="font-bold text-lg mb-3">Libre ba ang mga English WhatsApp group?</h3>
+                      <p className="text-gray-600 dark:text-gray-300">Oo, libre ang lahat ng grupo. Walang bayad para sumali at magsanay ng English.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                      <h3 className="font-bold text-lg mb-3">Para saan ang mga English WhatsApp group na ito?</h3>
+                      <p className="text-gray-600 dark:text-gray-300">Para sa mga Filipino na gustong matuto at magsanay ng English kasama ang mga native speaker at ibang learners.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                      <h3 className="font-bold text-lg mb-3">Kailangan ba ng advance na English skills?</h3>
+                      <p className="text-gray-600 dark:text-gray-300">Hindi, bukas ang mga grupo para sa lahat ng antas - mula sa beginner hanggang sa advanced level.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                      <h3 className="font-bold text-lg mb-3">Paano sumali sa English WhatsApp groups?</h3>
+                      <p className="text-gray-600 dark:text-gray-300">I-click lamang ang link ng grupo na gusto ninyong salihan. Automatic na kayong makakasali sa grupo.</p>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                      <h3 className="font-bold text-lg mb-3">May mga Filipino ba sa mga grupo?</h3>
+                      <p className="text-gray-600 dark:text-gray-300">Oo, maraming Filipino learners ang sumasali sa mga grupo para magsanay ng English kasama ang mga international learners.</p>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+
               {/* Telegram Section */}
               <Card className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20">
                 <CardBody className="p-8 text-center">
@@ -303,5 +412,6 @@ export default function WhatsApp() {
         <CommentSection postID={"f-whatsapp-group"} />
       </div>
     </div>
+    </>
   );
 }

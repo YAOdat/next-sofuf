@@ -7,7 +7,7 @@ import {
   Button, 
   Card,
   Chip
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { FiMapPin, FiHexagon, FiX, FiFilter } from "react-icons/fi";
 import { PiLaptopThin } from "react-icons/pi";
 import { useTheme } from "next-themes";
@@ -85,7 +85,7 @@ const CareersSearchComponent: React.FC<CareersSearchProps> = ({
         aria-label="City"
       >
         {cityOptions.map((city) => (
-          <SelectItem key={city} value={city}>
+          <SelectItem key={city}>
             {city}
           </SelectItem>
         ))}
@@ -106,7 +106,7 @@ const CareersSearchComponent: React.FC<CareersSearchProps> = ({
         aria-label="Industry"
       >
         {industries.map((industry) => (
-          <SelectItem key={industry} value={industry}>
+          <SelectItem key={industry}>
             {industry}
           </SelectItem>
         ))}

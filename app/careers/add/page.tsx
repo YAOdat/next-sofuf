@@ -1,12 +1,12 @@
 'use client';
 import React, { useState, FormEvent, Suspense } from 'react';
-// import { Textarea } from '@nextui-org/react';
+// import { Textarea } from '@heroui/react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../../../config/firebase';
 // import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // import the styles
 import dynamic from 'next/dynamic';
-import {Select, SelectItem, Avatar} from "@nextui-org/react";
+import {Select, SelectItem, Avatar} from "@heroui/react";
 import countries from '@/public/countries.json'
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -174,13 +174,13 @@ const JobSubmissionForm = () => {
       className={`max-w-xs`}
       onChange={(e) => setJobData({ ...jobData, workLoc: e.target.value })}
     >
-        <SelectItem key='Remote' value="Remote">
+        <SelectItem key="Remote">
         Remote
         </SelectItem>
-        <SelectItem key='Onsite' value="Onsite">
+        <SelectItem key="Onsite">
         Onsite
         </SelectItem>
-        <SelectItem key='Hybrid' value="Hybrid">
+        <SelectItem key="Hybrid">
         Hybrid
         </SelectItem>
     </Select>

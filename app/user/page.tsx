@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, doc, setDoc, collection } from 'firebase/firestore';
 import { app } from '../../config/firebase';
-import {Input, Button} from "@nextui-org/react";
+import {Input, Button} from "@heroui/react";
 import {EyeFilledIcon} from "@/public/EyeFilledIcon";
 import {EyeSlashFilledIcon} from "@/public/EyeSlashFilledIcon";
 

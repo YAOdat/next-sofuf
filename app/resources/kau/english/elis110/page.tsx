@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react"
-import { Card, CardBody, CardHeader, Image, Link, Tabs, Tab } from "@nextui-org/react"
+import { Card, CardBody, CardHeader, Image, Link, Tabs, Tab } from "@heroui/react"
 import Head from 'next/head'
 import { FaExternalLinkAlt } from "react-icons/fa";
 

@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
+import { Card, CardBody, Spacer, Link, Code, Image } from "@heroui/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
-import AdComponent from "@/components/AdComponent";
+
 
 const englischeGruppen = [
   { name: 'Englische Gruppe 1', link: 'https://chat.whatsapp.com/LyczdR1bJWGErr6ArcSBSx', sprache: 'Englisch' },

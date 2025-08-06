@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import MontegAdService from '../../components/MontegAdService'
 
 export default function BlogLayout({
 	children,
@@ -10,6 +11,8 @@ export default function BlogLayout({
 			<div className="inline-block max-w-lg text-center justify-center">
 				{children}
 			</div>
+			{/* Monteg Ad Service - Only for blog pages */}
+			<MontegAdService enabled={true} />
 		</section>
 	);
 }

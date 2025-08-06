@@ -13,7 +13,7 @@ import { app } from '@/config/firebase';
 import { title } from "@/components/primitives";
 import SubNav from "@/components/subNavBar";
 import { FiMapPin, FiDollarSign, FiCalendar, FiHexagon, FiExternalLink, FiTrash2, FiEdit, FiUsers, FiBriefcase } from "react-icons/fi";
-import { Link, Card, Button, Pagination, Chip, Skeleton } from "@nextui-org/react";
+import { Link, Card, Button, Pagination, Chip, Skeleton } from "@heroui/react";
 import { useTheme } from "next-themes";
 import CareersSearchComponent from '../../components/CareerSearchComponent';
 

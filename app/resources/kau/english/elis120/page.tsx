@@ -1,8 +1,8 @@
 'use client';
 
 import React from "react";
-import { Card, CardBody, CardHeader, Image, Link, Tabs, Tab, Badge } from "@nextui-org/react";
-import AdComponent from "../../../../../components/AdComponent";
+import { Card, CardBody, CardHeader, Image, Link, Tabs, Tab, Badge } from "@heroui/react";
+
 
 interface ResourceCard {
   title: string;
@@ -95,12 +95,7 @@ export default function ELIS120() {
           </div>
         </Tab>
       </Tabs>
-      <div className="mt-8 relative">
-        <div className="absolute top-0 left-0 bg-yellow-400 text-black text-xs px-2 py-1 rounded-tl">
-          Advertisement
-        </div>
-        <AdComponent />
-      </div>
+
     </div>
   );
 }

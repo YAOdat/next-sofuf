@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@heroui/react";
 import { GrResources } from "react-icons/gr";
 import { title } from "../../../components/primitives";
 

@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { Card, CardBody, CardHeader, Image, Link } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Image, Link } from "@heroui/react";
 import Head from "next/head";
 
 const resource = {

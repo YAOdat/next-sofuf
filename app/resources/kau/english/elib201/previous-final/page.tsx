@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react'
-import { Button, Card, CardBody, CardFooter, CardHeader, Radio, RadioGroup, Pagination, Spacer } from '@nextui-org/react'
+import { Button, Card, CardBody, CardFooter, CardHeader, Radio, RadioGroup, Pagination, Spacer } from '@heroui/react'
 import examDataJson from '@/public/elib201exam.json'
-import AdComponent from "@/components/AdComponent";
+
 
 // Base interface for common question properties
 interface BaseQuestion {
@@ -277,7 +277,7 @@ export default function ExamPage() {
                 )}
             </Card>
             <Spacer y={12} />
-            <AdComponent />
+    
         </div>
     )
 }

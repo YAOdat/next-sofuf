@@ -7,13 +7,13 @@ import {
 	NavbarBrand,
 	NavbarItem,
 	NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Kbd } from "@nextui-org/kbd";
-import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
+	Kbd,
+	Link,
+	Input,
+	link as linkStyles,
+} from "@heroui/react";
 import { useState } from 'react';
 import { FaTelegram } from "react-icons/fa";
-import { link as linkStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";

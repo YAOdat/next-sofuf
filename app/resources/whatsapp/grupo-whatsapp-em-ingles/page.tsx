@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
+import { Card, CardBody, Spacer, Link, Code, Image } from "@heroui/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
 

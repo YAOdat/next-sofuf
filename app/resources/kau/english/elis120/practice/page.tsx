@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { Pagination, Chip, Button } from "@nextui-org/react";
+import { Pagination, Chip, Button } from "@heroui/react";
 import { FaRedo } from "react-icons/fa";
 import type { Metadata } from 'next'
 

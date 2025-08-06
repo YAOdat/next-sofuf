@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, CardBody, Spacer, Link, Code, Image } from "@nextui-org/react";
+import { Card, CardBody, Spacer, Link, Code, Image } from "@heroui/react";
 import type { Metadata } from 'next';
 import CommentSection from "@/components/commentSection";
-import AdComponent from "@/components/AdComponent";
+
 
 const arabicGroups = [
   { name: 'Арабский WhatsApp-групповой чат', link: 'https://chat.whatsapp.com/GC59qnSlRtf9tC4NjqUuYY', language: 'Арабский' },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Присоединяйтесь к бесплатным арабским WhatsApp-группам | Практикуйте и изучайте арабский онлайн',
     description: 'Общайтесь с изучающими арабский со всего мира. Присоединяйтесь к нашим бесплатным WhatsApp-группам для изучения арабского языка.',
     url: 'https://www.sofuf.com/resources/whatsapp/arabic-whatsapp-group',
-    images: [{ url: 'https://www.sofuf.com/arabic_whatsapp_group.webp', alt: 'Арабский WhatsApp-групповой чат 2024' }],
+    images: [{ url: 'https://www.sofuf.com/arabic_whatsapp_group.webp', alt: 'Арабский WhatsApp-групповой чат 2026' }],
 },
 };
 
@@ -115,7 +115,7 @@ export default function ArabicWhatsAppGroups() {
         </CardBody>
       </Card>
       <Spacer y={1} />
-      <AdComponent />
+      
       <CommentSection postID={"arabic-whatsapp-group"} />
     </div>
   );

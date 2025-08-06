@@ -2,11 +2,12 @@
 
 import { title } from "@/components/primitives";
 import { useState, useEffect } from 'react';
-import { Card, CardHeader, Link, Image, Spinner } from "@nextui-org/react";
+import { Card, CardHeader, Link, Image, Spinner } from "@heroui/react";
 import { getFirestore, collection, doc, getDoc, getDocs, deleteDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { app, firestore } from '@/config/firebase';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+
 
 
 interface Post {
@@ -84,6 +85,8 @@ export default function BlogPage() {
 	return (
 		<div>
 			<h1 className={`${title()}`}>Blog</h1>
+
+
 
 			{isAdmin && (
 				<Link href={"/blog/add"} className="mx-5">

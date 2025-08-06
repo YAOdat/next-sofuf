@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../config/firebase';
-import { Link, Button, Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+import { Link, Button, Card, CardBody, CardHeader, Divider } from "@heroui/react";
 import Head from 'next/head';
 import { FiShare2, FiMapPin, FiCalendar, FiBriefcase, FiHome, FiDollarSign } from 'react-icons/fi';
-import AdComponent from './AdComponent';
+
 
 interface CareerDetail {
   jobTitle: string;
@@ -174,7 +174,7 @@ const CareerDetailPage: React.FC<{ careerId: string }> = ({ careerId }) => {
       </Card>
 
       <div className="mt-8">
-        <AdComponent />
+
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Chip, Spacer, Spinner } from "@nextui-org/react";
+import { Chip, Spacer, Spinner } from "@heroui/react";
 import dynamic from 'next/dynamic';
-import AdComponent  from '@/components/AdComponent';
+
 
 // Dynamically import the Editor component with SSR disabled
 const DynamicEditor = dynamic(
@@ -45,7 +45,7 @@ const SentenceCounter: React.FC = () => {
             <Spacer y={1} />
             <Chip variant="flat">Number of words: {wordCount}</Chip>
             <Spacer y={2} />
-            <AdComponent />
+    
             
         </div>
     );

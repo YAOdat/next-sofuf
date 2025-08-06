@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
     Card, CardBody, CardHeader, Spacer, Link, Textarea, Input, Badge, CardFooter, Button, Avatar
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {
     Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {
     addDoc, collection, getDocs, deleteDoc, getDoc, doc, DocumentData, FirestoreError
 } from 'firebase/firestore';

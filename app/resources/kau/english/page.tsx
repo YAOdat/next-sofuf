@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardHeader, Image, Link, Button } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Image, Link, Button } from "@heroui/react";
 import type { Metadata } from 'next'
 import { FaBook, FaLanguage } from "react-icons/fa";
 

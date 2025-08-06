@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
-import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
-import { Chip } from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody } from "@heroui/react";
+import { Chip } from "@heroui/react";
 
 
 const progressQuiz = [

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/react";
 import clsx from "clsx";
 import { Analytics } from '@vercel/analytics/react';
 
@@ -34,14 +34,9 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
-				<meta name="2d5c652bc6a334b927c4ad98677b376d50b4bc83" content="2d5c652bc6a334b927c4ad98677b376d50b4bc83" />
 
-				{/* Google Ads */}
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5304129517868035"
-					crossOrigin="anonymous"
-				></script>
+
+
 
 				{/* Google Analytics */}
 				<script

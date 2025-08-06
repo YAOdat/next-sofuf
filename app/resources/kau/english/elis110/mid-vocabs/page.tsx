@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Spinner, Card, CardBody, Switch, Accordion, AccordionItem } from "@nextui-org/react"
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Spinner, Card, CardBody, Switch, Accordion, AccordionItem } from "@heroui/react"
 import { useTheme } from 'next-themes'
 
 interface VocabWord {
